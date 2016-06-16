@@ -1,0 +1,2 @@
+(ns clj-eyes.web-socket
+  (:require [taoensso.sente :as sente]))

@@ -1,0 +1,2570 @@
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 1.447 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.net.BindException: Address already in use, compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web-server.clj:32:1)[0m
+                   java.net.BindException : [1mAddress already in use[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.net.BindException: Address already in use
+ at sun.nio.ch.Net.bind0 (Net.java:-2)
+    sun.nio.ch.Net.bind (Net.java:437)
+    sun.nio.ch.Net.bind (Net.java:429)
+    sun.nio.ch.ServerSocketChannelImpl.bind (ServerSocketChannelImpl.java:223)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:74)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:67)
+    org.httpkit.server.HttpServer.<init> (HttpServer.java:62)
+    org.httpkit.server$run_server.invokeStatic (server.clj:8)
+    org.httpkit.server$run_server.invoke (server.clj:8)
+    clj_eyes.web_server$eval31894.invokeStatic (web-server.clj:32)
+    clj_eyes.web_server$eval31894.invoke (web-server.clj:32)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.029 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.net.BindException: Address already in use, compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web-server.clj:32:1)[0m
+                   java.net.BindException : [1mAddress already in use[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.net.BindException: Address already in use
+ at sun.nio.ch.Net.bind0 (Net.java:-2)
+    sun.nio.ch.Net.bind (Net.java:437)
+    sun.nio.ch.Net.bind (Net.java:429)
+    sun.nio.ch.ServerSocketChannelImpl.bind (ServerSocketChannelImpl.java:223)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:74)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:67)
+    org.httpkit.server.HttpServer.<init> (HttpServer.java:62)
+    org.httpkit.server$run_server.invokeStatic (server.clj:8)
+    org.httpkit.server$run_server.invoke (server.clj:8)
+    clj_eyes.web_server$eval31912.invokeStatic (web-server.clj:32)
+    clj_eyes.web_server$eval31912.invoke (web-server.clj:32)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.041 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.net.BindException: Address already in use, compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web-server.clj:32:1)[0m
+                   java.net.BindException : [1mAddress already in use[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.net.BindException: Address already in use
+ at sun.nio.ch.Net.bind0 (Net.java:-2)
+    sun.nio.ch.Net.bind (Net.java:437)
+    sun.nio.ch.Net.bind (Net.java:429)
+    sun.nio.ch.ServerSocketChannelImpl.bind (ServerSocketChannelImpl.java:223)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:74)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:67)
+    org.httpkit.server.HttpServer.<init> (HttpServer.java:62)
+    org.httpkit.server$run_server.invokeStatic (server.clj:8)
+    org.httpkit.server$run_server.invoke (server.clj:8)
+    clj_eyes.web_server$eval31930.invokeStatic (web-server.clj:32)
+    clj_eyes.web_server$eval31930.invoke (web-server.clj:32)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.049 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.net.BindException: Address already in use, compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web-server.clj:32:1)[0m
+                   java.net.BindException : [1mAddress already in use[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.net.BindException: Address already in use
+ at sun.nio.ch.Net.bind0 (Net.java:-2)
+    sun.nio.ch.Net.bind (Net.java:437)
+    sun.nio.ch.Net.bind (Net.java:429)
+    sun.nio.ch.ServerSocketChannelImpl.bind (ServerSocketChannelImpl.java:223)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:74)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:67)
+    org.httpkit.server.HttpServer.<init> (HttpServer.java:62)
+    org.httpkit.server$run_server.invokeStatic (server.clj:8)
+    org.httpkit.server$run_server.invoke (server.clj:8)
+    clj_eyes.web_server$eval31948.invokeStatic (web-server.clj:32)
+    clj_eyes.web_server$eval31948.invoke (web-server.clj:32)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.075 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.net.BindException: Address already in use, compiling:(web-server.clj:32:22)[0m
+                   java.net.BindException : [1mAddress already in use[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.net.BindException: Address already in use
+ at sun.nio.ch.Net.bind0 (Net.java:-2)
+    sun.nio.ch.Net.bind (Net.java:437)
+    sun.nio.ch.Net.bind (Net.java:429)
+    sun.nio.ch.ServerSocketChannelImpl.bind (ServerSocketChannelImpl.java:223)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:74)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:67)
+    org.httpkit.server.HttpServer.<init> (HttpServer.java:62)
+    org.httpkit.server$run_server.invokeStatic (server.clj:8)
+    org.httpkit.server$run_server.invoke (server.clj:8)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Compiler$InvokeExpr.eval (Compiler.java:3652)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.071 seconds.[0m
+[36m----  Exception    ----[0m
+
+  [1mNo ns form found in src/clj_eyes/core.cljs[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.AssertionError: No ns form found in src/clj_eyes/core.cljs
+ at cljs.analyzer$parse_ns$fn__4720.invoke (analyzer.cljc:2761)
+    cljs.analyzer$parse_ns.invokeStatic (analyzer.cljc:2711)
+    cljs.analyzer$parse_ns.invoke (analyzer.cljc:2693)
+    cljs.analyzer$parse_ns.invokeStatic (analyzer.cljc:2703)
+    cljs.analyzer$parse_ns.invoke (analyzer.cljc:2693)
+    cljs.compiler$find_source.invokeStatic (compiler.cljc:1418)
+    cljs.compiler$find_source.invoke (compiler.cljc:1417)
+    clojure.core$map$fn__4785.invoke (core.clj:2646)
+    clojure.lang.LazySeq.sval (LazySeq.java:40)
+    clojure.lang.LazySeq.seq (LazySeq.java:56)
+    clojure.lang.Cons.next (Cons.java:39)
+    clojure.lang.RT.next (RT.java:688)
+    clojure.core$next__4341.invokeStatic (core.clj:64)
+    clojure.core$reduce1.invokeStatic (core.clj:925)
+    clojure.core$set.invokeStatic (core.clj:3983)
+    clojure.core$set.invoke (core.clj:3975)
+    cljs.closure$add_dependency_sources.invokeStatic (closure.clj:797)
+    cljs.closure$add_dependency_sources.invoke (closure.clj:791)
+    cljs.closure$build.invokeStatic (closure.clj:1941)
+    cljs.closure$build.invoke (closure.clj:1882)
+    cljs.build.api$build.invokeStatic (api.clj:210)
+    cljs.build.api$build.invoke (api.clj:198)
+    figwheel_sidecar.components.cljs_autobuild$cljs_build.invokeStatic (cljs_autobuild.clj:28)
+    figwheel_sidecar.components.cljs_autobuild$cljs_build.invoke (cljs_autobuild.clj:27)
+    figwheel_sidecar.build_middleware.injection$hook$fn__20820.invoke (injection.clj:139)
+    figwheel_sidecar.components.cljs_autobuild$notify_command_hook$fn__21217.invoke (cljs_autobuild.clj:68)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:115)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.262 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.419 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.net.BindException: Address already in use, compiling:(web-server.clj:34:22)[0m
+                   java.net.BindException : [1mAddress already in use[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.net.BindException: Address already in use
+ at sun.nio.ch.Net.bind0 (Net.java:-2)
+    sun.nio.ch.Net.bind (Net.java:437)
+    sun.nio.ch.Net.bind (Net.java:429)
+    sun.nio.ch.ServerSocketChannelImpl.bind (ServerSocketChannelImpl.java:223)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:74)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:67)
+    org.httpkit.server.HttpServer.<init> (HttpServer.java:62)
+    org.httpkit.server$run_server.invokeStatic (server.clj:8)
+    org.httpkit.server$run_server.invoke (server.clj:8)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Compiler$InvokeExpr.eval (Compiler.java:3652)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.726 seconds.[0m
+[36m----  Could not Read  src/clj_eyes/core.cljs   line:3  column:43  ----[0m
+
+  [1mInvalid token: ws://example.com:8084/'[0m
+
+  [36m1[0m  [36m(ns clj-eyes.core)[0m
+  [36m2[0m  [36m[0m
+  [33m3[0m  [1m(new js/Websocket 'ws://example.com:8084/')[0m
+  [0m [0m  [33m                                          ^--- Invalid token: ws://example.com:8084/'[0m
+
+[36m----  Reader Error : Please see src/clj_eyes/core.cljs  ----[0m
+Figwheel: Can't open  ("src/clj_eyes/core.cljs" 3 43) No :open-file-command supplied in the config.
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.476 seconds.[0m
+[36m----  Could not Read  src/clj_eyes/core.cljs   line:3  column:56  ----[0m
+
+  [1mInvalid token: ws://example.com:8084/'[0m
+
+  [36m1[0m  [36m(ns clj-eyes.core)[0m
+  [36m2[0m  [36m[0m
+  [33m3[0m  [1m(def web-socket (js/Websocket. 'ws://example.com:8084/'))[0m
+  [0m [0m  [33m                                                       ^--- Invalid token: ws://example.com:8084/'[0m
+
+[36m----  Reader Error : Please see src/clj_eyes/core.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.125 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.097 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 2.299 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:6  column:30  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.core/document[0m
+
+  [36m 3[0m  [36m(def web-socket (js/WebSocket. "ws://example.com:8084/"))[0m
+  [36m 4[0m  [36m[0m
+  [36m 5[0m  [36m;var canvas = document.getElementById('videoCanvas');[0m
+  [33m 6[0m  [1m(def canvas (.getElementById document "rendered_img_canvas"))[0m
+  [0m  [0m  [33m                             ^--- Use of undeclared Var clj-eyes.core/document[0m
+  [36m 7[0m  [36m[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m;var player = new jsmpeg(client, {canvas:canvas})[0m
+  [36m10[0m  [36m(def player (js/jsmpeg. web-socket (js-obj "canvas" canvas)))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.346 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.53 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.763 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.3 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.8 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.632 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.658 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 3.197 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.288 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.096 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.net.BindException: Address already in use, compiling:(web-server.clj:33:22)[0m
+                   java.net.BindException : [1mAddress already in use[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.net.BindException: Address already in use
+ at sun.nio.ch.Net.bind0 (Net.java:-2)
+    sun.nio.ch.Net.bind (Net.java:437)
+    sun.nio.ch.Net.bind (Net.java:429)
+    sun.nio.ch.ServerSocketChannelImpl.bind (ServerSocketChannelImpl.java:223)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:74)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:67)
+    org.httpkit.server.HttpServer.<init> (HttpServer.java:62)
+    org.httpkit.server$run_server.invokeStatic (server.clj:8)
+    org.httpkit.server$run_server.invoke (server.clj:8)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Compiler$InvokeExpr.eval (Compiler.java:3652)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.134 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath., compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web_socket.clj:1:1)[0m
+            java.io.FileNotFoundException : [1mCould not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.
+ at clojure.lang.RT.load (RT.java:456)
+    clojure.lang.RT.load (RT.java:419)
+    clojure.core$load$fn__5677.invoke (core.clj:5893)
+    clojure.core$load.invokeStatic (core.clj:5892)
+    clojure.core$load.doInvoke (core.clj:5876)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojure.core$load_one.invokeStatic (core.clj:5697)
+    clojure.core$load_one.invoke (core.clj:5692)
+    clojure.core$load_lib$fn__5626.invoke (core.clj:5737)
+    clojure.core$load_lib.invokeStatic (core.clj:5736)
+    clojure.core$load_lib.doInvoke (core.clj:5717)
+    clojure.lang.RestFn.applyTo (RestFn.java:142)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$load_libs.invokeStatic (core.clj:5774)
+    clojure.core$load_libs.doInvoke (core.clj:5758)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$require.invokeStatic (core.clj:5796)
+    clojure.core$require.doInvoke (core.clj:5796)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clj_eyes.web_socket$eval32114$loading__5569__auto____32115.invoke (web_socket.clj:1)
+    clj_eyes.web_socket$eval32114.invokeStatic (web_socket.clj:1)
+    clj_eyes.web_socket$eval32114.invoke (web_socket.clj:1)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.eval (Compiler.java:6916)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.056 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath., compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web_socket.clj:1:1)[0m
+            java.io.FileNotFoundException : [1mCould not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.
+ at clojure.lang.RT.load (RT.java:456)
+    clojure.lang.RT.load (RT.java:419)
+    clojure.core$load$fn__5677.invoke (core.clj:5893)
+    clojure.core$load.invokeStatic (core.clj:5892)
+    clojure.core$load.doInvoke (core.clj:5876)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojure.core$load_one.invokeStatic (core.clj:5697)
+    clojure.core$load_one.invoke (core.clj:5692)
+    clojure.core$load_lib$fn__5626.invoke (core.clj:5737)
+    clojure.core$load_lib.invokeStatic (core.clj:5736)
+    clojure.core$load_lib.doInvoke (core.clj:5717)
+    clojure.lang.RestFn.applyTo (RestFn.java:142)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$load_libs.invokeStatic (core.clj:5774)
+    clojure.core$load_libs.doInvoke (core.clj:5758)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$require.invokeStatic (core.clj:5796)
+    clojure.core$require.doInvoke (core.clj:5796)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clj_eyes.web_socket$eval32120$loading__5569__auto____32121.invoke (web_socket.clj:1)
+    clj_eyes.web_socket$eval32120.invokeStatic (web_socket.clj:1)
+    clj_eyes.web_socket$eval32120.invoke (web_socket.clj:1)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.eval (Compiler.java:6916)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.109 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath., compiling:(clj_eyes/web_socket.clj:1:1)[0m
+            java.io.FileNotFoundException : [1mCould not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.
+ at clojure.lang.RT.load (RT.java:456)
+    clojure.lang.RT.load (RT.java:419)
+    clojure.core$load$fn__5677.invoke (core.clj:5893)
+    clojure.core$load.invokeStatic (core.clj:5892)
+    clojure.core$load.doInvoke (core.clj:5876)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojure.core$load_one.invokeStatic (core.clj:5697)
+    clojure.core$load_one.invoke (core.clj:5692)
+    clojure.core$load_lib$fn__5626.invoke (core.clj:5737)
+    clojure.core$load_lib.invokeStatic (core.clj:5736)
+    clojure.core$load_lib.doInvoke (core.clj:5717)
+    clojure.lang.RestFn.applyTo (RestFn.java:142)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$load_libs.invokeStatic (core.clj:5774)
+    clojure.core$load_libs.doInvoke (core.clj:5758)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$require.invokeStatic (core.clj:5796)
+    clojure.core$require.doInvoke (core.clj:5796)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clj_eyes.web_socket$eval32132$loading__5569__auto____32133.invoke (web_socket.clj:1)
+    clj_eyes.web_socket$eval32132.invokeStatic (web_socket.clj:1)
+    clj_eyes.web_socket$eval32132.invoke (web_socket.clj:1)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.eval (Compiler.java:6916)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.RT.loadResourceScript (RT.java:372)
+    clojure.lang.RT.loadResourceScript (RT.java:363)
+    clojure.lang.RT.load (RT.java:453)
+    clojure.lang.RT.load (RT.java:419)
+    clojure.core$load$fn__5677.invoke (core.clj:5893)
+    clojure.core$load.invokeStatic (core.clj:5892)
+    clojure.core$load.doInvoke (core.clj:5876)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojure.core$load_one.invokeStatic (core.clj:5697)
+    clojure.core$load_one.invoke (core.clj:5692)
+    clojure.core$load_lib$fn__5626.invoke (core.clj:5737)
+    clojure.core$load_lib.invokeStatic (core.clj:5736)
+    clojure.core$load_lib.doInvoke (core.clj:5717)
+    clojure.lang.RestFn.applyTo (RestFn.java:142)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$load_libs.invokeStatic (core.clj:5774)
+    clojure.core$load_libs.doInvoke (core.clj:5758)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$require.invokeStatic (core.clj:5796)
+    clojure.core$require.doInvoke (core.clj:5796)
+    clojure.lang.RestFn.invoke (RestFn.java:457)
+    clj_eyes.web_server$eval32126$loading__5569__auto____32127.invoke (web-server.clj:1)
+    clj_eyes.web_server$eval32126.invokeStatic (web-server.clj:1)
+    clj_eyes.web_server$eval32126.invoke (web-server.clj:1)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.eval (Compiler.java:6916)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.159 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath., compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web_socket.clj:1:1)[0m
+            java.io.FileNotFoundException : [1mCould not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.
+ at clojure.lang.RT.load (RT.java:456)
+    clojure.lang.RT.load (RT.java:419)
+    clojure.core$load$fn__5677.invoke (core.clj:5893)
+    clojure.core$load.invokeStatic (core.clj:5892)
+    clojure.core$load.doInvoke (core.clj:5876)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojure.core$load_one.invokeStatic (core.clj:5697)
+    clojure.core$load_one.invoke (core.clj:5692)
+    clojure.core$load_lib$fn__5626.invoke (core.clj:5737)
+    clojure.core$load_lib.invokeStatic (core.clj:5736)
+    clojure.core$load_lib.doInvoke (core.clj:5717)
+    clojure.lang.RestFn.applyTo (RestFn.java:142)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$load_libs.invokeStatic (core.clj:5774)
+    clojure.core$load_libs.doInvoke (core.clj:5758)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$require.invokeStatic (core.clj:5796)
+    clojure.core$require.doInvoke (core.clj:5796)
+    clojure.lang.RestFn.invoke (RestFn.java:421)
+    clj_eyes.web_socket$eval32138$loading__5569__auto____32139.invoke (web_socket.clj:1)
+    clj_eyes.web_socket$eval32138.invokeStatic (web_socket.clj:1)
+    clj_eyes.web_socket$eval32138.invoke (web_socket.clj:1)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.eval (Compiler.java:6916)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.058 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath., compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web_socket.clj:1:1)[0m
+            java.io.FileNotFoundException : [1mCould not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.
+ at clojure.lang.RT.load (RT.java:456)
+    clojure.lang.RT.load (RT.java:419)
+    clojure.core$load$fn__5677.invoke (core.clj:5893)
+    clojure.core$load.invokeStatic (core.clj:5892)
+    clojure.core$load.doInvoke (core.clj:5876)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojure.core$load_one.invokeStatic (core.clj:5697)
+    clojure.core$load_one.invoke (core.clj:5692)
+    clojure.core$load_lib$fn__5626.invoke (core.clj:5737)
+    clojure.core$load_lib.invokeStatic (core.clj:5736)
+    clojure.core$load_lib.doInvoke (core.clj:5717)
+    clojure.lang.RestFn.applyTo (RestFn.java:142)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$load_libs.invokeStatic (core.clj:5774)
+    clojure.core$load_libs.doInvoke (core.clj:5758)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$require.invokeStatic (core.clj:5796)
+    clojure.core$require.doInvoke (core.clj:5796)
+    clojure.lang.RestFn.invoke (RestFn.java:421)
+    clj_eyes.web_socket$eval32144$loading__5569__auto____32145.invoke (web_socket.clj:1)
+    clj_eyes.web_socket$eval32144.invokeStatic (web_socket.clj:1)
+    clj_eyes.web_socket$eval32144.invoke (web_socket.clj:1)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.eval (Compiler.java:6916)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.078 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath., compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web_socket.clj:1:1)[0m
+            java.io.FileNotFoundException : [1mCould not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.
+ at clojure.lang.RT.load (RT.java:456)
+    clojure.lang.RT.load (RT.java:419)
+    clojure.core$load$fn__5677.invoke (core.clj:5893)
+    clojure.core$load.invokeStatic (core.clj:5892)
+    clojure.core$load.doInvoke (core.clj:5876)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojure.core$load_one.invokeStatic (core.clj:5697)
+    clojure.core$load_one.invoke (core.clj:5692)
+    clojure.core$load_lib$fn__5626.invoke (core.clj:5737)
+    clojure.core$load_lib.invokeStatic (core.clj:5736)
+    clojure.core$load_lib.doInvoke (core.clj:5717)
+    clojure.lang.RestFn.applyTo (RestFn.java:142)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$load_libs.invokeStatic (core.clj:5774)
+    clojure.core$load_libs.doInvoke (core.clj:5758)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$require.invokeStatic (core.clj:5796)
+    clojure.core$require.doInvoke (core.clj:5796)
+    clojure.lang.RestFn.invoke (RestFn.java:421)
+    clj_eyes.web_socket$eval32150$loading__5569__auto____32151.invoke (web_socket.clj:1)
+    clj_eyes.web_socket$eval32150.invokeStatic (web_socket.clj:1)
+    clj_eyes.web_socket$eval32150.invoke (web_socket.clj:1)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.eval (Compiler.java:6916)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.06 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath., compiling:(clj_eyes/web_socket.clj:1:1)[0m
+            java.io.FileNotFoundException : [1mCould not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.io.FileNotFoundException: Could not locate taoensso/sente__init.class or taoensso/sente.clj on classpath.
+ at clojure.lang.RT.load (RT.java:456)
+    clojure.lang.RT.load (RT.java:419)
+    clojure.core$load$fn__5677.invoke (core.clj:5893)
+    clojure.core$load.invokeStatic (core.clj:5892)
+    clojure.core$load.doInvoke (core.clj:5876)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojure.core$load_one.invokeStatic (core.clj:5697)
+    clojure.core$load_one.invoke (core.clj:5692)
+    clojure.core$load_lib$fn__5626.invoke (core.clj:5737)
+    clojure.core$load_lib.invokeStatic (core.clj:5736)
+    clojure.core$load_lib.doInvoke (core.clj:5717)
+    clojure.lang.RestFn.applyTo (RestFn.java:142)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$load_libs.invokeStatic (core.clj:5774)
+    clojure.core$load_libs.doInvoke (core.clj:5758)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$require.invokeStatic (core.clj:5796)
+    clojure.core$require.doInvoke (core.clj:5796)
+    clojure.lang.RestFn.invoke (RestFn.java:421)
+    clj_eyes.web_socket$eval32162$loading__5569__auto____32163.invoke (web_socket.clj:1)
+    clj_eyes.web_socket$eval32162.invokeStatic (web_socket.clj:1)
+    clj_eyes.web_socket$eval32162.invoke (web_socket.clj:1)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.eval (Compiler.java:6916)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.RT.loadResourceScript (RT.java:372)
+    clojure.lang.RT.loadResourceScript (RT.java:363)
+    clojure.lang.RT.load (RT.java:453)
+    clojure.lang.RT.load (RT.java:419)
+    clojure.core$load$fn__5677.invoke (core.clj:5893)
+    clojure.core$load.invokeStatic (core.clj:5892)
+    clojure.core$load.doInvoke (core.clj:5876)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojure.core$load_one.invokeStatic (core.clj:5697)
+    clojure.core$load_one.invoke (core.clj:5692)
+    clojure.core$load_lib$fn__5626.invoke (core.clj:5737)
+    clojure.core$load_lib.invokeStatic (core.clj:5736)
+    clojure.core$load_lib.doInvoke (core.clj:5717)
+    clojure.lang.RestFn.applyTo (RestFn.java:142)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$load_libs.invokeStatic (core.clj:5774)
+    clojure.core$load_libs.doInvoke (core.clj:5758)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$require.invokeStatic (core.clj:5796)
+    clojure.core$require.doInvoke (core.clj:5796)
+    clojure.lang.RestFn.invoke (RestFn.java:512)
+    clj_eyes.web_server$eval32156$loading__5569__auto____32157.invoke (web-server.clj:1)
+    clj_eyes.web_server$eval32156.invokeStatic (web-server.clj:1)
+    clj_eyes.web_server$eval32156.invoke (web-server.clj:1)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.eval (Compiler.java:6916)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:3  column:1  ----[0m
+
+  [1mmy-client-side-ns is a single segment namespace[0m
+
+  [36m1[0m  [36m(ns clj-eyes.core)[0m
+  [36m2[0m  [36m[0m
+  [33m3[0m  [1m(ns my-client-side-ns ; .cljs[0m
+  [0m [0m  [33m^--- my-client-side-ns is a single segment namespace[0m
+  [36m4[0m  [36m  (:require-macros[0m
+  [36m5[0m  [36m   [cljs.core.async.macros :as asyncm :refer (go go-loop)])[0m
+  [36m6[0m  [36m  (:require[0m
+  [36m7[0m  [36m   ;; <other stuff>[0m
+  [36m8[0m  [36m   [cljs.core.async :as async :refer (<! >! put! chan)][0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.694 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/core.cljs  ----[0m
+
+  [1mNo such namespace: taoensso.sente, could not locate taoensso/sente.cljs, taoensso/sente.cljc, or Closure namespace "taoensso.sente" [0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/core.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.409 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/core.cljs  ----[0m
+
+  [1mNo such namespace: taoensso.sente, could not locate taoensso/sente.cljs, taoensso/sente.cljc, or Closure namespace "taoensso.sente" [0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/core.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.629 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:35  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.core/->output![0m
+
+  [36m32[0m  [36m(defmethod -event-msg-handler :chsk/state[0m
+  [36m33[0m  [36m  [{:as ev-msg :keys [?data]}][0m
+  [36m34[0m  [36m  (if (:first-open? ?data)[0m
+  [33m35[0m  [1m    (->output! "Channel socket successfully established!: %s" ?data)[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.core/->output![0m
+  [36m36[0m  [36m    (->output! "Channel socket state change: %s" ?data)))[0m
+  [36m37[0m  [36m[0m
+  [36m38[0m  [36m(defmethod -event-msg-handler :chsk/recv[0m
+  [36m39[0m  [36m  [{:as ev-msg :keys [?data]}][0m
+  [36m40[0m  [36m  (->output! "Push event from server: %s" ?data))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:36  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.core/->output![0m
+
+  [36m32[0m  [36m(defmethod -event-msg-handler :chsk/state[0m
+  [36m33[0m  [36m  [{:as ev-msg :keys [?data]}][0m
+  [36m34[0m  [36m  (if (:first-open? ?data)[0m
+  [36m35[0m  [36m    (->output! "Channel socket successfully established!: %s" ?data)[0m
+  [33m36[0m  [1m    (->output! "Channel socket state change: %s" ?data)))[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.core/->output![0m
+  [36m37[0m  [36m[0m
+  [36m38[0m  [36m(defmethod -event-msg-handler :chsk/recv[0m
+  [36m39[0m  [36m  [{:as ev-msg :keys [?data]}][0m
+  [36m40[0m  [36m  (->output! "Push event from server: %s" ?data))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:40  column:4  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.core/->output![0m
+
+  [36m36[0m  [36m    (->output! "Channel socket state change: %s" ?data)))[0m
+  [36m37[0m  [36m[0m
+  [36m38[0m  [36m(defmethod -event-msg-handler :chsk/recv[0m
+  [36m39[0m  [36m  [{:as ev-msg :keys [?data]}][0m
+  [33m40[0m  [1m  (->output! "Push event from server: %s" ?data))[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var clj-eyes.core/->output![0m
+  [36m41[0m  [36m[0m
+  [36m42[0m  [36m(defmethod -event-msg-handler :chsk/handshake[0m
+  [36m43[0m  [36m  [{:as ev-msg :keys [?data]}][0m
+  [36m44[0m  [36m  (let [[?uid ?csrf-token ?handshake-data] ?data][0m
+  [36m45[0m  [36m    (->output! "Handshake: %s" ?data)))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:45  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.core/->output![0m
+
+  [36m42[0m  [36m(defmethod -event-msg-handler :chsk/handshake[0m
+  [36m43[0m  [36m  [{:as ev-msg :keys [?data]}][0m
+  [36m44[0m  [36m  (let [[?uid ?csrf-token ?handshake-data] ?data][0m
+  [33m45[0m  [1m    (->output! "Handshake: %s" ?data)))[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.core/->output![0m
+  [36m46[0m  [36m[0m
+  [36m47[0m  [36m[0m
+  [36m48[0m  [36m(defonce router_ (atom nil))[0m
+  [36m49[0m  [36m(defn  stop-router! [] (when-let [stop-f @router_] (stop-f)))[0m
+  [36m50[0m  [36m(defn start-router! [][0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.023 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:15  column:20  ----[0m
+
+  [1mNo such namespace: encore, could not locate encore.cljs, encore.cljc, or Closure namespace ""[0m
+
+  [36m11[0m  [36m;;;; Util for logging output to on-screen console[0m
+  [36m12[0m  [36m[0m
+  [36m13[0m  [36m(def output-el (.getElementById js/document "output"))[0m
+  [36m14[0m  [36m(defn ->output! [fmt & args][0m
+  [33m15[0m  [1m  (let [msg (apply encore/format fmt args)][0m
+  [0m  [0m  [33m                   ^--- No such namespace: encore, could not locate encore.cljs, encore.cljc, or Closure namespace ""[0m
+  [36m16[0m  [36m    (timbre/debug msg)[0m
+  [36m17[0m  [36m    (aset output-el "value" (str "• " (.-value output-el) "\n" msg))[0m
+  [36m18[0m  [36m    (aset output-el "scrollTop" (.-scrollHeight output-el))))[0m
+  [36m19[0m  [36m[0m
+  [36m20[0m  [36m(->output! "ClojureScript appears to have loaded correctly.")[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:15  column:20  ----[0m
+
+  [1mUse of undeclared Var encore/format[0m
+
+  [36m11[0m  [36m;;;; Util for logging output to on-screen console[0m
+  [36m12[0m  [36m[0m
+  [36m13[0m  [36m(def output-el (.getElementById js/document "output"))[0m
+  [36m14[0m  [36m(defn ->output! [fmt & args][0m
+  [33m15[0m  [1m  (let [msg (apply encore/format fmt args)][0m
+  [0m  [0m  [33m                   ^--- Use of undeclared Var encore/format[0m
+  [36m16[0m  [36m    (timbre/debug msg)[0m
+  [36m17[0m  [36m    (aset output-el "value" (str "• " (.-value output-el) "\n" msg))[0m
+  [36m18[0m  [36m    (aset output-el "scrollTop" (.-scrollHeight output-el))))[0m
+  [36m19[0m  [36m[0m
+  [36m20[0m  [36m(->output! "ClojureScript appears to have loaded correctly.")[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:16  column:6  ----[0m
+
+  [1mNo such namespace: timbre, could not locate timbre.cljs, timbre.cljc, or Closure namespace ""[0m
+
+  [36m13[0m  [36m(def output-el (.getElementById js/document "output"))[0m
+  [36m14[0m  [36m(defn ->output! [fmt & args][0m
+  [36m15[0m  [36m  (let [msg (apply encore/format fmt args)][0m
+  [33m16[0m  [1m    (timbre/debug msg)[0m
+  [0m  [0m  [33m     ^--- No such namespace: timbre, could not locate timbre.cljs, timbre.cljc, or Closure namespace ""[0m
+  [36m17[0m  [36m    (aset output-el "value" (str "• " (.-value output-el) "\n" msg))[0m
+  [36m18[0m  [36m    (aset output-el "scrollTop" (.-scrollHeight output-el))))[0m
+  [36m19[0m  [36m[0m
+  [36m20[0m  [36m(->output! "ClojureScript appears to have loaded correctly.")[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:16  column:6  ----[0m
+
+  [1mUse of undeclared Var timbre/debug[0m
+
+  [36m13[0m  [36m(def output-el (.getElementById js/document "output"))[0m
+  [36m14[0m  [36m(defn ->output! [fmt & args][0m
+  [36m15[0m  [36m  (let [msg (apply encore/format fmt args)][0m
+  [33m16[0m  [1m    (timbre/debug msg)[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var timbre/debug[0m
+  [36m17[0m  [36m    (aset output-el "value" (str "• " (.-value output-el) "\n" msg))[0m
+  [36m18[0m  [36m    (aset output-el "scrollTop" (.-scrollHeight output-el))))[0m
+  [36m19[0m  [36m[0m
+  [36m20[0m  [36m(->output! "ClojureScript appears to have loaded correctly.")[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.345 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:15  column:20  ----[0m
+
+  [1mNo such namespace: encore, could not locate encore.cljs, encore.cljc, or Closure namespace ""[0m
+
+  [36m11[0m  [36m;;;; Util for logging output to on-screen console[0m
+  [36m12[0m  [36m[0m
+  [36m13[0m  [36m(def output-el (.getElementById js/document "output"))[0m
+  [36m14[0m  [36m(defn ->output! [fmt & args][0m
+  [33m15[0m  [1m  (let [msg (apply encore/format fmt args)][0m
+  [0m  [0m  [33m                   ^--- No such namespace: encore, could not locate encore.cljs, encore.cljc, or Closure namespace ""[0m
+  [36m16[0m  [36m    (timbre/debug msg)[0m
+  [36m17[0m  [36m    (aset output-el "value" (str "• " (.-value output-el) "\n" msg))[0m
+  [36m18[0m  [36m    (aset output-el "scrollTop" (.-scrollHeight output-el))))[0m
+  [36m19[0m  [36m[0m
+  [36m20[0m  [36m(->output! "ClojureScript appears to have loaded correctly.")[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:15  column:20  ----[0m
+
+  [1mUse of undeclared Var encore/format[0m
+
+  [36m11[0m  [36m;;;; Util for logging output to on-screen console[0m
+  [36m12[0m  [36m[0m
+  [36m13[0m  [36m(def output-el (.getElementById js/document "output"))[0m
+  [36m14[0m  [36m(defn ->output! [fmt & args][0m
+  [33m15[0m  [1m  (let [msg (apply encore/format fmt args)][0m
+  [0m  [0m  [33m                   ^--- Use of undeclared Var encore/format[0m
+  [36m16[0m  [36m    (timbre/debug msg)[0m
+  [36m17[0m  [36m    (aset output-el "value" (str "• " (.-value output-el) "\n" msg))[0m
+  [36m18[0m  [36m    (aset output-el "scrollTop" (.-scrollHeight output-el))))[0m
+  [36m19[0m  [36m[0m
+  [36m20[0m  [36m(->output! "ClojureScript appears to have loaded correctly.")[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:16  column:6  ----[0m
+
+  [1mNo such namespace: timbre, could not locate timbre.cljs, timbre.cljc, or Closure namespace ""[0m
+
+  [36m13[0m  [36m(def output-el (.getElementById js/document "output"))[0m
+  [36m14[0m  [36m(defn ->output! [fmt & args][0m
+  [36m15[0m  [36m  (let [msg (apply encore/format fmt args)][0m
+  [33m16[0m  [1m    (timbre/debug msg)[0m
+  [0m  [0m  [33m     ^--- No such namespace: timbre, could not locate timbre.cljs, timbre.cljc, or Closure namespace ""[0m
+  [36m17[0m  [36m    (aset output-el "value" (str "• " (.-value output-el) "\n" msg))[0m
+  [36m18[0m  [36m    (aset output-el "scrollTop" (.-scrollHeight output-el))))[0m
+  [36m19[0m  [36m[0m
+  [36m20[0m  [36m(->output! "ClojureScript appears to have loaded correctly.")[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:16  column:6  ----[0m
+
+  [1mUse of undeclared Var timbre/debug[0m
+
+  [36m13[0m  [36m(def output-el (.getElementById js/document "output"))[0m
+  [36m14[0m  [36m(defn ->output! [fmt & args][0m
+  [36m15[0m  [36m  (let [msg (apply encore/format fmt args)][0m
+  [33m16[0m  [1m    (timbre/debug msg)[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var timbre/debug[0m
+  [36m17[0m  [36m    (aset output-el "value" (str "• " (.-value output-el) "\n" msg))[0m
+  [36m18[0m  [36m    (aset output-el "scrollTop" (.-scrollHeight output-el))))[0m
+  [36m19[0m  [36m[0m
+  [36m20[0m  [36m(->output! "ClojureScript appears to have loaded correctly.")[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 2.008 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.658 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 4.105 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.net.BindException: Address already in use, compiling:(web-server.clj:40:22)[0m
+                   java.net.BindException : [1mAddress already in use[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.net.BindException: Address already in use
+ at sun.nio.ch.Net.bind0 (Net.java:-2)
+    sun.nio.ch.Net.bind (Net.java:437)
+    sun.nio.ch.Net.bind (Net.java:429)
+    sun.nio.ch.ServerSocketChannelImpl.bind (ServerSocketChannelImpl.java:223)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:74)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:67)
+    org.httpkit.server.HttpServer.<init> (HttpServer.java:62)
+    org.httpkit.server$run_server.invokeStatic (server.clj:8)
+    org.httpkit.server$run_server.invoke (server.clj:8)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Compiler$InvokeExpr.eval (Compiler.java:3652)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.535 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.053 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.net.BindException: Address already in use, compiling:(web-server.clj:40:22)[0m
+                   java.net.BindException : [1mAddress already in use[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.net.BindException: Address already in use
+ at sun.nio.ch.Net.bind0 (Net.java:-2)
+    sun.nio.ch.Net.bind (Net.java:437)
+    sun.nio.ch.Net.bind (Net.java:429)
+    sun.nio.ch.ServerSocketChannelImpl.bind (ServerSocketChannelImpl.java:223)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:74)
+    sun.nio.ch.ServerSocketAdaptor.bind (ServerSocketAdaptor.java:67)
+    org.httpkit.server.HttpServer.<init> (HttpServer.java:62)
+    org.httpkit.server$run_server.invokeStatic (server.clj:8)
+    org.httpkit.server$run_server.invoke (server.clj:8)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Compiler$InvokeExpr.eval (Compiler.java:3652)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.072 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.284 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.081 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.RuntimeException: Map literal must contain an even number of forms, compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web-server.clj:28:17)[0m
+               java.lang.RuntimeException : [1mMap literal must contain an even number of forms[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.RuntimeException: Map literal must contain an even number of forms
+ at clojure.lang.Util.runtimeException (Util.java:221)
+    clojure.lang.LispReader$MapReader.invoke (LispReader.java:1160)
+    clojure.lang.LispReader.read (LispReader.java:263)
+    clojure.lang.LispReader.readDelimitedList (LispReader.java:1200)
+    clojure.lang.LispReader$ListReader.invoke (LispReader.java:1049)
+    clojure.lang.LispReader.read (LispReader.java:263)
+    clojure.lang.LispReader.read (LispReader.java:196)
+    clojure.lang.Compiler.load (Compiler.java:7374)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.066 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.UnsatisfiedLinkError: no opencv_java310 in java.library.path, compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/core.clj:3:1)[0m
+           java.lang.UnsatisfiedLinkError : [1mno opencv_java310 in java.library.path[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.UnsatisfiedLinkError: no opencv_java310 in java.library.path
+ at java.lang.ClassLoader.loadLibrary (ClassLoader.java:1865)
+    java.lang.Runtime.loadLibrary0 (Runtime.java:870)
+    java.lang.System.loadLibrary (System.java:1122)
+    clojure.lang.RT.loadLibrary (RT.java:495)
+    clj_eyes.core$eval31910.invokeStatic (core.clj:4)
+    clj_eyes.core$eval31910.invoke (core.clj:4)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.757 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.275 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.649 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.806 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/core.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.478 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/img_frame.cljs   line:4  column:3  ----[0m
+
+  [1mset! target must be a field or a symbol naming a var at line 4 src/clj_eyes/img_frame.cljs[0m
+
+  [36m3[0m  [36m(defn reload-img-frame [][0m
+  [33m4[0m  [1m  (set! (.src (.getElementById js/document "img-frame")) "/img"))[0m
+  [0m [0m  [33m  ^--- set! target must be a field or a symbol naming a var at line 4 src/clj_eyes/img_frame.cljs[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/img_frame.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.345 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/img_frame.cljs   line:4  column:3  ----[0m
+
+  [1mset! target must be a field or a symbol naming a var at line 4 /Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/img_frame.cljs[0m
+
+  [36m3[0m  [36m(defn reload-img-frame [][0m
+  [33m4[0m  [1m  (set! (.src (.getElementById js/document "img-frame")) "/img"))[0m
+  [0m [0m  [33m  ^--- set! target must be a field or a symbol naming a var at line 4 /Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/img_frame.cljs[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/img_frame.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/core.cljs   line:64  column:4  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.img-frame/reload-image-frame[0m
+
+  [36m61[0m  [36m(defmethod -event-msg-handler :opencv/reload[0m
+  [36m62[0m  [36m  [{:as ev-msg :keys [?data]}][0m
+  [36m63[0m  [36m  (->output! "Server notified client of img change. Reloading")[0m
+  [33m64[0m  [1m  (img/reload-image-frame))[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var clj-eyes.img-frame/reload-image-frame[0m
+  [36m65[0m  [36m[0m
+  [36m66[0m  [36m(defmethod -event-msg-handler :chsk/ws-error[0m
+  [36m67[0m  [36m  [{:as ev-msg :keys [?data]}][0m
+  [36m68[0m  [36m  (->output! "Error event from server: %s" ?data))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/core.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.477 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/clj_eyes/img_frame.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.001 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/img_frame.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.616 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.227 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/img_frame.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.779 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.844 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/img_frame.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.636 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/img_frame.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.323 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/img_frame.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.08 seconds.[0m
+[36m----  Could not Read  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mEOF while reading, starting at line 1 and column 1[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- EOF while reading, starting at line 1 and column 1[0m
+  [36m2[0m  [36m  (:require [ajax.core :refer [GET POST]][0m
+  [36m3[0m  [36m  (:use jayq.core ))[0m
+
+[36m----  Reader Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.021 seconds.[0m
+[36m----  Could not Read  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mEOF while reading, starting at line 1 and column 1[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- EOF while reading, starting at line 1 and column 1[0m
+  [36m2[0m  [36m  (:require [ajax.core :refer [GET POST]][0m
+  [36m3[0m  [36m  (:use jayq.core ))[0m
+
+[36m----  Reader Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.031 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mnth not supported on this type: Symbol[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- nth not supported on this type: Symbol[0m
+  [36m2[0m  [36m  (:require [ajax.core :refer [GET POST]])[0m
+  [36m3[0m  [36m  (:use jayq.core ))[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.04 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mnth not supported on this type: Symbol[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- nth not supported on this type: Symbol[0m
+  [36m2[0m  [36m  (:require [ajax.core :refer [GET POST]])[0m
+  [36m3[0m  [36m  (:use jayq.core ))[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+Figwheel: Can't open  ("src/clj_eyes/controls.cljs" 1 1) No :open-file-command supplied in the config.
+Figwheel: Can't open  ("src/clj_eyes/controls.cljs" 1 1) No :open-file-command supplied in the config.
+Figwheel: Can't open  ("src/clj_eyes/controls.cljs" 1 1) No :open-file-command supplied in the config.
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.024 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mnth not supported on this type: Symbol[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- nth not supported on this type: Symbol[0m
+  [36m2[0m  [36m  (:require [ajax.core :refer [GET POST]])[0m
+  [36m3[0m  [36m  (:use jayq.core ))[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+Figwheel: Can't open  ("src/clj_eyes/controls.cljs" 1 1) No :open-file-command supplied in the config.
+Figwheel: Can't open  ("src/clj_eyes/controls.cljs" 1 1) No :open-file-command supplied in the config.
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.04 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mnth not supported on this type: Symbol[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- nth not supported on this type: Symbol[0m
+  [36m2[0m  [36m  (:use jayq.core ))[0m
+  [36m3[0m  [36m(require '[ajax.core :refer [GET POST]])[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.047 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mnth not supported on this type: Symbol[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- nth not supported on this type: Symbol[0m
+  [36m2[0m  [36m  (:use jayq.core ))[0m
+  [36m3[0m  [36m;(require '[ajax.core :refer [GET POST]])[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:5  column:4  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/POST[0m
+
+  [36m 1[0m  [36m(ns clj-eyes.controls)[0m
+  [36m 2[0m  [36m;(require '[ajax.core :refer [GET POST]])[0m
+  [36m 3[0m  [36m[0m
+  [36m 4[0m  [36m(defn handle-select-transform [][0m
+  [33m 5[0m  [1m  (POST "/select-transformation"[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var clj-eyes.controls/POST[0m
+  [36m 6[0m  [36m       {:params[0m
+  [36m 7[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m(-> ($ :#select-transform)[0m
+  [36m10[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:7  column:27  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/$[0m
+
+  [36m 4[0m  [36m(defn handle-select-transform [][0m
+  [36m 5[0m  [36m  (POST "/select-transformation"[0m
+  [36m 6[0m  [36m       {:params[0m
+  [33m 7[0m  [1m        {:transform (val ($ :#select-transform))}}))[0m
+  [0m  [0m  [33m                          ^--- Use of undeclared Var clj-eyes.controls/$[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m(-> ($ :#select-transform)[0m
+  [36m10[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:10  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/change[0m
+
+  [36m 6[0m  [36m       {:params[0m
+  [36m 7[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m(-> ($ :#select-transform)[0m
+  [33m10[0m  [1m    (change handle-select-transform))[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.controls/change[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:9  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/$[0m
+
+  [36m 5[0m  [36m  (POST "/select-transformation"[0m
+  [36m 6[0m  [36m       {:params[0m
+  [36m 7[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 8[0m  [36m[0m
+  [33m 9[0m  [1m(-> ($ :#select-transform)[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.controls/$[0m
+  [36m10[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 12.703 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:2  column:2  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/require[0m
+
+  [36m1[0m  [36m(ns clj-eyes.controls)[0m
+  [33m2[0m  [1m(require '[ajax.core :refer [GET POST]])[0m
+  [0m [0m  [33m ^--- Use of undeclared Var clj-eyes.controls/require[0m
+  [36m3[0m  [36m[0m
+  [36m4[0m  [36m(defn handle-select-transform [][0m
+  [36m5[0m  [36m  (POST "/select-transformation"[0m
+  [36m6[0m  [36m       {:params[0m
+  [36m7[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:5  column:4  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/POST[0m
+
+  [36m 1[0m  [36m(ns clj-eyes.controls)[0m
+  [36m 2[0m  [36m(require '[ajax.core :refer [GET POST]])[0m
+  [36m 3[0m  [36m[0m
+  [36m 4[0m  [36m(defn handle-select-transform [][0m
+  [33m 5[0m  [1m  (POST "/select-transformation"[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var clj-eyes.controls/POST[0m
+  [36m 6[0m  [36m       {:params[0m
+  [36m 7[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m(-> ($ :#select-transform)[0m
+  [36m10[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:7  column:27  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/$[0m
+
+  [36m 4[0m  [36m(defn handle-select-transform [][0m
+  [36m 5[0m  [36m  (POST "/select-transformation"[0m
+  [36m 6[0m  [36m       {:params[0m
+  [33m 7[0m  [1m        {:transform (val ($ :#select-transform))}}))[0m
+  [0m  [0m  [33m                          ^--- Use of undeclared Var clj-eyes.controls/$[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m(-> ($ :#select-transform)[0m
+  [36m10[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:10  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/change[0m
+
+  [36m 6[0m  [36m       {:params[0m
+  [36m 7[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m(-> ($ :#select-transform)[0m
+  [33m10[0m  [1m    (change handle-select-transform))[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.controls/change[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:9  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/$[0m
+
+  [36m 5[0m  [36m  (POST "/select-transformation"[0m
+  [36m 6[0m  [36m       {:params[0m
+  [36m 7[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 8[0m  [36m[0m
+  [33m 9[0m  [1m(-> ($ :#select-transform)[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.controls/$[0m
+  [36m10[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 2.725 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:7  column:27  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/$[0m
+
+  [36m 4[0m  [36m(defn handle-select-transform [][0m
+  [36m 5[0m  [36m  (POST "/select-transformation"[0m
+  [36m 6[0m  [36m       {:params[0m
+  [33m 7[0m  [1m        {:transform (val ($ :#select-transform))}}))[0m
+  [0m  [0m  [33m                          ^--- Use of undeclared Var clj-eyes.controls/$[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m(-> ($ :#select-transform)[0m
+  [36m10[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:10  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/change[0m
+
+  [36m 6[0m  [36m       {:params[0m
+  [36m 7[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m(-> ($ :#select-transform)[0m
+  [33m10[0m  [1m    (change handle-select-transform))[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.controls/change[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:9  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/$[0m
+
+  [36m 5[0m  [36m  (POST "/select-transformation"[0m
+  [36m 6[0m  [36m       {:params[0m
+  [36m 7[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 8[0m  [36m[0m
+  [33m 9[0m  [1m(-> ($ :#select-transform)[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.controls/$[0m
+  [36m10[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 6.451 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.016 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mnth not supported on this type: Symbol[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- nth not supported on this type: Symbol[0m
+  [36m2[0m  [36m  (:require [ajax.core :refer [GET POST]])[0m
+  [36m3[0m  [36m  (:use jayq.core))[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:8  column:27  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/$[0m
+
+  [36m 5[0m  [36m(defn handle-select-transform [][0m
+  [36m 6[0m  [36m  (POST "/select-transformation"[0m
+  [36m 7[0m  [36m       {:params[0m
+  [33m 8[0m  [1m        {:transform (val ($ :#select-transform))}}))[0m
+  [0m  [0m  [33m                          ^--- Use of undeclared Var clj-eyes.controls/$[0m
+  [36m 9[0m  [36m[0m
+  [36m10[0m  [36m(-> ($ :#select-transform)[0m
+  [36m11[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:11  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/change[0m
+
+  [36m 7[0m  [36m       {:params[0m
+  [36m 8[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 9[0m  [36m[0m
+  [36m10[0m  [36m(-> ($ :#select-transform)[0m
+  [33m11[0m  [1m    (change handle-select-transform))[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.controls/change[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:10  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/$[0m
+
+  [36m 6[0m  [36m  (POST "/select-transformation"[0m
+  [36m 7[0m  [36m       {:params[0m
+  [36m 8[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 9[0m  [36m[0m
+  [33m10[0m  [1m(-> ($ :#select-transform)[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.controls/$[0m
+  [36m11[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.346 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:8  column:27  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/$[0m
+
+  [36m 5[0m  [36m(defn handle-select-transform [][0m
+  [36m 6[0m  [36m  (POST "/select-transformation"[0m
+  [36m 7[0m  [36m       {:params[0m
+  [33m 8[0m  [1m        {:transform (val ($ :#select-transform))}}))[0m
+  [0m  [0m  [33m                          ^--- Use of undeclared Var clj-eyes.controls/$[0m
+  [36m 9[0m  [36m[0m
+  [36m10[0m  [36m(-> ($ :#select-transform)[0m
+  [36m11[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:11  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/change[0m
+
+  [36m 7[0m  [36m       {:params[0m
+  [36m 8[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 9[0m  [36m[0m
+  [36m10[0m  [36m(-> ($ :#select-transform)[0m
+  [33m11[0m  [1m    (change handle-select-transform))[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.controls/change[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:10  column:6  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.controls/$[0m
+
+  [36m 6[0m  [36m  (POST "/select-transformation"[0m
+  [36m 7[0m  [36m       {:params[0m
+  [36m 8[0m  [36m        {:transform (val ($ :#select-transform))}}))[0m
+  [36m 9[0m  [36m[0m
+  [33m10[0m  [1m(-> ($ :#select-transform)[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var clj-eyes.controls/$[0m
+  [36m11[0m  [36m    (change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 3.24 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:11  column:6  ----[0m
+
+  [1mUse of undeclared Var jayq.core/change[0m
+
+  [36m 7[0m  [36m       {:params[0m
+  [36m 8[0m  [36m        {:transform (val (jq/$ :#select-transform))}}))[0m
+  [36m 9[0m  [36m[0m
+  [36m10[0m  [36m(-> (jq/$ :#select-transform)[0m
+  [33m11[0m  [1m    (jq/change handle-select-transform))[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var jayq.core/change[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.543 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.824 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.189 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.io.FileNotFoundException: Could not locate clj_eyes/templates/home_template__init.class or clj_eyes/templates/home_template.clj on classpath. Please check that namespaces with dashes use underscores in the Clojure file name., compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web-server.clj:1:1)[0m
+            java.io.FileNotFoundException : [1mCould not locate clj_eyes/templates/home_template__init.class or clj_eyes/templates/home_template.clj on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.io.FileNotFoundException: Could not locate clj_eyes/templates/home_template__init.class or clj_eyes/templates/home_template.clj on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+ at clojure.lang.RT.load (RT.java:456)
+    clojure.lang.RT.load (RT.java:419)
+    clojure.core$load$fn__5677.invoke (core.clj:5893)
+    clojure.core$load.invokeStatic (core.clj:5892)
+    clojure.core$load.doInvoke (core.clj:5876)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojure.core$load_one.invokeStatic (core.clj:5697)
+    clojure.core$load_one.invoke (core.clj:5692)
+    clojure.core$load_lib$fn__5626.invoke (core.clj:5737)
+    clojure.core$load_lib.invokeStatic (core.clj:5736)
+    clojure.core$load_lib.doInvoke (core.clj:5717)
+    clojure.lang.RestFn.applyTo (RestFn.java:142)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$load_libs.invokeStatic (core.clj:5774)
+    clojure.core$load_libs.doInvoke (core.clj:5758)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$require.invokeStatic (core.clj:5796)
+    clojure.core$require.doInvoke (core.clj:5796)
+    clojure.lang.RestFn.invoke (RestFn.java:551)
+    clj_eyes.web_server$eval29931$loading__5569__auto____29932.invoke (web-server.clj:1)
+    clj_eyes.web_server$eval29931.invokeStatic (web-server.clj:1)
+    clj_eyes.web_server$eval29931.invoke (web-server.clj:1)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.eval (Compiler.java:6916)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.803 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 1.572 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.UnsatisfiedLinkError: no opencv_java310 in java.library.path, compiling:(clj_eyes/core.clj:3:1)[0m
+           java.lang.UnsatisfiedLinkError : [1mno opencv_java310 in java.library.path[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.UnsatisfiedLinkError: no opencv_java310 in java.library.path
+ at java.lang.ClassLoader.loadLibrary (ClassLoader.java:1865)
+    java.lang.Runtime.loadLibrary0 (Runtime.java:870)
+    java.lang.System.loadLibrary (System.java:1122)
+    clojure.lang.RT.loadLibrary (RT.java:495)
+    clj_eyes.core$eval31393.invokeStatic (core.clj:4)
+    clj_eyes.core$eval31393.invoke (core.clj:4)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.RT.loadResourceScript (RT.java:372)
+    clojure.lang.RT.loadResourceScript (RT.java:363)
+    clojure.lang.RT.load (RT.java:453)
+    clojure.lang.RT.load (RT.java:419)
+    clojure.core$load$fn__5677.invoke (core.clj:5893)
+    clojure.core$load.invokeStatic (core.clj:5892)
+    clojure.core$load.doInvoke (core.clj:5876)
+    clojure.lang.RestFn.invoke (RestFn.java:408)
+    clojure.core$load_one.invokeStatic (core.clj:5697)
+    clojure.core$load_one.invoke (core.clj:5692)
+    clojure.core$load_lib$fn__5626.invoke (core.clj:5737)
+    clojure.core$load_lib.invokeStatic (core.clj:5736)
+    clojure.core$load_lib.doInvoke (core.clj:5717)
+    clojure.lang.RestFn.applyTo (RestFn.java:142)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$load_libs.invokeStatic (core.clj:5774)
+    clojure.core$load_libs.doInvoke (core.clj:5758)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:648)
+    clojure.core$require.invokeStatic (core.clj:5796)
+    clojure.core$require.doInvoke (core.clj:5796)
+    clojure.lang.RestFn.invoke (RestFn.java:551)
+    clj_eyes.web_server$eval30422$loading__5569__auto____30423.invoke (web-server.clj:1)
+    clj_eyes.web_server$eval30422.invokeStatic (web-server.clj:1)
+    clj_eyes.web_server$eval30422.invoke (web-server.clj:1)
+    clojure.lang.Compiler.eval (Compiler.java:6927)
+    clojure.lang.Compiler.eval (Compiler.java:6916)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.144 seconds.[0m
+[36m----  Exception    ----[0m
+
+      clojure.lang.Compiler$CompilerException : [1mjava.lang.reflect.InvocationTargetException, compiling:(core.clj:9:1)[0m
+  java.lang.reflect.InvocationTargetException : [1m[0m
+               java.lang.UnsatisfiedLinkError : [1morg.opencv.core.Mat.n_Mat(III)J[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.UnsatisfiedLinkError: org.opencv.core.Mat.n_Mat(III)J
+ at org.opencv.core.Mat.n_Mat (Mat.java:-2)
+    org.opencv.core.Mat.<init> (Mat.java:37)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    java.lang.reflect.Constructor.newInstance (Constructor.java:422)
+    clojure.lang.Compiler$NewExpr.eval (Compiler.java:2573)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 1.36 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.RuntimeException: No such var: eyes-core/get-current-image, compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web-server.clj:27:51)[0m
+               java.lang.RuntimeException : [1mNo such var: eyes-core/get-current-image[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.RuntimeException: No such var: eyes-core/get-current-image
+ at clojure.lang.Util.runtimeException (Util.java:221)
+    clojure.lang.Compiler.resolveIn (Compiler.java:7138)
+    clojure.lang.Compiler.resolve (Compiler.java:7108)
+    clojure.lang.Compiler.analyzeSymbol (Compiler.java:7069)
+    clojure.lang.Compiler.analyze (Compiler.java:6648)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3766)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6870)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$HostExpr$Parser.parse (Compiler.java:976)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$NewExpr$Parser.parse (Compiler.java:2634)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3072)
+    clojure.lang.Compiler.analyze (Compiler.java:6677)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:6001)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5380)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3972)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6866)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$DefExpr$Parser.parse (Compiler.java:589)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler.eval (Compiler.java:6931)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 2.588 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 1.453 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.RuntimeException: No such var: eyes-core/get-current-image, compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web-server.clj:27:51)[0m
+               java.lang.RuntimeException : [1mNo such var: eyes-core/get-current-image[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.RuntimeException: No such var: eyes-core/get-current-image
+ at clojure.lang.Util.runtimeException (Util.java:221)
+    clojure.lang.Compiler.resolveIn (Compiler.java:7138)
+    clojure.lang.Compiler.resolve (Compiler.java:7108)
+    clojure.lang.Compiler.analyzeSymbol (Compiler.java:7069)
+    clojure.lang.Compiler.analyze (Compiler.java:6648)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3766)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6870)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$HostExpr$Parser.parse (Compiler.java:976)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$NewExpr$Parser.parse (Compiler.java:2634)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3072)
+    clojure.lang.Compiler.analyze (Compiler.java:6677)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:6001)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5380)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3972)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6866)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$DefExpr$Parser.parse (Compiler.java:589)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler.eval (Compiler.java:6931)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.017 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.RuntimeException: No such var: eyes-core/get-current-image, compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web_server.clj:27:51)[0m
+               java.lang.RuntimeException : [1mNo such var: eyes-core/get-current-image[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.RuntimeException: No such var: eyes-core/get-current-image
+ at clojure.lang.Util.runtimeException (Util.java:221)
+    clojure.lang.Compiler.resolveIn (Compiler.java:7138)
+    clojure.lang.Compiler.resolve (Compiler.java:7108)
+    clojure.lang.Compiler.analyzeSymbol (Compiler.java:7069)
+    clojure.lang.Compiler.analyze (Compiler.java:6648)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3766)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6870)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$HostExpr$Parser.parse (Compiler.java:976)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$NewExpr$Parser.parse (Compiler.java:2634)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3072)
+    clojure.lang.Compiler.analyze (Compiler.java:6677)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:6001)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5380)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3972)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6866)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$DefExpr$Parser.parse (Compiler.java:589)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler.eval (Compiler.java:6931)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:10  column:2  ----[0m
+
+  [1mNo such namespace: alert, could not locate alert.cljs, alert.cljc, or Closure namespace ""[0m
+
+  [36m 6[0m  [36m  (POST "/select-transformation"[0m
+  [36m 7[0m  [36m       {:params[0m
+  [36m 8[0m  [36m        {:transform (val (jq/$ :#select-transform))}}))[0m
+  [36m 9[0m  [36m[0m
+  [33m10[0m  [1m(alert/js "It is working")[0m
+  [0m  [0m  [33m ^--- No such namespace: alert, could not locate alert.cljs, alert.cljc, or Closure namespace ""[0m
+  [36m11[0m  [36m(-> (jq/$ :#select-transform)[0m
+  [36m12[0m  [36m    (jq/on :change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:10  column:2  ----[0m
+
+  [1mUse of undeclared Var alert/js[0m
+
+  [36m 6[0m  [36m  (POST "/select-transformation"[0m
+  [36m 7[0m  [36m       {:params[0m
+  [36m 8[0m  [36m        {:transform (val (jq/$ :#select-transform))}}))[0m
+  [36m 9[0m  [36m[0m
+  [33m10[0m  [1m(alert/js "It is working")[0m
+  [0m  [0m  [33m ^--- Use of undeclared Var alert/js[0m
+  [36m11[0m  [36m(-> (jq/$ :#select-transform)[0m
+  [36m12[0m  [36m    (jq/on :change handle-select-transform))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.663 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.215 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.271 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.841 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.26 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.214 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.98 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.738 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.292 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.526 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.071 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.343 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.93 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.049 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.RuntimeException: No such var: eyes-core/get-current-image, compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web_server.clj:27:51)[0m
+               java.lang.RuntimeException : [1mNo such var: eyes-core/get-current-image[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.RuntimeException: No such var: eyes-core/get-current-image
+ at clojure.lang.Util.runtimeException (Util.java:221)
+    clojure.lang.Compiler.resolveIn (Compiler.java:7138)
+    clojure.lang.Compiler.resolve (Compiler.java:7108)
+    clojure.lang.Compiler.analyzeSymbol (Compiler.java:7069)
+    clojure.lang.Compiler.analyze (Compiler.java:6648)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3766)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6870)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$HostExpr$Parser.parse (Compiler.java:976)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$NewExpr$Parser.parse (Compiler.java:2634)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3072)
+    clojure.lang.Compiler.analyze (Compiler.java:6677)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:6001)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5380)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3972)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6866)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$DefExpr$Parser.parse (Compiler.java:589)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler.eval (Compiler.java:6931)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.019 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J, compiling:(core.clj:9:17)[0m
+           java.lang.UnsatisfiedLinkError : [1morg.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J
+ at org.opencv.imgcodecs.Imgcodecs.imread_1 (Imgcodecs.java:-2)
+    org.opencv.imgcodecs.Imgcodecs.imread (Imgcodecs.java:102)
+    sun.reflect.NativeMethodAccessorImpl.invoke0 (NativeMethodAccessorImpl.java:-2)
+    sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke (Method.java:497)
+    clojure.lang.Reflector.invokeMatchingMethod (Reflector.java:93)
+    clojure.lang.Compiler$StaticMethodExpr.eval (Compiler.java:1698)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.076 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.RuntimeException: No such var: eyes-core/get-current-image, compiling:(/Users/collinbell/Rouge/eyes/clj-eyes/src/clj_eyes/web_server.clj:27:51)[0m
+               java.lang.RuntimeException : [1mNo such var: eyes-core/get-current-image[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.RuntimeException: No such var: eyes-core/get-current-image
+ at clojure.lang.Util.runtimeException (Util.java:221)
+    clojure.lang.Compiler.resolveIn (Compiler.java:7138)
+    clojure.lang.Compiler.resolve (Compiler.java:7108)
+    clojure.lang.Compiler.analyzeSymbol (Compiler.java:7069)
+    clojure.lang.Compiler.analyze (Compiler.java:6648)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$InvokeExpr.parse (Compiler.java:3766)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6870)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$HostExpr$Parser.parse (Compiler.java:976)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$NewExpr$Parser.parse (Compiler.java:2634)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$MapExpr.parse (Compiler.java:3072)
+    clojure.lang.Compiler.analyze (Compiler.java:6677)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler$BodyExpr$Parser.parse (Compiler.java:6001)
+    clojure.lang.Compiler$FnMethod.parse (Compiler.java:5380)
+    clojure.lang.Compiler$FnExpr.parse (Compiler.java:3972)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6866)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6856)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.access$300 (Compiler.java:38)
+    clojure.lang.Compiler$DefExpr$Parser.parse (Compiler.java:589)
+    clojure.lang.Compiler.analyzeSeq (Compiler.java:6868)
+    clojure.lang.Compiler.analyze (Compiler.java:6669)
+    clojure.lang.Compiler.analyze (Compiler.java:6625)
+    clojure.lang.Compiler.eval (Compiler.java:6931)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.044 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J, compiling:(core.clj:9:17)[0m
+           java.lang.UnsatisfiedLinkError : [1morg.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J
+ at org.opencv.imgcodecs.Imgcodecs.imread_1 (Imgcodecs.java:-2)
+    org.opencv.imgcodecs.Imgcodecs.imread (Imgcodecs.java:102)
+    sun.reflect.NativeMethodAccessorImpl.invoke0 (NativeMethodAccessorImpl.java:-2)
+    sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke (Method.java:497)
+    clojure.lang.Reflector.invokeMatchingMethod (Reflector.java:93)
+    clojure.lang.Compiler$StaticMethodExpr.eval (Compiler.java:1698)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.949 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.134 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J, compiling:(core.clj:11:17)[0m
+           java.lang.UnsatisfiedLinkError : [1morg.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J
+ at org.opencv.imgcodecs.Imgcodecs.imread_1 (Imgcodecs.java:-2)
+    org.opencv.imgcodecs.Imgcodecs.imread (Imgcodecs.java:102)
+    sun.reflect.NativeMethodAccessorImpl.invoke0 (NativeMethodAccessorImpl.java:-2)
+    sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke (Method.java:497)
+    clojure.lang.Reflector.invokeMatchingMethod (Reflector.java:93)
+    clojure.lang.Compiler$StaticMethodExpr.eval (Compiler.java:1698)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.041 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J, compiling:(core.clj:11:17)[0m
+           java.lang.UnsatisfiedLinkError : [1morg.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J
+ at org.opencv.imgcodecs.Imgcodecs.imread_1 (Imgcodecs.java:-2)
+    org.opencv.imgcodecs.Imgcodecs.imread (Imgcodecs.java:102)
+    sun.reflect.NativeMethodAccessorImpl.invoke0 (NativeMethodAccessorImpl.java:-2)
+    sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke (Method.java:497)
+    clojure.lang.Reflector.invokeMatchingMethod (Reflector.java:93)
+    clojure.lang.Compiler$StaticMethodExpr.eval (Compiler.java:1698)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.055 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J, compiling:(core.clj:9:17)[0m
+           java.lang.UnsatisfiedLinkError : [1morg.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J
+ at org.opencv.imgcodecs.Imgcodecs.imread_1 (Imgcodecs.java:-2)
+    org.opencv.imgcodecs.Imgcodecs.imread (Imgcodecs.java:102)
+    sun.reflect.NativeMethodAccessorImpl.invoke0 (NativeMethodAccessorImpl.java:-2)
+    sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke (Method.java:497)
+    clojure.lang.Reflector.invokeMatchingMethod (Reflector.java:93)
+    clojure.lang.Compiler$StaticMethodExpr.eval (Compiler.java:1698)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.153 seconds.[0m

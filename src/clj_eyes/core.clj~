@@ -1,0 +1,16 @@
+(ns clj-eyes.core)
+
+;Load the OpenCV Library
+(clojure.lang.RT/loadLibrary org.opencv.core.Core/NATIVE_LIBRARY_NAME)
+
+(import '[org.opencv.core]
+        '[org.opencv.imgcodecs Imgcodecs]
+        '[org.opencv.imgproc Imgproc])
+
+(def blurred (Mat. 512 512 CvType/CV_8UC3))
+(def tomato-pic (Imgcodecs/imread "resources/imgs/tomato_plants.jpg"))
+(Imgproc/GaussianBlur tomato-pic blurred (Size. 5 5) 3 3)
+
+(def tomato-pic (Imgcodecs/imwrite "tomato_plants_blurred.jpg" blurred))
+
+
