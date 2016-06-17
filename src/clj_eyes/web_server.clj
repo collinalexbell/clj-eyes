@@ -4,7 +4,7 @@
    [org.httpkit.server :as server]
    [clj-eyes.templates.home-template :as home-template]
    [clj-eyes.web-socket :as soc]
-   [clj-eyes.core :as eyes-core]
+   [clj-eyes.cv :as cv]
    [compojure.core :refer :all]
    [compojure.route :as route])
   (:use
@@ -16,6 +16,7 @@
 
 
 (defn home-handler [request]
+  (println "handling request")
   {:status  200
    :session {:uid 1}
    :headers {"Content-Type" "text/html"}
@@ -24,7 +25,7 @@
 (defn file-handler [request]
   {:status 200
    :headers {"Content-Type" "image/jpeg"}
-   :body (java.io.ByteArrayInputStream. (.toArray (eyes-core/get-current-image)))
+   :body (java.io.ByteArrayInputStream. (.toArray (cv/get-current-image)))
    })
 
 (defn select-transformation [request]

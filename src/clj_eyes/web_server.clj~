@@ -48,5 +48,12 @@
       (wrap-params)
       (wrap-session)))
 
-(def server-instance (server/run-server main-handler {:port 8084}))
+(def server-shutdown-fn (atom nil))
 
+(defn start-server []
+  ;Shut down previous server if it is running
+  (if (not (= @server-shutdown-fn nil))
+      (@server-shutdown-fn))
+  (swap! server-shutdown-fn 
+    (fn [throw-away]
+      (server/run-server main-handler {:port 8080})))) 
