@@ -6,12 +6,14 @@
    [clj-eyes.web-socket :as soc]
    [clj-eyes.cv :as cv]
    [compojure.core :refer :all]
-   [compojure.route :as route])
+   [compojure.route :as route]
+   )
   (:use
    ring.middleware.file 
    ring.middleware.params 
    ring.middleware.keyword-params 
    ring.middleware.session
+   [ring.util.response :only [response]]
    hiccup.core))
 
 
@@ -28,19 +30,12 @@
    :body (java.io.ByteArrayInputStream. (.toArray (cv/get-current-image)))
    })
 
-(defn select-transformation [request]
-  (println "transformation recieved")
-  {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body "{\"status\":\"ok\"}"})
-
 
 (defroutes app
   (GET "/" req home-handler)
   (GET  "/chsk" req (soc/ring-ajax-get-or-ws-handshake req))
   (POST "/chsk" req (soc/ring-ajax-post                req))
-  (GET "/img" req (file-handler req))
-  (POST "/select-transformation" req (select-transformation req)))
+  (GET "/img" req (file-handler req)))
 
 (def main-handler 
   (-> app 
@@ -58,3 +53,14 @@
   (swap! server-shutdown-fn 
     (fn [throw-away]
       (server/run-server main-handler {:port 8080})))) 
+
+;(@server-shutdown-fn)
+
+
+
+;(start-server)
+
+
+
+
+
