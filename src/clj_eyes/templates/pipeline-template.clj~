@@ -1,0 +1,14 @@
+(ns clj-eyes.templates.pipeline-template
+  (:use hiccup.core))
+
+(defn render []
+  (html
+   [:html
+    [:head]
+    [:body
+     [:div#content-frame
+      [:div#menu]
+      [:div#pipeline-title]
+      [:div#filter-content]
+      [:div#select-source]
+      [:div#add-filter]]]]))

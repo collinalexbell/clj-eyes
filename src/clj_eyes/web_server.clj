@@ -3,6 +3,7 @@
    weasel.repl.websocket
    [org.httpkit.server :as server]
    [clj-eyes.templates.home-template :as home-template]
+   [clj-eyes.templates.pipeline-template :as pipeline-template]
    [clj-eyes.web-socket :as soc]
    [clj-eyes.cv :as cv]
    [compojure.core :refer :all]
@@ -16,6 +17,11 @@
    [ring.util.response :only [response]]
    hiccup.core))
 
+(defn pipeline-handler [request]
+ {:status  200
+   :session {:uid 1}
+   :headers {"Content-Type" "text/html"}
+   :body (pipeline-template/render)})
 
 (defn home-handler [request]
   (println "handling request")
@@ -33,6 +39,7 @@
 
 (defroutes app
   (GET "/" req home-handler)
+  (GET "/pipeline" req pipeline-handler)
   (GET  "/chsk" req (soc/ring-ajax-get-or-ws-handshake req))
   (POST "/chsk" req (soc/ring-ajax-post                req))
   (GET "/img" req (file-handler req)))
@@ -55,10 +62,8 @@
       (server/run-server main-handler {:port 8080})))) 
 
 ;(@server-shutdown-fn)
-
-
-
 ;(start-server)
+
 
 
 

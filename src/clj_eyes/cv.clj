@@ -11,6 +11,19 @@
 
 (def current-img (atom nil))
 
+
+(defn gaussian-blur [src dest kernal-height kernal-width standard-deviation]
+  (Imgproc/GaussianBlur src dest (Size.
+                                  (read-string kernal-height)
+                                  (read-string kernal-width))
+                        (read-string standard-deviation)))
+
+(defn canny [src dest threshold1 threshold2]
+  (Imgproc/Canny src dest
+                 (read-string threshold1)
+                 (read-string threshold2)))
+
+
 (defn load-current-img [img]
   (swap! current-img
          (fn [throw-away]
@@ -30,24 +43,33 @@
         params (map #(:value %) (data :transformation-params))]
     
     (println *ns*)
-    ((eval (symbol name)) (cons tomato-pic (cons rv params)))
+    (let [name-symbol (symbol name)]
+     (apply (eval name-symbol) (cons tomato-pic (cons rv params))))
     (load-current-img rv))
   (notify-client-of-img-change))
 
 
 (defn get-transform-html [transform-name]
   (case transform-name
-    "Imgproc/GuassianBlur" (html
+    "gaussian-blur" (html
                             [:div#transform-params
                              [:label "Kernal Height"
                               [:input
-                               {:type "range" :value "1" :min "1" :max "25" :step "2" :name "kernal-height" :class "transform-param"}]]
+                               {:type "range" :defaultValue "1" :min "1" :max "25" :step "2" :name "kernal-height" :class "transform-param"}]]
                              [:label "Kernal Width"
                               [:input
-                               {:type "range" :value "1" :min "1" :max "25" :step "2" :name "kernal-width" :class "transform-param"}]]
+                               {:type "range" :defaultValue "1" :min "1" :max "25" :step "2" :name "kernal-width" :class "transform-param"}]]
                              [:label "Standard Deviation"
                               [:input
-                               {:type "range" :value "0" :min "0" :max "20" :name "standard-deviation" :class "transform-param"}]]])
+                               {:type "range" :defaultValue "0" :min "0" :max "20" :name "standard-deviation" :class "transform-param"}]]])
+    "canny" (html
+             [:div#transform-params
+              [:label "Threshold 1"
+                [:input
+                 {:type "range" :defaultValue "1" :min "0" :max "500" :step "1" :name "threshold1" :class "transform-param"}]]
+              [:label "Threshold 2"
+                [:input
+                 {:type "range" :defaultValue "1" :min "0" :max "500" :step "1" :name "threshold2" :class "transform-param"}]]])
     "nil" ""))
 
 ;Init the module
