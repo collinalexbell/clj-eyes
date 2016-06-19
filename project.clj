@@ -20,7 +20,8 @@
                  [com.taoensso/encore "2.56.1"]
                  [jayq "2.5.4"]
                  [cljs-ajax "0.5.5"]
-                 [ring-transit "0.1.5"]]
+                 [ring-transit "0.1.5"]
+                 [garden "1.3.2"]]
   :plugins [[lein-figwheel "0.5.4-3"]]
   :cljsbuild {
     :builds [{:id "clj-eyes" 
