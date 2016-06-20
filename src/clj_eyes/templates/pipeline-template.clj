@@ -4,20 +4,36 @@
 
 (def styles 
  (css
+
+      [:#content-frame
+      {:display      "block"
+       :width        "1000px"
+       :margin       "0px auto"
+       :overflow     "auto"}] 
       [:.close-button
        {:float         "right"}]
       [:.pipeline-right-wrapper
        {:float         "right"}
-       {:display       "block"}]
+       {:display       "block"}
+       {:width         "400px"}]
+      [:.options-wrapper
+       {:float         "left"}]
+      [:.pipeline-options-frame
+       {:margin        "auto"
+        :width         "80%"}]
       [:.close-button
-       {:float         "right"}]
+       {:height        "20px"
+        :font-size     "75%"
+        :float         "right"
+        :padding       "3px"
+        :border-radius "5px"
+        :border        "2px solid #414141"}]
       [:.pipeline-frame
-       {:width         "1000px"
-        :border-radius "25px"
+       {:border-radius "25px"
         :border        "2px solid #414141"
         :padding       "20px"
-        :margin        "40px auto"
         :display       "block"
+        :margin        "40px 0px"
         :overflow      "auto"}
        [:img
         {:width         "500px"
@@ -34,7 +50,7 @@
     [:div.pipeline-right-wrapper
      [:div.options-wrapper
       [:h2.pipeline-frame-title name] 
-      [:div.pipeline-frame-options options-frame]]
+       options-frame]
      (close-button)]]))
 
 
@@ -94,19 +110,25 @@
   [:body
    [:div#content-frame
     [:div#menu]
-    (title)
-    [:div#filter-content]
-    (select-source)
-    (pipeline-frame "Source" "/img" (source-options-frame))
-    (pipeline-frame "Canny Filter" "/img" (pipeline-options-frame canny-demo-options-data))
-    (pipeline-frame "Gaussian Filter" "/img" (pipeline-options-frame gaussian-demo-options-data))
-    (add-filter-to-pipeline)
-    [:div#add-filter]]])
+    [:div#main-content
+     (title)
+     [:div#filter-content]
+     (select-source)
+     (pipeline-frame "Source" "/img" (source-options-frame))
+     (pipeline-frame "Canny Filter" "/img" (pipeline-options-frame canny-demo-options-data))
+     (pipeline-frame "Gaussian Filter" "/img" (pipeline-options-frame gaussian-demo-options-data))
+     (add-filter-to-pipeline)
+     [:div#add-filter]]]])
 
 (defn render []
   (html
    (let [body (body)]
      [:html
-      [:head [:style styles]]
+      [:head
+       [:link {:rel "stylesheet"
+               :href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+               :integrity "sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+               :crossorigin "anonymous"}]
+       [:style styles]]
       body])))
 
