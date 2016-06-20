@@ -3,7 +3,7 @@
             [clj-eyes.web-socket :as soc])
   (:use hiccup.core))
 
-(import '[org.opencv.core MatOfByte Mat CvType Size]
+(import '[org.opencv.core MatOfInt MatOfByte Mat CvType Size]
         '[org.opencv.imgcodecs Imgcodecs]
         '[org.opencv.imgproc Imgproc])
 
@@ -28,7 +28,7 @@
   (swap! current-img
          (fn [throw-away]
            (let [img-buf (MatOfByte.)]
-            (Imgcodecs/imencode ".jpg" img img-buf)
+             (Imgcodecs/imencode ".webp" img img-buf (MatOfInt. (into-array Integer/TYPE [Imgcodecs/CV_IMWRITE_WEBP_QUALITY 30])))
             img-buf))))
 
 (defn get-current-image []
