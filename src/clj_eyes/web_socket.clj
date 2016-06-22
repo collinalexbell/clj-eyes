@@ -16,3 +16,13 @@
    (def connected-uids                connected-uids) ; Watchable, read-only atom
    ))
 
+;Allows for functional testing
+(defn -generate-unique-uid [uids]
+  "Will generate a unique id that is not in the set of uids already"
+  (if (= 0 (count  (:any uids)))
+    1
+    (+ 1 (apply max (:any uids)))))
+
+;Non functional wrapper
+(defn generate-unique-uid []
+  (-generate-unique-uid @connected-uids))

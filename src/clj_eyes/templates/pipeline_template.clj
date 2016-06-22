@@ -19,7 +19,8 @@
         :background-color background-color
         }]
       [:#select-source-upload
-       {:border-radius    "7px"
+       {:cursor           "pointer"
+        :border-radius    "7px"
         :border           "2px solid #414141"
         :text-align       "center"
         :margin-bottom    "15px"
@@ -165,6 +166,7 @@
   (html
    [:div#select-source
     [:div#select-source-upload "Upload new image"]
+    [:input#source-file {:type "file" :style "display:none;"}]
     [:p "OR"]
      [:select.selectpicker {:multiple true :title "Select from uploaded images"}
       (generate-source-options)]]))
@@ -223,9 +225,10 @@
      (pipeline-frame "Canny Filter" "/imgs/canny.png" (pipeline-options-frame canny-demo-options-data))
      (add-filter-to-pipeline)
      [:div#add-filter]]]
-     [:script {:src "https://code.jquery.com/jquery-2.2.4.min.js"  :integrity "sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   :crossorigin "anonymous"}]
-     [:script {:src "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" :integrity "sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" :crossorigin "anonymous"}]
-     [:script {:src "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"}]])
+   [:script {:src "https://code.jquery.com/jquery-2.2.4.min.js"  :integrity "sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   :crossorigin "anonymous"}]
+   [:script {:src "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" :integrity "sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" :crossorigin "anonymous"}]
+   [:script {:src "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"}]
+   [:script {:src "js/clj-eyes.js"}]])
 
 (defn render []
   (html

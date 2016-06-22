@@ -19,7 +19,7 @@
                  [com.taoensso/timbre "4.4.0"]
                  [com.taoensso/encore "2.56.1"]
                  [jayq "2.5.4"]
-                 [cljs-ajax "0.5.5"]
+                 [cljs-http "0.1.41"]
                  [ring-transit "0.1.5"]
                  [garden "1.3.2"]]
   :plugins [[lein-figwheel "0.5.4-3"]]

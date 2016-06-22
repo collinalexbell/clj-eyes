@@ -1,0 +1,15 @@
+(ns clj-eyes.pipeline-test
+  (:use clojure.test)
+  (:require [clj-eyes.cv-pipeline :as pipeline]))
+
+(import '[org.opencv.core MatOfInt MatOfByte Mat CvType Size]
+        '[org.opencv.imgcodecs Imgcodecs]
+        '[org.opencv.imgproc Imgproc])
+
+(deftest load-new-source
+ (let [test-atom (atom {})] 
+  (is (=
+       (type (:src (get @(pipeline/load-new-source "resources/imgs/tomato_plants.jpg" 1 test-atom) 1)))
+       org.opencv.core.Mat))))
+
+(run-tests)

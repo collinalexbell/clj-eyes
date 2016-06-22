@@ -6,7 +6,27 @@
             [clj-eyes.socket :as soc]
             [taoensso.encore :as encore :refer ()]
             [cljs.core.async :as async :refer (<! >! put! chan)]
-            [taoensso.timbre :as timbre :refer-macros (tracef debugf infof warnf errorf)]))
+            [taoensso.timbre :as timbre :refer-macros (tracef debugf infof warnf errorf)]
+            [cljs-http.client :as http]
+            [cljs.core.async :refer [<!]]))
+
+(defn upload-file []
+    (http/post
+     "/upload-src"
+     {:multipart-params
+      [[:data "data"] ["src-file" (-> (.getElementById js/document "source-file") .-files (.item 0))]]}))
+
+(defn bind-on-file-select []
+  (-> (jq/$ :#source-file)
+            (jq/bind :change upload-file)))
+
+(defn init-upload-button []
+  (-> (jq/$ :#select-source-upload)
+     (jq/bind
+      :click
+      #(-> (jq/$ :#source-file)
+           (jq/trigger :click)))))
+
 
 
 (defn handle-select-transform []
@@ -82,6 +102,8 @@
   (load-transform-options (:html ?data)))
 
 
+(init-upload-button)
+(bind-on-file-select)
 
 
 (defonce router_ (atom nil))
