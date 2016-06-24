@@ -88,6 +88,11 @@
   (.log js/console "Server notified client of img change. Reloading")
   (img/reload-image-frame))
 
+(defmethod -event-msg-handler :pipeline/reload-img
+  [{:as ev-msg :keys [?data]}]
+  (.log js/console "Reloading img")
+  (img/reload-image (:id ?data)))
+
 (defmethod -event-msg-handler :chsk/ws-error
   [{:as ev-msg :keys [?data]}]
   (.log js/console "Error event from server: %s" ?data))

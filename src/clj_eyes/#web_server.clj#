@@ -35,12 +35,18 @@
 
 (defn file-handler [request]
   (if (not (nil? (:id (:params request)))) 
-      {:status 200
-       :headers {"Content-Type" "image/webp"}
-       :body (java.io.ByteArrayInputStream. (.toArray (:data (pipeline/fetch-webp
-                                                              @pipeline/loaded-pipelines
-                                                              (:uid (request :session))
-                                                              (:id (:params request))))))}
+      (let [webp
+
+            (pipeline/fetch-webp
+             @pipeline/loaded-pipelines
+             (:uid (request :session))
+             (keyword (:id (:params request))))]
+
+       (if (= (:type webp) :in-memory)
+           {:status 200
+            :headers {"Content-Type" "image/webp"}
+            :body (java.io.ByteArrayInputStream. (.toArray (:value webp)))}))
+
       {:status 200
        :headers {"Content-Type" "image/jpeg"}
        :body (java.io.ByteArrayInputStream. (.toArray (cv/get-current-image)))

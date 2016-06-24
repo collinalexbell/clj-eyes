@@ -138,10 +138,10 @@
   (html
    [:div.close-button "X"]))
 
-(defn pipeline-frame [name img-src options-frame]
+(defn pipeline-frame [name img-src img-id options-frame]
   (html
    [:div.pipeline-frame
-    [:img {:src img-src}]
+    [:img {:src img-src :id img-id}]
     [:div.pipeline-right-wrapper
      [:div.options-wrapper
       [:h3.pipeline-frame-title name] 
@@ -218,16 +218,16 @@
     [:div#main-content
      (title)
      [:div#filter-content]
-     (pipeline-frame "Source Image" "/img" (source-options-frame))
+     (pipeline-frame "Source Image" "/img" "pipeline-source-img" (source-options-frame))
      arrow
-     (pipeline-frame "Gaussian Filter" "/imgs/blurry.png" (pipeline-options-frame gaussian-demo-options-data))
+     (pipeline-frame "Gaussian Filter" "/imgs/blurry.png" "filter1" (pipeline-options-frame gaussian-demo-options-data))
      arrow
-     (pipeline-frame "Canny Filter" "/imgs/canny.png" (pipeline-options-frame canny-demo-options-data))
+     (pipeline-frame "Canny Filter" "/imgs/canny.png" "filter2" (pipeline-options-frame canny-demo-options-data))
      (add-filter-to-pipeline)
      [:div#add-filter]]]
-   [:script {:src "https://code.jquery.com/jquery-2.2.4.min.js"  :integrity "sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   :crossorigin "anonymous"}]
-   [:script {:src "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" :integrity "sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" :crossorigin "anonymous"}]
-   [:script {:src "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"}]
+   [:script {:src "js/jquery-2.2.4.min.js"}]
+   [:script {:src "js/bootstrap.min.js"}]
+   [:script {:src "js/bootstrap-select.min.js"}]
    [:script {:src "js/clj-eyes.js"}]])
 
 (defn render []
@@ -236,10 +236,9 @@
      [:html
       [:head
        [:link {:rel "stylesheet"
-               :href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-               :integrity "sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-               :crossorigin "anonymous"}]
-       [:link {:rel "stylesheet" :href "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css"}]
+               :href "css/bootstrap.min.css"}]
+       [:link {:rel "stylesheet"
+               :href "css/bootstrap-select.min.css"}]
        [:style styles]]
       body])))
 

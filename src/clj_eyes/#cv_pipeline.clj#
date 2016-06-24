@@ -9,8 +9,6 @@
 
 (def loaded-pipelines (atom {}))
 
-(defn update-pipelines [new-pipeline-list]
-  (swap! loaded-pipelines (fn [ignore-me] new-pipeline-list)))
 
 (defn get-pipelines []
   @loaded-pipelines)
@@ -111,4 +109,16 @@
        {:type :in-memory :value img-buf})
       nil)))
 
+
+
+(defn do-transform [parent-frame transformation]
+  (let [parent-mat (:img-matrix parent-frame)
+        rv (Mat. (.size parent-mat) CvType/CV_8UC3)
+        name (transformation :transformation-name) 
+        params (map #(:value %) (transformation :transformation-params))]
+    (let [name-symbol (symbol name)]
+     (apply (eval "clj-eyes.cv-filter" name-symbol) (cons parent-mat (cons rv params))))
+    (load-image-matrix-into-pipeline-frame
+     (pipeline-frame parent-frame (transformation :transformation-id)) rv))
+  (notify-client-of-img-change))
 
