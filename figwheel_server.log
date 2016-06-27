@@ -9083,3 +9083,41 @@ notifying browser that file changed:  out/clj_eyes/controls.js
 [0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
 [32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.351 seconds.[0m
 notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.072 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/param_handling.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :refer-clojure, :require, :require-macros, :use, :use-macros, and :import libspecs supported at line 1 src/clj_eyes/param_handling.cljs[0m
+
+  [33m1[0m  [1m(ns clj-eyes.param-handling[0m
+  [0m [0m  [33m^--- Only :refer-clojure, :require, :require-macros, :use, :use-macros, and :import libspecs supported at line 1 src/clj_eyes/param_handling.cljs[0m
+  [36m2[0m  [36m  (require [jayq.core :as jq][0m
+  [36m3[0m  [36m           [clj-eyes.socket :as soc]))[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/param_handling.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.03 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :as and :refer options supported in :require / :require-macros; offending spec: [clj-eyes.param-handling as :params] at line 1 src/clj_eyes/controls.cljs[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- Only :as and :refer options supported in :require / :require-macros; offending spec: [clj-eyes.param-handling as :params] at line 1 src/clj_eyes/controls.cljs[0m
+  [36m2[0m  [36m  (:require-macros [cljs.core.async.macros :as asyncm :refer (go go-loop)])[0m
+  [36m3[0m  [36m  (:require [taoensso.sente :as sente][0m
+  [36m4[0m  [36m            [jayq.core :as jq][0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.027 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :as and :refer options supported in :require / :require-macros; offending spec: [clj-eyes.param-handling as :params] at line 1 src/clj_eyes/controls.cljs[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- Only :as and :refer options supported in :require / :require-macros; offending spec: [clj-eyes.param-handling as :params] at line 1 src/clj_eyes/controls.cljs[0m
+  [36m2[0m  [36m  (:require-macros [cljs.core.async.macros :as asyncm :refer (go go-loop)])[0m
+  [36m3[0m  [36m  (:require [taoensso.sente :as sente][0m
+  [36m4[0m  [36m            [jayq.core :as jq][0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
