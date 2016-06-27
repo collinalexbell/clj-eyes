@@ -1,6 +1,9 @@
 (ns clj-eyes.event-message-handler
-  (:require [clj-eyes.web-socket :as soc]
-            [clj-eyes.pipeline-test :as pipeline]))
+  (:require [clj-eyes.web-socket  :as soc]
+            [clj-eyes.cv-pipeline :as pipeline]
+            [clj-eyes.cv-filter   :as filter]
+            [clj-eyes.templates.pipeline-template :as pipeline-template]
+            [taoensso.sente       :as sente]))
 
 
 (defmulti -event-msg-handler
@@ -24,14 +27,44 @@
     (when ?reply-fn
       (?reply-fn {:umatched-event-as-echoed-from-from-server event}))))
 
-(defmethod -event-msg-handler :opencv/transformation
-  [ev-msg]
-  (println "transform")
-  (soc/chsk-send! 1 [:opencv/load-transformation-options {:html (get-transform-html (:transformation-selection (second (:event ev-msg))))}]))
+(defmethod -event-msg-handler
+  :pipeline/update-transform-params
+  [event-msg]
+  (let [params (second (:event event-msg))]
+    (println (str "params\n" params))))
 
-(defmethod -event-msg-handler :opencv/load-transformation
+
+(defn handle-transformation-result
+  [transformation-result uid]
+      ;first for some side effects
+      (pipeline/update-pipeline-list (:pipelines transformation-result))
+      ;now return the generated html
+      {:html
+       (pipeline-template/generate-new-frame-html
+        (pipeline/get-frame-from-pipeline 
+         (pipeline/get-pipeline-from-list (:pipelines transformation-result) uid)
+         (:frame-id transformation-result))
+        filter/filter-params)
+
+       :frame-id
+       (:frame-id transformation-result)})
+
+(defmethod -event-msg-handler :pipeline/add-transformation
   [ev-msg]
-  (do-transform (second (:event ev-msg))))
+                                        ;(soc/chsk-send! 1 [:opencv/load-transformation-options {:html (get-transform-html (:transformation-selection (second (:event ev-msg))))}])
+  
+  (let [event-data (second (:event ev-msg))]
+
+   (soc/chsk-send! (:uid ev-msg)
+     [:pipeline/load-transformation-frame
+
+       (handle-transformation-result
+        (pipeline/add-transformation
+         @pipeline/loaded-pipelines
+         (:transformation-selection event-data)
+         (:uid ev-msg)
+         (:parent-frame event-data))
+        (:uid ev-msg))])))
 
 (defonce router_ (atom nil))
 (defn  stop-router! [] (when-let [stop-fn @router_] (stop-fn)))
@@ -44,4 +77,8 @@
 (defn stop!  []  (stop-router!))
 (defn start! [] (start-router!))
 
+;(stop!)
 (start!)
+
+
+

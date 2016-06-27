@@ -1,0 +1,171 @@
+* OpenCV Exploration Tool
+
+** Description
+	 Build a web app that will allow users to explore the results of OpenCV funtions using a GUI.
+	 
+** Why could this be useful?
+	 Coding is fun, but GUIs have been built to simplify applications. 
+	 It is easy to explore changing function parameters with slider bars.
+	 
+** What OpenCV functionality would be suited to being explored with a gui?
+*** Image filters
+		+cv::bilateralFilter
+		+cv::blur
+		+cv::boxFilte
+		+cv::buildPyramid
+		+cv::dilate
+		+cv::erode
+		+cv::filter2D
+		+cv::GaussianBlur
+		+cv::medianBlur
+		+cv::Sobel
+
+*** Feature Detection
+		+cv::Canny
+
+
+** Archetecture
+*** Server
+**** server-socket.clj
+		 This module will maintain the socket connection with the client.
+**** server-renderer.clj
+		 This module will use the socket connection to send a render event with the output img
+**** server-controller.clj
+		 This module will process controller socket events and will transform data into function calls in the image-processing.clj module
+**** image-processing.clj
+		 This module will be the only module to import opencv. 
+		 It will recieve the filters to apply and images to apply them to via the interface.
+*** Client
+**** client-socket.cljs
+		 This module will maintain the socket connection with the server.
+**** client-controller.cljs
+		 It will encode the data comming from the gui into a form that the server-interface.clj can recieve.
+**** client-renderer.cljs
+		 This module will be responsible for handling the render socket event.
+		 It will be what renders the output img to the screen
+**** client-gui.cljs
+		 This module will handle the actual rendering of the gui.
+		 It will be responsible for selecting the OpenCV functions to apply and in what order.
+		 
+** Approach
+*** The MVP approach.
+**** Create all module files, bare bones.
+**** Write the module interfaces. 
+		 EXCEPT for the socket modules.
+
+		 
+** Technologies
+*** GUI
+**** HTML5
+		 Will be used to edit the paramaters of the individual function applied
+**** Quil - SECOND STAGE
+		 Will be used to draw a drag and drop pipeline
+
+*** Sockets
+**** Sente
+
+*** Computer Vision
+**** Obviously OpenCV
+
+
+
+** Tasks
+*** DONE Research advanced clojure file structure
+		CLOSED: [2016-06-15 Wed 08:01]
+*** DONE Practice encoding MAT to Jpg 
+		CLOSED: [2016-06-16 Thu 03:27]
+*** DONE Build up the web socket and generate an api to send a frame
+		CLOSED: [2016-06-17 Fri 03:04]
+*** DONE Seperate the OpenCV funcs from core.clj
+		CLOSED: [2016-06-17 Fri 03:17]
+*** DONE Write function in cv.clj that will return the parameters needed to run the filter. Use websockets!
+		CLOSED: [2016-06-18 Sat 10:43]
+*** DONE Design a mockup for the layout for the app
+		CLOSED: [2016-06-19 Sun 03:59]
+*** DONE Touch pipeline-template.clj
+		CLOSED: [2016-06-19 Sun 05:49]
+*** DONE Write pipline-template.clj generate-source-options
+		CLOSED: [2016-06-21 Tue 05:56]
+*** DONE Give the user a cookie and uuid so that we can track which imgs are theirs. 
+		CLOSED: [2016-06-21 Tue 06:31]
+		
+*** DONE Think hard about the system design
+		CLOSED: [2016-06-21 Tue 06:50]
+**** When a user arives at the page, they should be signed in meaning they have a uid already assigned
+**** This uid should be loaded into their session to indicate that they are logged in.
+**** I do not want to over complicate v2, therefore each user gets 1 pipeline that gets saved.
+**** When the user logs in and goes to /pipeline, it will load their single pipeline.
+**** The pipeline data will consist of 1 src img and the various open cv transformations applied to that src
+**** Upon loading /pipeline, load in the pipeline data for that user and perform the transformation and render the entire page.
+**** Only on page load will the pages be rendered in full, otherwise, bits of html will be transfered over sockets.
+**** When a user adds a filter, add that filter to the pipeline data structure
+**** Then automatically serialize and save filter to db. I hate when db is interacted with directly. Do this "behind the scenes". 
+
+*** DONE Make a list of all the functional points of site v2
+		CLOSED: [2016-06-21 Tue 06:49]
+**** templates/user-log-in-and-registration.clj
+**** database.clj (will handle all automatic serialization)
+**** user.clj
+**** cv.clj will be split into
+***** pipeline.clj 
+		+ set pipeline title
+		+ add filter
+		+ remove filter
+		+ upload/change source
+***** filter.clj
+		+ has an img associated with it
+		+ set-current-img
+		+ generates a unique url for the img
+		+ update img based on param changes
+
+
+		
+
+*** DONE Go home and take a nap. Think about the components of v2 as I go to sleep
+		CLOSED: [2016-06-22 Wed 05:02]
+		
+*** DONE Get the image source http route to work (Currently the route causes a img load failure)
+		CLOSED: [2016-06-23 Thu 03:34]
+*** DONE Refactor file-handler for the image file on web-server.clj
+		CLOSED: [2016-06-24 Fri 07:51]
+**** DONE Change file-handler to use the to be written pipeline/fetch-webp
+		 CLOSED: [2016-06-24 Fri 07:51]
+***** DONE Change the data structure used to store images. Pipeline frames as I call them will be stored by ids.
+			CLOSED: [2016-06-24 Fri 07:51]
+****** DONE Create the prototypical pipeline frame.
+			 CLOSED: [2016-06-23 Thu 03:54]
+****** DONE Write a function to load an image into the frame
+			 CLOSED: [2016-06-23 Thu 03:57]
+****** TODO Find usecase for new fuction load-image-matrix-into-pipeline-frame
+******* This will obviously be load-new-source
+*** DONE Update project.clj to start the core namespace on lein bootup
+		CLOSED: [2016-06-24 Fri 08:45]
+*** DONE Set up the /pipeline route to check for ?mockup=true. If it is true, display a mockup version. Otherwise display working version
+		CLOSED: [2016-06-24 Fri 08:45]
+*** DONE Start the real render off with just the source and the default img of NOT lena, just because.
+		CLOSED: [2016-06-24 Fri 08:58]
+*** DONE Write code in filters.cv to generate the filter params datastruct
+		CLOSED: [2016-06-24 Fri 09:05]
+*** DONE Wire up socket to fire clj-eyes.cv-pipeline/add-transformation when the appropriate action on /pipeline is taken
+		CLOSED: [2016-06-24 Fri 09:40]
+*** DONE Get cv-pipeline/add-transformation to generate the frames html
+		CLOSED: [2016-06-26 Sun 08:15]
+**** DONE Write cv-pipeline/generate-filter-id and a test for it!
+		 CLOSED: [2016-06-24 Fri 10:33]
+**** TODO Write test for cv-pipeline/do-transform
+**** TODO Write test & function for cv-filter/generate-default-params
+
+**** It was a little more convoluted than just writing cv-pipeline/add-transformation, but the HTML is being created
+*** DONE Pass the generated html from the previous task through the websocket and inject it into the page
+		CLOSED: [2016-06-26 Sun 08:32]
+*** DONE Make the inected html look like the mockup "proper arrow and margin"
+		CLOSED: [2016-06-26 Sun 11:34]
+*** TODO Write function that will listen to a change on the params of the frame and submit any changes
+**** DONE Listen to and gather params
+		 CLOSED: [2016-06-26 Sun 13:27]
+**** TODO Send the params
+*** TODO Figure out why it takes two clicks of the addition button to get cv-pipeline/add-transformation to work properly
+*** TODO Figure out why figwheel is nessicary to not cause an error when loading the page. I thought figwheel was optional.
+*** TODO On /pipeline page load, use loader throbber to indicate when the web socket connection has fully loaded
+
+		

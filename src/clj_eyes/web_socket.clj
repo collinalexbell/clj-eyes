@@ -26,3 +26,5 @@
 ;Non functional wrapper
 (defn generate-unique-uid []
   (-generate-unique-uid @connected-uids))
+
+(init)

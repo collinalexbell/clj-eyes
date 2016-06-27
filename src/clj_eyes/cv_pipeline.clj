@@ -1,6 +1,8 @@
 (ns clj-eyes.cv-pipeline
   (:require [taoensso.sente :as sente]
-            [clj-eyes.web-socket :as soc])
+            [clj-eyes.web-socket :as soc]
+            [clj-eyes.cv-filter :as filter]
+            [clj-eyes.templates.pipeline-template])
   (:use hiccup.core))
 
 (import '[org.opencv.core MatOfInt MatOfByte Mat CvType Size]
@@ -9,8 +11,10 @@
 
 (def loaded-pipelines (atom {}))
 
-(defn update-pipelines [new-pipeline-list]
-  (swap! loaded-pipelines (fn [ignore-me] new-pipeline-list)))
+@loaded-pipelines
+
+(def default-img
+  (Imgcodecs/imread "resources/public/imgs/test-pattern.png"))
 
 (defn get-pipelines []
   @loaded-pipelines)
@@ -22,6 +26,12 @@
   "Will generate the data structure that is neccisary for a pipeline frame in the gui"
   [source-frame id]
   {:source-frame source-frame :id id})
+
+(defn add-transformation-params-to [transformation-name-keyword pipeline-frame]
+  (assoc pipeline-frame
+   :transformation-params (transformation-name-keyword filter/filter-params)
+   :transformation-label  (filter/transformation-labels transformation-name-keyword)))
+
 
 (defn load-image-matrix-into-pipeline-frame
   "Will create a matrix field in the pipeline frame that is takes on the value of img-matrix"
@@ -38,6 +48,11 @@
 (defn get-frame-from-pipeline
   ([pipeline id] (get pipeline id))
   ([pipeline id constr-if-nil] (get pipeline id (constr-if-nil))))
+
+(defn generate-transform-id [pipeline-list uid]
+  (keyword
+   (str "transformation"
+    (count (get-pipeline-from-list pipeline-list uid)))))
 
 (defn load-new-source
   "Will open the src file and load it into memory as an opencv mat
@@ -110,5 +125,40 @@
                             (MatOfInt. (into-array Integer/TYPE [Imgcodecs/CV_IMWRITE_WEBP_QUALITY 30])))
        {:type :in-memory :value img-buf})
       nil)))
+
+
+(defn mat-with-size-of [parent-mat]
+  (Mat. (.size parent-mat) CvType/CV_8UC3))
+
+(defn do-transform [parent-frame transformation]
+  (let [parent-mat (get parent-frame :img-matrix default-img)
+        rv (mat-with-size-of parent-mat) 
+        name (transformation :transformation-name) 
+        params (map #(:value %) (transformation :transformation-params))
+        name-symbol (symbol "clj-eyes.cv-filter" name)]
+    (apply (eval  name-symbol) (cons parent-mat (cons rv params)))
+    rv))
+
+
+(defn add-transformation [pipeline-list transformation-selection uid parent-frame-name-str]
+  (let [pipeline (get-pipeline-from-list pipeline-list uid)
+        parent-frame (get-frame-from-pipeline pipeline-list (keyword parent-frame-name-str))
+        frame-id (generate-transform-id pipeline-list uid)]
+
+    {:pipelines
+     (assoc pipeline-list uid
+        (assoc pipeline frame-id  
+            (add-transformation-params-to
+                (keyword transformation-selection)
+                (load-image-matrix-into-pipeline-frame
+                 (pipeline-frame (keyword parent-frame-name-str) frame-id)
+                 (do-transform parent-frame
+                               {:transformation-name
+                                transformation-selection
+
+                                :transformation-params
+                                (filter/generate-default-params filter/filter-params (keyword transformation-selection))})))))
+
+     :frame-id frame-id}))
 
 

@@ -5,12 +5,11 @@
    [clj-eyes.templates.home-template :as home-template]
    [clj-eyes.templates.pipeline-template :as pipeline-template]
    [clj-eyes.web-socket :as soc]
-   [clj-eyes.cv :as cv]
    [clj-eyes.session :as session]
    [clj-eyes.cv-pipeline :as pipeline]
+   clj-eyes.event-message-handler
    [compojure.core :refer :all]
-   [compojure.route :as route]
-   )
+   [compojure.route :as route])
   (:use
    ring.middleware.file 
    ring.middleware.params 
@@ -21,10 +20,12 @@
    hiccup.core))
 
 (defn pipeline-handler [request]
- {:status  200
-   :session (session/generate-session request) 
-   :headers {"Content-Type" "text/html"}
-   :body (pipeline-template/render)})
+    {:status  200
+     :session (session/generate-session request) 
+     :headers {"Content-Type" "text/html"}
+     :body (if (not (nil? (:mockup (:params request))))
+             (pipeline-template/render-mockup)
+             (pipeline-template/render))})
 
 (defn home-handler [request]
   (println "handling request")
@@ -35,16 +36,17 @@
 
 (defn file-handler [request]
   (if (not (nil? (:id (:params request)))) 
-      {:status 200
-       :headers {"Content-Type" "image/webp"}
-       :body (java.io.ByteArrayInputStream. (.toArray (:data (pipeline/fetch-webp
-                                                              @pipeline/loaded-pipelines
-                                                              (:uid (request :session))
-                                                              (:id (:params request))))))}
-      {:status 200
-       :headers {"Content-Type" "image/jpeg"}
-       :body (java.io.ByteArrayInputStream. (.toArray (cv/get-current-image)))
-       }))
+      (let [webp
+
+            (pipeline/fetch-webp
+             @pipeline/loaded-pipelines
+             (:uid (request :session))
+             (keyword (:id (:params request))))]
+
+       (if (= (:type webp) :in-memory)
+           {:status 200
+            :headers {"Content-Type" "image/webp"}
+            :body (java.io.ByteArrayInputStream. (.toArray (:value webp)))}))))
 
 
 (defn upload-src-request-handler [req]

@@ -140,7 +140,7 @@
 
 (defn pipeline-frame [name img-src img-id options-frame]
   (html
-   [:div.pipeline-frame
+   [:div.pipeline-frame {:id (str "pipeline-" (clojure.core/name img-id))}
     [:img {:src img-src :id img-id}]
     [:div.pipeline-right-wrapper
      [:div.options-wrapper
@@ -196,7 +196,7 @@
   (html
    [:div#add-filter-to-pipeline
     [:label "Add filter to pipeline ..."]
-    [:select.selectpicker
+    [:select.selectpicker {:id "select-transform"}
 (filter-options)]
     [:div#submit-new-filter-option]]))
 
@@ -211,7 +211,7 @@
    {:type :range :label "SigmaY"        :obligation :optional}])
 
 
-(defn body []
+(defn mockup-body []
   [:body
    [:div#content-frame
     [:div#menu]
@@ -230,6 +230,23 @@
    [:script {:src "js/bootstrap-select.min.js"}]
    [:script {:src "js/clj-eyes.js"}]])
 
+(defn body []
+  [:body
+   [:div#content-frame
+    [:div#menu]
+    [:div#main-content
+     (title)
+     [:div#filter-content]
+     (pipeline-frame "Source Image" "imgs/test-pattern.png" "pipeline-source-img" (source-options-frame))
+     (add-filter-to-pipeline)
+     [:div#add-filter]]]
+   [:script {:src "js/jquery-2.2.4.min.js"}]
+   [:script {:src "js/bootstrap.min.js"}]
+   [:script {:src "js/bootstrap-select.min.js"}]
+   [:script {:src "js/clj-eyes.js"}]])
+
+
+
 (defn render []
   (html
    (let [body (body)]
@@ -241,4 +258,26 @@
                :href "css/bootstrap-select.min.css"}]
        [:style styles]]
       body])))
+
+
+(defn render-mockup []
+    (html
+       (let [body (mockup-body)]
+         [:html
+          [:head
+           [:link {:rel "stylesheet"
+                   :href "css/bootstrap.min.css"}]
+           [:link {:rel "stylesheet"
+                   :href "css/bootstrap-select.min.css"}]
+           [:style styles]]
+          body])))
+
+(defn generate-new-frame-html [frame frame-params]
+  (str
+    (html arrow)
+    (pipeline-frame
+     (:transformation-label frame)
+     (str "/img?id=" (name (:id frame)))
+     (:id frame)
+     (pipeline-options-frame (:transformation-params frame)))))
 
