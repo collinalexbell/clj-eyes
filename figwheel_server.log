@@ -9121,3 +9121,172 @@ notifying browser that file changed:  out/clj_eyes/controls.js
   [36m4[0m  [36m            [jayq.core :as jq][0m
 
 [36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.076 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :as and :refer options supported in :require / :require-macros; offending spec: [clj-eyes.param-handling as :params] at line 1 src/clj_eyes/controls.cljs[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- Only :as and :refer options supported in :require / :require-macros; offending spec: [clj-eyes.param-handling as :params] at line 1 src/clj_eyes/controls.cljs[0m
+  [36m2[0m  [36m  (:require-macros [cljs.core.async.macros :as asyncm :refer (go go-loop)])[0m
+  [36m3[0m  [36m  (:require [taoensso.sente :as sente][0m
+  [36m4[0m  [36m            [jayq.core :as jq][0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.041 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :as and :refer options supported in :require / :require-macros; offending spec: [clj-eyes.param-handling as :params] at line 1 src/clj_eyes/controls.cljs[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- Only :as and :refer options supported in :require / :require-macros; offending spec: [clj-eyes.param-handling as :params] at line 1 src/clj_eyes/controls.cljs[0m
+  [36m2[0m  [36m  (:require [taoensso.sente :as sente][0m
+  [36m3[0m  [36m            [jayq.core :as jq][0m
+  [36m4[0m  [36m            [clj-eyes.img-frame :as img][0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.033 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :as and :refer options supported in :require / :require-macros; offending spec: [clj-eyes.param-handling as :params] at line 1 src/clj_eyes/controls.cljs[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- Only :as and :refer options supported in :require / :require-macros; offending spec: [clj-eyes.param-handling as :params] at line 1 src/clj_eyes/controls.cljs[0m
+  [36m2[0m  [36m  (:require [taoensso.sente :as sente][0m
+  [36m3[0m  [36m            [jayq.core :as jq][0m
+  [36m4[0m  [36m            [clj-eyes.img-frame :as img][0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.037 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/controls.cljs   line:1  column:1  ----[0m
+
+  [1m:as must be followed by a symbol in :require / :require-macros; offending spec: [clj-eyes.param-handling :as :params] at line 1 src/clj_eyes/controls.cljs[0m
+
+  [33m1[0m  [1m(ns clj-eyes.controls[0m
+  [0m [0m  [33m^--- :as must be followed by a symbol in :require / :require-macros; offending spec: [clj-eyes.param-handling :as :params] at line 1 src/clj_eyes/controls.cljs[0m
+  [36m2[0m  [36m  (:require [taoensso.sente :as sente][0m
+  [36m3[0m  [36m            [jayq.core :as jq][0m
+  [36m4[0m  [36m            [clj-eyes.img-frame :as img][0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/controls.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.033 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/param_handling.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :refer-clojure, :require, :require-macros, :use, :use-macros, and :import libspecs supported at line 1 src/clj_eyes/param_handling.cljs[0m
+
+  [33m1[0m  [1m(ns clj-eyes.param-handling[0m
+  [0m [0m  [33m^--- Only :refer-clojure, :require, :require-macros, :use, :use-macros, and :import libspecs supported at line 1 src/clj_eyes/param_handling.cljs[0m
+  [36m2[0m  [36m  (require [jayq.core :as jq][0m
+  [36m3[0m  [36m           [clj-eyes.socket :as soc]))[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/param_handling.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.026 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/param_handling.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :refer-clojure, :require, :require-macros, :use, :use-macros, and :import libspecs supported at line 1 src/clj_eyes/param_handling.cljs[0m
+
+  [33m1[0m  [1m(ns clj-eyes.param-handling[0m
+  [0m [0m  [33m^--- Only :refer-clojure, :require, :require-macros, :use, :use-macros, and :import libspecs supported at line 1 src/clj_eyes/param_handling.cljs[0m
+  [36m2[0m  [36m  (require [jayq.core :as jq][0m
+  [36m3[0m  [36m           [clj-eyes.socket :as soc]))[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/param_handling.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.053 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/param_handling.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :refer-clojure, :require, :require-macros, :use, :use-macros, and :import libspecs supported at line 1 src/clj_eyes/param_handling.cljs[0m
+
+  [33m1[0m  [1m(ns clj-eyes.param-handling[0m
+  [0m [0m  [33m^--- Only :refer-clojure, :require, :require-macros, :use, :use-macros, and :import libspecs supported at line 1 src/clj_eyes/param_handling.cljs[0m
+  [36m2[0m  [36m  (require [jayq.core :as jq][0m
+  [36m3[0m  [36m           [clj-eyes.socket :as soc]))[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/param_handling.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.026 seconds.[0m
+[36m----  Could not Analyze  src/clj_eyes/param_handling.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :refer-clojure, :require, :require-macros, :use, :use-macros, and :import libspecs supported at line 1 src/clj_eyes/param_handling.cljs[0m
+
+  [33m1[0m  [1m(ns clj-eyes.param-handling[0m
+  [0m [0m  [33m^--- Only :refer-clojure, :require, :require-macros, :use, :use-macros, and :import libspecs supported at line 1 src/clj_eyes/param_handling.cljs[0m
+  [36m2[0m  [36m  (require [jayq.core :as jq][0m
+  [36m3[0m  [36m           [clj-eyes.socket :as soc]))[0m
+
+[36m----  Analysis Error : Please see src/clj_eyes/param_handling.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/param_handling.cljs   line:46  column:11  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.param-handling/console[0m
+
+  [36m42[0m  [36m(defn option-checkbox-handler[0m
+  [36m43[0m  [36m  "Handles the checking and unchecking of the optional parameters"[0m
+  [36m44[0m  [36m  [][0m
+  [36m45[0m  [36m  (this-as foo[0m
+  [33m46[0m  [1m    (.log console (jq/html foo))))[0m
+  [0m  [0m  [33m          ^--- Use of undeclared Var clj-eyes.param-handling/console[0m
+  [36m47[0m  [36m[0m
+  [36m48[0m  [36m[0m
+  [36m49[0m  [36m(defn bind-inputs-on-change [id][0m
+  [36m50[0m  [36m  (-> (jq/$ (keyword (str "#pipeline-" (name id))))[0m
+  [36m51[0m  [36m      (jq/find :input)[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/param_handling.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 2.2 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.851 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.744 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.727 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.85 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.977 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.053 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.463 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.89 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.297 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.501 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.944 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.713 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.909 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.459 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.478 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.939 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.81 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.005 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.997 seconds.[0m

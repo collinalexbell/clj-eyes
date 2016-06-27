@@ -9,7 +9,7 @@
             [taoensso.timbre :as timbre :refer-macros (tracef debugf infof warnf errorf)]
             [cljs-http.client :as http]
             [cljs.core.async :refer [<!]]
-            [clj-eyes.param-handling as :params]))
+            [clj-eyes.param-handling :as params]))
 
 (defn upload-file []
     (http/post

@@ -7,15 +7,15 @@
 (def styles 
  (css
       [:.pipeline-frame-title
-       {:text-align "center"}
-       {:margin-bottom "20px"}]
+       {:text-align       "center"}
+       {:margin-bottom    "20px"}]
       [:.btn
-       {:border "2px solid transparent"}]
+       {:border           "2px solid transparent"}]
       [:.btn-default
-       {:border-color "#414141"
-        :border-size "2px"}]
+       {:border-color     "#414141"
+        :border-size      "2px"}]
       [:#source-options-frame
-       {:border "0px"
+       {:border           "0px"
         :background-color background-color
         }]
       [:#select-source-upload
@@ -26,7 +26,7 @@
         :margin-bottom    "15px"
         :background-color "FFFFFF"}]
       [:#select-source
-       {:padding "10px"
+       {:padding          "10px"
         :text-align       "center"}
        [:.bootstrap-select
         {:width           "100%"
@@ -148,16 +148,25 @@
        options-frame]
      (close-button)]]))
 
+(defn generate-boolean-input [d id]
+  [:div.boolean-input
+   [:input {:type :radio :class "toggle toggle-left" :name (:label d) :value "true" :id (str id "-toggle-on") :checked "checked"}] 
+   [:label.btn {:for (str id "-toggle-on")} "On"]
+   [:input {:type :radio :class "toggle toggle-right" :name (:label d) :value "false" :id (str id "-toggle-on")}] 
+   [:label.btn {:for (str id "-toggle-off")} "Off"]])
 
-(defn generate-pipeline-option-input [d]
+(defn generate-pipeline-option-input [d id]
   [(if (= :manditory (:obligation d)) :div.option-input.option-input-manditory :div.option-input.option-input-optional)
     [:div.option-checkbox]
     [:label.option-params (:label d)
-     [:input {:type (:type d) :min (:min d) :max (:max d)} ]]])
+     (if (not (= (:type d) :boolean))
+      [:input {:type (:type d) :min (:min d) :max (:max d) :class "non-boolean-input"}]
+      (generate-boolean-input d id))]])
 
-(defn pipeline-options-frame [option-data]
+(defn pipeline-options-frame
+  [option-data id]
   (html
-   (let [inputs (map #(generate-pipeline-option-input %) option-data)]
+   (let [inputs (map #(generate-pipeline-option-input % id) option-data)]
      (conj [:div.pipeline-options-frame] inputs))))
 
 
@@ -220,9 +229,9 @@
      [:div#filter-content]
      (pipeline-frame "Source Image" "/img" "pipeline-source-img" (source-options-frame))
      arrow
-     (pipeline-frame "Gaussian Filter" "/imgs/blurry.png" "filter1" (pipeline-options-frame gaussian-demo-options-data))
+     (pipeline-frame "Gaussian Filter" "/imgs/blurry.png" "filter1" (pipeline-options-frame gaussian-demo-options-data "filter1"))
      arrow
-     (pipeline-frame "Canny Filter" "/imgs/canny.png" "filter2" (pipeline-options-frame canny-demo-options-data))
+     (pipeline-frame "Canny Filter" "/imgs/canny.png" "filter2" (pipeline-options-frame canny-demo-options-data "filter2"))
      (add-filter-to-pipeline)
      [:div#add-filter]]]
    [:script {:src "js/jquery-2.2.4.min.js"}]
@@ -256,6 +265,8 @@
                :href "css/bootstrap.min.css"}]
        [:link {:rel "stylesheet"
                :href "css/bootstrap-select.min.css"}]
+       [:link {:rel "stylesheet"
+               :href "css/radio-btns.css"}]
        [:style styles]]
       body])))
 
@@ -269,6 +280,8 @@
                    :href "css/bootstrap.min.css"}]
            [:link {:rel "stylesheet"
                    :href "css/bootstrap-select.min.css"}]
+           [:link {:rel "stylesheet"
+                   :href "css/radio-btns.css"}]
            [:style styles]]
           body])))
 
@@ -279,5 +292,5 @@
      (:transformation-label frame)
      (str "/img?id=" (name (:id frame)))
      (:id frame)
-     (pipeline-options-frame (:transformation-params frame)))))
+     (pipeline-options-frame (:transformation-params frame) (name (:id frame))))))
 

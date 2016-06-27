@@ -30,10 +30,10 @@
 
 (def filter-params
  {:canny
-  [{:type :range :label "Threshold 1"   :obligation :manditory :default "0" }
+  [{:type :range :label "Threshold 1"   :obligation :manditory :default "0"}
    {:type :range :label "Threshold 2"   :obligation :manditory :default "0"}
    {:type :range :label "Aperture Size" :obligation :optional  :default "3"}
-   {:type :checkbox :label "L2 Gradient" :obligation :optional :default "true"}]
+   {:type :boolean :label "L2 Gradient" :obligation :optional :default "true"}]
 
   :gaussian-blur
   [{:type :range :label "Kernal Size"   :obligation :manditory :default "1"}

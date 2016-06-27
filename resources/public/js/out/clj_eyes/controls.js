@@ -4,6 +4,7 @@ goog.require('cljs.core');
 goog.require('taoensso.sente');
 goog.require('taoensso.timbre');
 goog.require('clj_eyes.img_frame');
+goog.require('clj_eyes.param_handling');
 goog.require('cljs.core.async');
 goog.require('cljs_http.client');
 goog.require('jayq.core');
@@ -34,25 +35,8 @@ while(true){
 if((el_num < n__22622__auto__)){
 each_fn.call(null,el_num,cljs.core.nth.call(null,elements,el_num));
 
-var G__29100 = (el_num + (1));
-el_num = G__29100;
-continue;
-} else {
-return null;
-}
-break;
-}
-});
-clj_eyes.controls.jq_each_elements = (function clj_eyes$controls$jq_each_elements(elements,each_fn){
-var elements__$1 = cljs.core.js__GT_clj.call(null,elements);
-var n__22622__auto__ = cljs.core.count.call(null,elements__$1);
-var el_num = (0);
-while(true){
-if((el_num < n__22622__auto__)){
-each_fn.call(null,el_num,cljs.core.nth.call(null,elements__$1,el_num));
-
-var G__29101 = (el_num + (1));
-el_num = G__29101;
+var G__29566 = (el_num + (1));
+el_num = G__29566;
 continue;
 } else {
 return null;
@@ -74,36 +58,6 @@ return cljs.core.swap_BANG_.call(null,params,cljs.core.conj,new cljs.core.Persis
 );
 
 return clj_eyes.socket.chsk_send_BANG_.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("opencv","load-transformation","opencv/load-transformation",1699533857),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"transformation-name","transformation-name",-1059066008),jayq.core.val.call(null,jayq.core.$.call(null,new cljs.core.Keyword(null,"#select-transform","#select-transform",1569387196))),new cljs.core.Keyword(null,"transformation-params","transformation-params",-1372640963),cljs.core.deref.call(null,params)], null)], null));
-});
-clj_eyes.controls.manditory_or_selected = (function clj_eyes$controls$manditory_or_selected(item){
-
-var class_items_29102 = clojure.string.split.call(null,new cljs.core.Keyword(null,"class","class",-2030961996).cljs$core$IFn$_invoke$arity$1(item),/ /);
-
-if(((new cljs.core.Keyword(null,"class","class",-2030961996).cljs$core$IFn$_invoke$arity$1(item).indexOf("option-input-manditory") > (-1))) || ((new cljs.core.Keyword(null,"class","class",-2030961996).cljs$core$IFn$_invoke$arity$1(item).indexOf("activated") > (-1)))){
-return true;
-} else {
-return false;
-}
-});
-clj_eyes.controls.gen_param_input_change_handler = (function clj_eyes$controls$gen_param_input_change_handler(id){
-return (function (){
-var the_list = cljs.core.atom.call(null,cljs.core.PersistentVector.EMPTY);
-clj_eyes.controls.jq_each_elements.call(null,jayq.core.find.call(null,jayq.core.$.call(null,cljs.core.keyword.call(null,[cljs.core.str("#pipeline-"),cljs.core.str(cljs.core.name.call(null,id))].join(''))),new cljs.core.Keyword(null,".option-input",".option-input",1885884989)),((function (the_list){
-return (function (i,item){
-var jq_item = jayq.core.$.call(null,item);
-return cljs.core.swap_BANG_.call(null,the_list,cljs.core.conj,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"class","class",-2030961996),jayq.core.attr.call(null,jq_item,"class"),new cljs.core.Keyword(null,"value","value",305978217),jayq.core.val.call(null,jayq.core.find.call(null,jq_item,new cljs.core.Keyword(null,"input","input",556931961)).first())], null));
-});})(the_list))
-);
-
-return clj_eyes.socket.chsk_send_BANG_.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("pipeline","update-transform-params","pipeline/update-transform-params",-405237776),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"param-list","param-list",-1414956032),cljs.core.filter.call(null,clj_eyes.controls.manditory_or_selected,cljs.core.deref.call(null,the_list)),new cljs.core.Keyword(null,"id","id",-1388402092),id], null)], null));
-});
-});
-clj_eyes.controls.bind_inputs_on_change = (function clj_eyes$controls$bind_inputs_on_change(id){
-return jayq.core.bind.call(null,(function (item){
-console.log(cljs.core.count.call(null,item));
-
-return item;
-}).call(null,jayq.core.find.call(null,jayq.core.$.call(null,cljs.core.keyword.call(null,[cljs.core.str("#pipeline-"),cljs.core.str(cljs.core.name.call(null,id))].join(''))),new cljs.core.Keyword(null,"input","input",556931961))),new cljs.core.Keyword(null,"change","change",-1163046502),clj_eyes.controls.gen_param_input_change_handler.call(null,id));
 });
 clj_eyes.controls.load_transform_options = (function clj_eyes$controls$load_transform_options(html){
 jayq.core.html.call(null,jayq.core.$.call(null,new cljs.core.Keyword(null,"#transform-options","#transform-options",-1212368927)),html);
@@ -131,86 +85,86 @@ return (new cljs.core.MultiFn(cljs.core.symbol.call(null,"clj-eyes.controls","-e
 /**
  * Wraps `-event-msg-handler` with logging, error catching, etc.
  */
-clj_eyes.controls.event_msg_handler = (function clj_eyes$controls$event_msg_handler(p__29103){
-var map__29106 = p__29103;
-var map__29106__$1 = ((((!((map__29106 == null)))?((((map__29106.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29106.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29106):map__29106);
-var ev_msg = map__29106__$1;
-var id = cljs.core.get.call(null,map__29106__$1,new cljs.core.Keyword(null,"id","id",-1388402092));
-var _QMARK_data = cljs.core.get.call(null,map__29106__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
-var event = cljs.core.get.call(null,map__29106__$1,new cljs.core.Keyword(null,"event","event",301435442));
+clj_eyes.controls.event_msg_handler = (function clj_eyes$controls$event_msg_handler(p__29567){
+var map__29570 = p__29567;
+var map__29570__$1 = ((((!((map__29570 == null)))?((((map__29570.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29570.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29570):map__29570);
+var ev_msg = map__29570__$1;
+var id = cljs.core.get.call(null,map__29570__$1,new cljs.core.Keyword(null,"id","id",-1388402092));
+var _QMARK_data = cljs.core.get.call(null,map__29570__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
+var event = cljs.core.get.call(null,map__29570__$1,new cljs.core.Keyword(null,"event","event",301435442));
 return clj_eyes.controls._event_msg_handler.call(null,ev_msg);
 });
-cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("chsk","state","chsk/state",-1991397620),(function (p__29108){
-var map__29109 = p__29108;
-var map__29109__$1 = ((((!((map__29109 == null)))?((((map__29109.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29109.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29109):map__29109);
-var ev_msg = map__29109__$1;
-var _QMARK_data = cljs.core.get.call(null,map__29109__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
+cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("chsk","state","chsk/state",-1991397620),(function (p__29572){
+var map__29573 = p__29572;
+var map__29573__$1 = ((((!((map__29573 == null)))?((((map__29573.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29573.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29573):map__29573);
+var ev_msg = map__29573__$1;
+var _QMARK_data = cljs.core.get.call(null,map__29573__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
 if(cljs.core.truth_(new cljs.core.Keyword(null,"first-open?","first-open?",396686530).cljs$core$IFn$_invoke$arity$1(_QMARK_data))){
 return console.log("Channel socket successfully established!: %s",_QMARK_data);
 } else {
 return console.log("Channel socket state change: %s",_QMARK_data);
 }
 }));
-cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("chsk","recv","chsk/recv",561097091),(function (p__29111){
-var map__29112 = p__29111;
-var map__29112__$1 = ((((!((map__29112 == null)))?((((map__29112.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29112.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29112):map__29112);
-var ev_msg = map__29112__$1;
-var _QMARK_data = cljs.core.get.call(null,map__29112__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
+cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("chsk","recv","chsk/recv",561097091),(function (p__29575){
+var map__29576 = p__29575;
+var map__29576__$1 = ((((!((map__29576 == null)))?((((map__29576.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29576.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29576):map__29576);
+var ev_msg = map__29576__$1;
+var _QMARK_data = cljs.core.get.call(null,map__29576__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
 return console.log("Push event from server: %s",_QMARK_data);
 }));
-cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("opencv","reload","opencv/reload",-414791604),(function (p__29114){
-var map__29115 = p__29114;
-var map__29115__$1 = ((((!((map__29115 == null)))?((((map__29115.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29115.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29115):map__29115);
-var ev_msg = map__29115__$1;
-var _QMARK_data = cljs.core.get.call(null,map__29115__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
+cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("opencv","reload","opencv/reload",-414791604),(function (p__29578){
+var map__29579 = p__29578;
+var map__29579__$1 = ((((!((map__29579 == null)))?((((map__29579.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29579.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29579):map__29579);
+var ev_msg = map__29579__$1;
+var _QMARK_data = cljs.core.get.call(null,map__29579__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
 console.log("Server notified client of img change. Reloading");
 
 return clj_eyes.img_frame.reload_image_frame.call(null);
 }));
-cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("pipeline","reload-img","pipeline/reload-img",386896552),(function (p__29117){
-var map__29118 = p__29117;
-var map__29118__$1 = ((((!((map__29118 == null)))?((((map__29118.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29118.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29118):map__29118);
-var ev_msg = map__29118__$1;
-var _QMARK_data = cljs.core.get.call(null,map__29118__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
+cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("pipeline","reload-img","pipeline/reload-img",386896552),(function (p__29581){
+var map__29582 = p__29581;
+var map__29582__$1 = ((((!((map__29582 == null)))?((((map__29582.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29582.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29582):map__29582);
+var ev_msg = map__29582__$1;
+var _QMARK_data = cljs.core.get.call(null,map__29582__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
 console.log("Reloading img");
 
 console.log(new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(_QMARK_data));
 
 return clj_eyes.img_frame.reload_image.call(null,cljs.core.name.call(null,new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(_QMARK_data)));
 }));
-cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("chsk","ws-error","chsk/ws-error",260168922),(function (p__29120){
-var map__29121 = p__29120;
-var map__29121__$1 = ((((!((map__29121 == null)))?((((map__29121.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29121.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29121):map__29121);
-var ev_msg = map__29121__$1;
-var _QMARK_data = cljs.core.get.call(null,map__29121__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
+cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("chsk","ws-error","chsk/ws-error",260168922),(function (p__29584){
+var map__29585 = p__29584;
+var map__29585__$1 = ((((!((map__29585 == null)))?((((map__29585.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29585.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29585):map__29585);
+var ev_msg = map__29585__$1;
+var _QMARK_data = cljs.core.get.call(null,map__29585__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
 return console.log("Error event from server: %s",_QMARK_data);
 }));
-cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("chsk","handshake","chsk/handshake",64910686),(function (p__29123){
-var map__29124 = p__29123;
-var map__29124__$1 = ((((!((map__29124 == null)))?((((map__29124.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29124.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29124):map__29124);
-var ev_msg = map__29124__$1;
-var _QMARK_data = cljs.core.get.call(null,map__29124__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
-var vec__29126 = _QMARK_data;
-var _QMARK_uid = cljs.core.nth.call(null,vec__29126,(0),null);
-var _QMARK_csrf_token = cljs.core.nth.call(null,vec__29126,(1),null);
-var _QMARK_handshake_data = cljs.core.nth.call(null,vec__29126,(2),null);
+cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("chsk","handshake","chsk/handshake",64910686),(function (p__29587){
+var map__29588 = p__29587;
+var map__29588__$1 = ((((!((map__29588 == null)))?((((map__29588.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29588.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29588):map__29588);
+var ev_msg = map__29588__$1;
+var _QMARK_data = cljs.core.get.call(null,map__29588__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
+var vec__29590 = _QMARK_data;
+var _QMARK_uid = cljs.core.nth.call(null,vec__29590,(0),null);
+var _QMARK_csrf_token = cljs.core.nth.call(null,vec__29590,(1),null);
+var _QMARK_handshake_data = cljs.core.nth.call(null,vec__29590,(2),null);
 return console.log("Handshake: %s",_QMARK_data);
 }));
-cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("opencv","load-transformation-options","opencv/load-transformation-options",-51269651),(function (p__29127){
-var map__29128 = p__29127;
-var map__29128__$1 = ((((!((map__29128 == null)))?((((map__29128.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29128.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29128):map__29128);
-var ev_msg = map__29128__$1;
-var _QMARK_data = cljs.core.get.call(null,map__29128__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
+cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("opencv","load-transformation-options","opencv/load-transformation-options",-51269651),(function (p__29591){
+var map__29592 = p__29591;
+var map__29592__$1 = ((((!((map__29592 == null)))?((((map__29592.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29592.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29592):map__29592);
+var ev_msg = map__29592__$1;
+var _QMARK_data = cljs.core.get.call(null,map__29592__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
 return clj_eyes.controls.load_transform_options.call(null,new cljs.core.Keyword(null,"html","html",-998796897).cljs$core$IFn$_invoke$arity$1(_QMARK_data));
 }));
-cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("pipeline","load-transformation-frame","pipeline/load-transformation-frame",1940846010),(function (p__29130){
-var map__29131 = p__29130;
-var map__29131__$1 = ((((!((map__29131 == null)))?((((map__29131.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29131.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29131):map__29131);
-var ev_msg = map__29131__$1;
-var _QMARK_data = cljs.core.get.call(null,map__29131__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
+cljs.core._add_method.call(null,clj_eyes.controls._event_msg_handler,new cljs.core.Keyword("pipeline","load-transformation-frame","pipeline/load-transformation-frame",1940846010),(function (p__29594){
+var map__29595 = p__29594;
+var map__29595__$1 = ((((!((map__29595 == null)))?((((map__29595.cljs$lang$protocol_mask$partition0$ & (64))) || (map__29595.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__29595):map__29595);
+var ev_msg = map__29595__$1;
+var _QMARK_data = cljs.core.get.call(null,map__29595__$1,new cljs.core.Keyword(null,"?data","?data",-9471433));
 clj_eyes.controls.add_transformation.call(null,new cljs.core.Keyword(null,"html","html",-998796897).cljs$core$IFn$_invoke$arity$1(_QMARK_data));
 
-return clj_eyes.controls.bind_inputs_on_change.call(null,new cljs.core.Keyword(null,"frame-id","frame-id",-636372072).cljs$core$IFn$_invoke$arity$1(_QMARK_data));
+return clj_eyes.param_handling.bind_inputs_on_change.call(null,new cljs.core.Keyword(null,"frame-id","frame-id",-636372072).cljs$core$IFn$_invoke$arity$1(_QMARK_data));
 }));
 clj_eyes.controls.init_upload_button.call(null);
 clj_eyes.controls.bind_on_file_select.call(null);
@@ -234,4 +188,4 @@ return cljs.core.reset_BANG_.call(null,clj_eyes.controls.router_,taoensso.sente.
 });
 clj_eyes.controls.start_router_BANG_.call(null);
 
-//# sourceMappingURL=controls.js.map?rel=1467006878705
+//# sourceMappingURL=controls.js.map?rel=1467009814165
