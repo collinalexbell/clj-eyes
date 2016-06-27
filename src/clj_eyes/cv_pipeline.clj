@@ -162,3 +162,23 @@
      :frame-id frame-id}))
 
 
+(defn update-transform
+  "The function that takes a pipeline-list, a uid and a data struct with an :id of the transformation as well as the new :param-list
+  The function will return a pipeline-list with the new transform data associated with it"
+  [pipeline-list uid data]
+  (let [pipeline
+        (get-pipeline-from-list pipeline-list uid)
+
+        frame
+        (get-frame-from-pipeline 
+            pipeline
+            (:id data))]
+
+    (assoc pipeline-list uid
+     (assoc pipeline (:id data)
+      (load-image-matrix-into-pipeline-frame
+       frame
+       (do-transform (:source-frame frame)
+                     {:transformation-name "canny"
+                      :transformation-params (:param-list data)}))))))
+

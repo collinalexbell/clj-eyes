@@ -163,8 +163,14 @@
 *** TODO Write function that will listen to a change on the params of the frame and submit any changes
 **** DONE Listen to and gather params
 		 CLOSED: [2016-06-26 Sun 13:27]
-**** TODO Send the params
-*** TODO Figure out why it takes two clicks of the addition button to get cv-pipeline/add-transformation to work properly
+**** DONE Send the params
+		 CLOSED: [2016-06-27 Mon 05:03]
+**** DONE process the params and transform the image
+		 CLOSED: [2016-06-27 Mon 05:51]
+**** TODO Finally, make sure the client refreshes the image after being transformed
+*** DONE Figure out why it takes two clicks of the addition button to get cv-pipeline/add-transformation to work properly
+		CLOSED: [2016-06-27 Mon 05:25]
+**** Solution: The file cv.clj had a socket handler that was interfering with the correct handler.
 *** TODO Figure out why figwheel is nessicary to not cause an error when loading the page. I thought figwheel was optional.
 *** TODO On /pipeline page load, use loader throbber to indicate when the web socket connection has fully loaded
 

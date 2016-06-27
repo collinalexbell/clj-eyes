@@ -14,7 +14,7 @@
 (defn event-msg-handler
   "Wraps `-event-msg-handler` with logging, error catching, etc."
   [{:as ev-msg :keys [id ?data event]}]
-  (println ev-msg)
+  (println "Message handling")
   (-event-msg-handler ev-msg) ; Handle event-msgs on a single thread
   ;; (future (-event-msg-handler ev-msg)) ; Handle event-msgs on a thread pool
   )
@@ -30,8 +30,10 @@
 (defmethod -event-msg-handler
   :pipeline/update-transform-params
   [event-msg]
-  (let [params (second (:event event-msg))]
-    (println (str "params\n" params))))
+  (let [data (second (:event event-msg))
+        uid    (:uid event-msg)]
+    (pipeline/update-pipeline-list
+     (pipeline/update-transform @pipeline/loaded-pipelines uid data))))
 
 
 (defn handle-transformation-result
@@ -77,7 +79,7 @@
 (defn stop!  []  (stop-router!))
 (defn start! [] (start-router!))
 
-;(stop!)
+(stop!)
 (start!)
 
 

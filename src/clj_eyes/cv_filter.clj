@@ -12,17 +12,22 @@
                                   (read-string kernal-width))
                         (read-string standard-deviation)))
 
-(defn canny [src dest threshold1 threshold2]
-  (Imgproc/Canny src dest
-                 (read-string threshold1)
-                 (read-string threshold2)))
+(defmulti canny (fn []))
 
-(defn canny [src dest threshold1 threshold2 aperture-size l2-gradient]
-  (Imgproc/Canny src dest
-                 (read-string threshold1)
-                 (read-string threshold2)
-                 (read-string aperture-size)
-                 (read-string l2-gradient)))
+(defn canny
+  ([src dest threshold1 threshold2]
+    (Imgproc/Canny src dest
+                   (read-string threshold1)
+                   (read-string threshold2)))
+
+  ([src dest threshold1 threshold2 aperture-size l2-gradient]
+   (Imgproc/Canny src dest
+                  (read-string threshold1)
+                  (read-string threshold2)
+                  (read-string aperture-size)
+                  (read-string l2-gradient))))
+
+
 (def filter-params
  {:canny
   [{:type :range :label "Threshold 1"   :obligation :manditory :default "0" }

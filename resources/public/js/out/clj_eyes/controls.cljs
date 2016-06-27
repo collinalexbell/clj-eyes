@@ -149,7 +149,8 @@
 (defmethod -event-msg-handler :pipeline/reload-img
   [{:as ev-msg :keys [?data]}]
   (.log js/console "Reloading img")
-  (img/reload-image (:id ?data)))
+  (.log js/console (:id ?data))
+  (img/reload-image (name (:id ?data))))
 
 (defmethod -event-msg-handler :chsk/ws-error
   [{:as ev-msg :keys [?data]}]
