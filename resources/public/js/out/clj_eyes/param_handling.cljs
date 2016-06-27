@@ -39,6 +39,17 @@
        :id
        id}])))
 
+(defn change-optiongroup-checkbox [option-frame option-group change-fn]
+  (-> option-frame
+      (jq/find :.option-input)
+      (jq-each-elements
+       (fn [i item]
+         (-> (jq/$ item)
+             (.data "option-group")
+             ((fn [item-op-group]
+                (if (= item-op-group option-group)
+                  (change-fn (jq/$ item) "activated")))))))))
+
 (defn option-checkbox-handler
   "Handles the checking and unchecking of the optional parameters"
   []
@@ -46,10 +57,15 @@
     (let
         [option-div
          (-> (jq/$ foo)
-             .parent)]
+             .parent)
+         option-frame
+         (-> option-div
+             .parent)
+         option-group (-> (jq/$ foo)
+                          (.data "option-group"))]
       (if (< (.indexOf (jq/attr option-div "class") "activated") 0)
-        (jq/add-class option-div "activated")
-        (jq/remove-class option-div "activated")))
+        (change-optiongroup-checkbox option-frame option-group jq/add-class)
+        (change-optiongroup-checkbox option-frame option-group jq/remove-class)))
     (.log js/console (str (jq/attr (jq/$ foo) "class")))))
 
 

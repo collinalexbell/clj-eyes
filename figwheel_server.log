@@ -9290,3 +9290,36 @@ notifying browser that file changed:  out/clj_eyes/param_handling.js
 [32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.005 seconds.[0m
 [0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
 [32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.997 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.147 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.178 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.025 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.212 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.37 seconds.[0m
+[36m----  Could not Read  src/clj_eyes/param_handling.cljs   line:56  column:3  ----[0m
+
+  [1mEOF while reading, starting at line 56 and column 3[0m
+
+  [36m54[0m  [36m"Handles the checking and unchecking of the optional parameters"[0m
+  [36m55[0m  [36m[][0m
+  [33m56[0m  [1m(this-as foo[0m
+  [0m  [0m  [33m^--- EOF while reading, starting at line 56 and column 3[0m
+  [36m57[0m  [36m  (let[0m
+  [36m58[0m  [36m      [option-div[0m
+  [36m59[0m  [36m       (-> (jq/$ foo)[0m
+
+[36m----  Reader Error : Please see src/clj_eyes/param_handling.cljs  ----[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.602 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.848 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
