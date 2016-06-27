@@ -1,6 +1,0 @@
-(ns clj-eyes.web-socket-test
-  (:use clojure.test)
-  (:require [clj-eyes.web-socket :as socket]))
-
-(deftest generate-unique-uid
-  (is (= (socket/generate-unique-uid #[1 3 4]) 5)))
