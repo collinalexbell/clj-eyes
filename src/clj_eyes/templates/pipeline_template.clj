@@ -6,6 +6,8 @@
 (def background-color "rgba(238, 253, 217, .7)")
 (def styles 
  (css
+      [:.option-param-value
+       {:float            "right"}]
       [:.pipeline-frame-title
        {:text-align       "center"}
        {:margin-bottom    "20px"}]
@@ -170,7 +172,7 @@
   [(if (= :manditory (:obligation d)) :div.option-input.option-input-manditory :div.option-input.option-input-optional)
    {:data-option-group (:option-group d)}
     [:div.option-checkbox {:data-option-group (:option-group d)}]
-    [:label.option-params (:label d)
+    [:label.option-params (:label d) [:span.option-param-value (:default d)]
      (if (not (= (:type d) :boolean))
       [:input {:type (:type d)
                :min (:min d)

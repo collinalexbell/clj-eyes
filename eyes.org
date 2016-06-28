@@ -190,9 +190,9 @@
 		+ Result. It kindof sucks.
 *** DONE Set up dev and production profiles
 		CLOSED: [2016-06-28 Tue 05:36]
-*** TODO Get handle-transform-param-change to only submit params for the transform that has been used
-*** TODO Trigger a picture reload if user checks/unchecks an optional param #6
-*** TODO Add a value label next to the slider bar so that users know what actual values they are setting params to
+*** DONE Trigger a picture reload if user checks/unchecks an optional param #6
+		CLOSED: [2016-06-28 Tue 05:56]
+*** TODO Add a value label next to the slider bar so that users know what actual values they are setting params to #7
 *** TODO Make sure that Gaussian Blur filter works and that it loads in all of the option-groups
 *** TODO Test that adding a transformation to the pipeline with a non default source works correctly
 *** TODO Write code that will reperform all of the transforms if a new source is selected

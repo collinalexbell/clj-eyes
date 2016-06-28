@@ -23,16 +23,22 @@
           (jq/find :.option-input)
           (jq-each-elements
            (fn [i item]
-             (let [jq-item (jq/$ item)]
+             (let [jq-item (jq/$ item)
+                   value (-> jq-item
+                           (jq/find :input)
+                           .first
+                           jq/val)]
+               ;Append Item to list to transfer to server
                (swap! the-list conj 
                       {:class
                        (jq/attr jq-item "class")
 
                        :value
-                       (-> jq-item
-                           (jq/find :input)
-                           .first
-                           jq/val)})))))
+                       value})
+               (-> jq-item
+                   (jq/find :span)
+                   (jq/html value))))))
+
     (soc/chsk-send!
      [:pipeline/update-transform-params
       {:param-list

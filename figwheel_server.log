@@ -9643,3 +9643,53 @@ java.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/la
     java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
     java.lang.Thread.run (Thread.java:745)
 
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.483 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.562 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.594 seconds.[0m
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/param_handling.cljs   line:39  column:20  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.param-handling/parent[0m
+
+  [36m36[0m  [36m                   :value[0m
+  [36m37[0m  [36m                   value})[0m
+  [36m38[0m  [36m           (-> jq-item[0m
+  [33m39[0m  [1m               parent[0m
+  [0m  [0m  [33m               ^--- Use of undeclared Var clj-eyes.param-handling/parent[0m
+  [36m40[0m  [36m               (jq/find :span)[0m
+  [36m41[0m  [36m               (jq/html value))))))[0m
+  [36m42[0m  [36m(soc/chsk-send![0m
+  [36m43[0m  [36m [:pipeline/update-transform-params[0m
+  [36m44[0m  [36m  {:param-list[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/param_handling.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 4.155 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/param_handling.cljs   line:39  column:20  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.param-handling/parent[0m
+
+  [36m36[0m  [36m                       :value[0m
+  [36m37[0m  [36m                       value})[0m
+  [36m38[0m  [36m               (-> jq-item[0m
+  [33m39[0m  [1m                   parent[0m
+  [0m  [0m  [33m                   ^--- Use of undeclared Var clj-eyes.param-handling/parent[0m
+  [36m40[0m  [36m                   (jq/find :span)[0m
+  [36m41[0m  [36m                   (jq/html value))))))[0m
+  [36m42[0m  [36m[0m
+  [36m43[0m  [36m    (soc/chsk-send![0m
+  [36m44[0m  [36m     [:pipeline/update-transform-params[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/param_handling.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.722 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.578 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.846 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
