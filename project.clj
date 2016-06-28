@@ -22,6 +22,7 @@
                  [cljs-http "0.1.41"]
                  [ring-transit "0.1.5"]
                  [garden "1.3.2"]]
+  :main clj-eyes.core
   :plugins [[lein-figwheel "0.5.4-3"]]
   :cljsbuild {
     :builds [{:id "clj-eyes" 
