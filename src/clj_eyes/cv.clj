@@ -112,7 +112,7 @@
 (defn start-router! []
   (stop-router!)
   (reset! router_
-    (sente/start-server-chsk-router!
+    (sente/tart-server-chsk-router!
       soc/ch-chsk event-msg-handler)))
 
 (defn stop!  []  (stop-router!))

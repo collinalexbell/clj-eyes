@@ -30,15 +30,15 @@
 
 (def filter-params
  {:canny
-  [{:type :range :label "Threshold 1"   :obligation :manditory :default "0"}
-   {:type :range :label "Threshold 2"   :obligation :manditory :default "0"}
-   {:type :range :label "Aperture Size" :obligation :optional  :default "3"}
-   {:type :boolean :label "L2 Gradient" :obligation :optional :default "true"}]
+  [{:type :range :label "Threshold 1"   :obligation :manditory :default "0" :option-group 0}
+   {:type :range :label "Threshold 2"   :obligation :manditory :default "0" :option-group 0}
+   {:type :range :label "Aperture Size" :obligation :optional  :default "3" :min 3 :max 7 :step 2 :option-group 1}
+   {:type :boolean :label "L2 Gradient" :obligation :optional :default "true" :option-group 1}]
 
   :gaussian-blur
-  [{:type :range :label "Kernal Size"   :obligation :manditory :default "1"}
-   {:type :range :label "SigmaX"        :obligation :manditory :default "0"}
-   {:type :range :label "SigmaY"        :obligation :optional  :default "0"}]})
+  [{:type :range :label "Kernal Size"   :obligation :manditory :default "1" :option-group 0}
+   {:type :range :label "SigmaX"        :obligation :manditory :default "0" :option-group 0}
+   {:type :range :label "SigmaY"        :obligation :optional  :default "0" :option-group 1}]})
 
 
 (def transformation-labels

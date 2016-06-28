@@ -33,7 +33,8 @@
   (let [data (second (:event event-msg))
         uid    (:uid event-msg)]
     (pipeline/update-pipeline-list
-     (pipeline/update-transform @pipeline/loaded-pipelines uid data))))
+     (pipeline/update-transform @pipeline/loaded-pipelines uid data))
+    (pipeline/notify-client-of-img-change uid (:id data))))
 
 
 (defn handle-transformation-result

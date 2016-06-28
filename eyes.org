@@ -173,9 +173,29 @@
 *** DONE Figure out why it takes two clicks of the addition button to get cv-pipeline/add-transformation to work properly
 		CLOSED: [2016-06-27 Mon 05:25]
 **** Solution: The file cv.clj had a socket handler that was interfering with the correct handler.
-*** TODO Refactor code that handles params into param-handling.cljs
-*** TODO Get optional parameters to show when I click on them. 
-**** Some optional parameters are tied together, so they must be activated together.
+*** DONE Refactor code that handles params into param-handling.cljs
+		CLOSED: [2016-06-27 Mon 06:14]
+*** DONE Get optional parameters to show when I click on them. 
+		CLOSED: [2016-06-27 Mon 06:48]
+*** DONE Get the boolean option parameter to be passed to the server as true/false
+		CLOSED: [2016-06-27 Mon 12:46]
+*** DONE Some optional parameters are tied together, so they must be activated together. Write the code to do this.
+		CLOSED: [2016-06-27 Mon 13:36]
+		
+** Path to v2.0
+*** TODO When the transform gets loaded, set the initial values of the sliders
+*** TODO Add a value label next to the slider bar so that users know what actual values they are setting params to
+*** TODO Make sure that Gaussian Blur filter works and that it loads in all of the option-groups
+*** TODO Test that adding a transformation to the pipeline with a non default source works correctly
+*** TODO Write code that will reperform all of the transforms if a new source is selected
+*** TODO Get Select from uploaded images to remember the images uploaded that session and allow for selection
+*** TODO Set up the current pipeline and frame as a clojure type or record
+*** TODO Get the title to save into the correct session and load on refresh.
+*** TODO Save pipelines into a database
+*** TODO Write code to load pipelines out of database
+*** TODO Remove x from source frame
+*** TODO Add listener to the close button that removes the frame from the pipeline.
+
 *** TODO Figure out why figwheel is nessicary to not cause an error when loading the page. I thought figwheel was optional.
 *** TODO On /pipeline page load, use loader throbber to indicate when the web socket connection has fully loaded
 

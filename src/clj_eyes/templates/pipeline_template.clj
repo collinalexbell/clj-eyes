@@ -150,17 +150,35 @@
 
 (defn generate-boolean-input [d id]
   [:div.boolean-input
-   [:input {:type :radio :class "toggle toggle-left" :name (:label d) :value "true" :id (str id "-toggle-on") :checked "checked"}] 
+   [:input {:type :radio
+            :class "toggle toggle-left"
+            :name (str id "-toggle")
+            :value "true"
+            :id (str id "-toggle-on")
+            :checked "checked"
+            :data-option-group (:option-group d)}] 
    [:label.btn {:for (str id "-toggle-on")} "On"]
-   [:input {:type :radio :class "toggle toggle-right" :name (:label d) :value "false" :id (str id "-toggle-on")}] 
+   [:input {:type :radio
+            :class "toggle toggle-right"
+            :name (str id "-toggle")
+            :value "false"
+            :id (str id "-toggle-off")
+            :data-option-group (:option-group d)}] 
    [:label.btn {:for (str id "-toggle-off")} "Off"]])
 
 (defn generate-pipeline-option-input [d id]
   [(if (= :manditory (:obligation d)) :div.option-input.option-input-manditory :div.option-input.option-input-optional)
-    [:div.option-checkbox]
+   {:data-option-group (:option-group d)}
+    [:div.option-checkbox {:data-option-group (:option-group d)}]
     [:label.option-params (:label d)
      (if (not (= (:type d) :boolean))
-      [:input {:type (:type d) :min (:min d) :max (:max d) :class "non-boolean-input"}]
+      [:input {:type (:type d)
+               :min (:min d)
+               :max (:max d)
+               :step (:step d)
+               :value (:default d)
+               :class "non-boolean-input"
+               :data-option-group (:option-group d)}]
       (generate-boolean-input d id))]])
 
 (defn pipeline-options-frame
