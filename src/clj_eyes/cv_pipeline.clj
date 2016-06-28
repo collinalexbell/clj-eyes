@@ -63,7 +63,7 @@
         frame    (get-frame-from-pipeline
                   pipeline :pipeline-source-img
                   ;Constructor if pipeline doesn't exist
-                  #(pipeline-frame nil :pipeline-source-img))]
+                  #(pipeline-frame nil :pipeline-source-img :src))]
    (assoc pipeline-list uid
           (assoc
            pipeline
@@ -151,7 +151,7 @@
             (add-transformation-params-to
                 (keyword transformation-selection)
                 (load-image-matrix-into-pipeline-frame
-                 (pipeline-frame (keyword parent-frame-name-str) frame-id)
+                 (pipeline-frame (keyword parent-frame-name-str) frame-id (keyword transformation-selection)) 
                  (do-transform parent-frame
                                {:transformation-name
                                 transformation-selection

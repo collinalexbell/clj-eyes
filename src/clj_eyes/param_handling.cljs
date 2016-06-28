@@ -44,7 +44,10 @@
       {:param-list
        (filter manditory-or-selected @the-list)
        :id
-       id}])))
+       id
+       :function-name
+       (-> (jq/$ (keyword (str "#pipeline-" (name id))))
+           (jq/data "function-name"))}])))
 
 (defn change-optiongroup-checkbox [option-frame option-group change-fn]
   (-> option-frame
