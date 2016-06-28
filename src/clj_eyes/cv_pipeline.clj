@@ -88,7 +88,7 @@
                              img-src
                              img-buf
                              ;;Settings, specifically image quality
-                             (MatOfInt. (into-array Integer/TYPE [Imgcodecs/CV_IMWRITE_WEBP_QUALITY 30]))))
+                             (MatOfInt. (into-array Integer/TYPE [Imgcodecs/CV_IMWRITE_WEBP_QUALITY 15]))))
     {:data
      (if (not (.empty img-buf))
        img-buf

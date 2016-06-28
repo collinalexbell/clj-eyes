@@ -11,8 +11,8 @@ while(true){
 if((el_num < n__22622__auto__)){
 each_fn.call(null,el_num,cljs.core.nth.call(null,elements__$1,el_num));
 
-var G__30359 = (el_num + (1));
-el_num = G__30359;
+var G__28998 = (el_num + (1));
+el_num = G__28998;
 continue;
 } else {
 return null;
@@ -22,7 +22,7 @@ break;
 });
 clj_eyes.param_handling.manditory_or_selected = (function clj_eyes$param_handling$manditory_or_selected(item){
 
-var class_items_30360 = clojure.string.split.call(null,new cljs.core.Keyword(null,"class","class",-2030961996).cljs$core$IFn$_invoke$arity$1(item),/ /);
+var class_items_28999 = clojure.string.split.call(null,new cljs.core.Keyword(null,"class","class",-2030961996).cljs$core$IFn$_invoke$arity$1(item),/ /);
 
 if(((new cljs.core.Keyword(null,"class","class",-2030961996).cljs$core$IFn$_invoke$arity$1(item).indexOf("option-input-manditory") > (-1))) || ((new cljs.core.Keyword(null,"class","class",-2030961996).cljs$core$IFn$_invoke$arity$1(item).indexOf("activated") > (-1)))){
 return true;
@@ -57,18 +57,20 @@ return null;
 /**
  * Handles the checking and unchecking of the optional parameters
  */
-clj_eyes.param_handling.option_checkbox_handler = (function clj_eyes$param_handling$option_checkbox_handler(){
+clj_eyes.param_handling.gen_option_checkbox_handler = (function clj_eyes$param_handling$gen_option_checkbox_handler(id){
+return (function (){
 var foo = this;
-var option_div_30361 = jayq.core.$.call(null,foo).parent();
-var option_frame_30362 = option_div_30361.parent();
-var option_group_30363 = jayq.core.$.call(null,foo).data("option-group");
-if((jayq.core.attr.call(null,option_div_30361,"class").indexOf("activated") < (0))){
-clj_eyes.param_handling.change_optiongroup_checkbox.call(null,option_frame_30362,option_group_30363,jayq.core.add_class);
+var option_div_29000 = jayq.core.$.call(null,foo).parent();
+var option_frame_29001 = option_div_29000.parent();
+var option_group_29002 = jayq.core.$.call(null,foo).data("option-group");
+if((jayq.core.attr.call(null,option_div_29000,"class").indexOf("activated") < (0))){
+clj_eyes.param_handling.change_optiongroup_checkbox.call(null,option_frame_29001,option_group_29002,jayq.core.add_class);
 } else {
-clj_eyes.param_handling.change_optiongroup_checkbox.call(null,option_frame_30362,option_group_30363,jayq.core.remove_class);
+clj_eyes.param_handling.change_optiongroup_checkbox.call(null,option_frame_29001,option_group_29002,jayq.core.remove_class);
 }
 
-return console.log([cljs.core.str(jayq.core.attr.call(null,jayq.core.$.call(null,foo),"class"))].join(''));
+return clj_eyes.param_handling.gen_param_input_change_handler.call(null,id).call(null);
+});
 });
 clj_eyes.param_handling.bind_inputs_on_change = (function clj_eyes$param_handling$bind_inputs_on_change(id){
 jayq.core.bind.call(null,(function (item){
@@ -77,7 +79,7 @@ console.log(cljs.core.count.call(null,item));
 return item;
 }).call(null,jayq.core.find.call(null,jayq.core.$.call(null,cljs.core.keyword.call(null,[cljs.core.str("#pipeline-"),cljs.core.str(cljs.core.name.call(null,id))].join(''))),new cljs.core.Keyword(null,"input","input",556931961))),new cljs.core.Keyword(null,"change","change",-1163046502),clj_eyes.param_handling.gen_param_input_change_handler.call(null,id));
 
-return jayq.core.bind.call(null,jayq.core.find.call(null,jayq.core.$.call(null,cljs.core.keyword.call(null,[cljs.core.str("#pipeline-"),cljs.core.str(cljs.core.name.call(null,id))].join(''))),new cljs.core.Keyword(null,".option-checkbox",".option-checkbox",1675746654)),new cljs.core.Keyword(null,"click","click",1912301393),clj_eyes.param_handling.option_checkbox_handler);
+return jayq.core.bind.call(null,jayq.core.find.call(null,jayq.core.$.call(null,cljs.core.keyword.call(null,[cljs.core.str("#pipeline-"),cljs.core.str(cljs.core.name.call(null,id))].join(''))),new cljs.core.Keyword(null,".option-checkbox",".option-checkbox",1675746654)),new cljs.core.Keyword(null,"click","click",1912301393),clj_eyes.param_handling.gen_option_checkbox_handler.call(null,id));
 });
 
-//# sourceMappingURL=param_handling.js.map?rel=1467034557027
+//# sourceMappingURL=param_handling.js.map?rel=1467093304216

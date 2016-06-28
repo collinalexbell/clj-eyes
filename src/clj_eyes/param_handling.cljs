@@ -2,6 +2,7 @@
   (:require [jayq.core :as jq]
            [clj-eyes.socket :as soc]))
 
+
 (defn jq-each-elements [elements each-fn]
   (let [elements (js->clj elements)]
     (dotimes [el-num (count elements)]
@@ -50,23 +51,24 @@
                 (if (= item-op-group option-group)
                   (change-fn (jq/$ item) "activated")))))))))
 
-(defn option-checkbox-handler
+(defn gen-option-checkbox-handler
   "Handles the checking and unchecking of the optional parameters"
-  []
-  (this-as foo
-    (let
-        [option-div
-         (-> (jq/$ foo)
-             .parent)
-         option-frame
-         (-> option-div
-             .parent)
-         option-group (-> (jq/$ foo)
-                          (.data "option-group"))]
-      (if (< (.indexOf (jq/attr option-div "class") "activated") 0)
-        (change-optiongroup-checkbox option-frame option-group jq/add-class)
-        (change-optiongroup-checkbox option-frame option-group jq/remove-class)))
-    (.log js/console (str (jq/attr (jq/$ foo) "class")))))
+  [id]
+
+  (fn [] (this-as foo
+           (let
+               [option-div
+                (-> (jq/$ foo)
+                    .parent)
+                option-frame
+                (-> option-div
+                    .parent)
+                option-group (-> (jq/$ foo)
+                                 (.data "option-group"))]
+               (if (< (.indexOf (jq/attr option-div "class") "activated") 0)
+                 (change-optiongroup-checkbox option-frame option-group jq/add-class)
+                 (change-optiongroup-checkbox option-frame option-group jq/remove-class)))
+           ((gen-param-input-change-handler id)))))
 
 
 (defn bind-inputs-on-change [id]
@@ -76,5 +78,5 @@
       (jq/bind :change (gen-param-input-change-handler id)))
   (-> (jq/$ (keyword (str "#pipeline-" (name id))))
       (jq/find :.option-checkbox)
-      (jq/bind :click option-checkbox-handler)))
+      (jq/bind :click (gen-option-checkbox-handler id))))
 

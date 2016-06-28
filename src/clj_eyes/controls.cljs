@@ -49,10 +49,9 @@
     (dotimes [el-num (count elements)]
       (each-fn el-num (nth elements el-num)))))
 
-(defn other-transform []
-  (.log js/console "params changed"))
 
 (defn handle-transform-param-change []
+  "Will be depreciated as of v2"
   (let [params (atom [])]
       (.log js/console "params changed")
    (jq-each ".transform-param"
@@ -61,6 +60,11 @@
                                   :value (.-value item)})))
    (soc/chsk-send! [:opencv/load-transformation  {:transformation-name (jq/val (jq/$ :#select-transform))
                                                   :transformation-params @params}])))
+
+
+
+(defn other-transform []
+  (.log js/console "params changed"))
 
 (defn load-transform-options [html]
   (jq/html (jq/$ :#transform-options) html)

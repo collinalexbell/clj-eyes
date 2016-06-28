@@ -9532,3 +9532,114 @@ java.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/la
     java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
     java.lang.Thread.run (Thread.java:745)
 
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/param_handling.cljs   line:9  column:5  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.param-handling/jq-each[0m
+
+  [36m 6[0m  [36m(defn handle-transform-param-change [][0m
+  [36m 7[0m  [36m  (let [params (atom [])][0m
+  [36m 8[0m  [36m      (.log js/console "params changed")[0m
+  [33m 9[0m  [1m   (jq-each ".transform-param"[0m
+  [0m  [0m  [33m    ^--- Use of undeclared Var clj-eyes.param-handling/jq-each[0m
+  [36m10[0m  [36m            (fn [i item][0m
+  [36m11[0m  [36m              (swap! params conj {:name (jq/attr (jq/$ item) "name")[0m
+  [36m12[0m  [36m                                  :value (.-value item)})))[0m
+  [36m13[0m  [36m   (soc/chsk-send! [:opencv/load-transformation  {:transformation-name (jq/val (jq/$ :#select-transform))[0m
+  [36m14[0m  [36m                                                  :transformation-params @params}])))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/param_handling.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 2.833 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.618 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/param_handling.cljs   line:10  column:5  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.param-handling/jq-each[0m
+
+  [36m 6[0m  [36m(defn handle-transform-param-change [][0m
+  [36m 7[0m  [36m  "Will be depreciated as of v2"[0m
+  [36m 8[0m  [36m  (let [params (atom [])][0m
+  [36m 9[0m  [36m      (.log js/console "params changed")[0m
+  [33m10[0m  [1m   (jq-each ".transform-param"[0m
+  [0m  [0m  [33m    ^--- Use of undeclared Var clj-eyes.param-handling/jq-each[0m
+  [36m11[0m  [36m            (fn [i item][0m
+  [36m12[0m  [36m              (swap! params conj {:name (jq/attr (jq/$ item) "name")[0m
+  [36m13[0m  [36m                                  :value (.-value item)})))[0m
+  [36m14[0m  [36m   (soc/chsk-send! [:opencv/load-transformation  {:transformation-name (jq/val (jq/$ :#select-transform))[0m
+  [36m15[0m  [36m                                                  :transformation-params @params}])))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/param_handling.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.778 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.282 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:72  column:22  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.param-handling/handle-transform-param-change[0m
+
+  [36m69[0m  [36m(defn load-transform-options [html][0m
+  [36m70[0m  [36m  (jq/html (jq/$ :#transform-options) html)[0m
+  [36m71[0m  [36m  (-> (jq/$ :.transform-param)[0m
+  [33m72[0m  [1m    (jq/bind :change params/handle-transform-param-change)))[0m
+  [0m  [0m  [33m                     ^--- Use of undeclared Var clj-eyes.param-handling/handle-transform-param-change[0m
+  [36m73[0m  [36m[0m
+  [36m74[0m  [36m[0m
+  [36m75[0m  [36m(defn add-transformation [html][0m
+  [36m76[0m  [36m  (.log js/console html)[0m
+  [36m77[0m  [36m  (-> (jq/$ :.pipeline-frame)[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 1.396 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.774 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[31mFailed to compile "resources/public/js/clj-eyes.js" in 0.03 seconds.[0m
+[36m----  Exception    ----[0m
+
+  clojure.lang.Compiler$CompilerException : [1mjava.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J, compiling:(cv_pipeline.clj:17:3)[0m
+           java.lang.UnsatisfiedLinkError : [1morg.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.lang.UnsatisfiedLinkError: org.opencv.imgcodecs.Imgcodecs.imread_1(Ljava/lang/String;)J
+ at org.opencv.imgcodecs.Imgcodecs.imread_1 (Imgcodecs.java:-2)
+    org.opencv.imgcodecs.Imgcodecs.imread (Imgcodecs.java:102)
+    sun.reflect.NativeMethodAccessorImpl.invoke0 (NativeMethodAccessorImpl.java:-2)
+    sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke (Method.java:497)
+    clojure.lang.Reflector.invokeMatchingMethod (Reflector.java:93)
+    clojure.lang.Compiler$StaticMethodExpr.eval (Compiler.java:1698)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:451)
+    clojure.lang.Compiler.eval (Compiler.java:6932)
+    clojure.lang.Compiler.load (Compiler.java:7379)
+    clojure.lang.Compiler.loadFile (Compiler.java:7317)
+    clojure.lang.RT$3.invoke (RT.java:320)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:77)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:62)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__21123.invoke (clj_reloading.clj:109)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__21169.invoke (javascript_reloading.clj:60)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__21209.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__21047.invoke (notifications.clj:180)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__21221.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__21258.invoke (cljs_autobuild.clj:220)
+    figwheel_sidecar.utils$sync_exec$fn__4768$fn__4769.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__4768.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1941)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+

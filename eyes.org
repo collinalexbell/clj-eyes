@@ -183,7 +183,15 @@
 		CLOSED: [2016-06-27 Mon 13:36]
 		
 ** Path to v2.0
-*** TODO When the transform gets loaded, set the initial values of the sliders
+*** DONE When the transform gets loaded, set the initial values of the sliders
+		CLOSED: [2016-06-28 Tue 04:20]
+*** DONE Test that the app is somewhat responsive in a live server environment.
+		CLOSED: [2016-06-28 Tue 05:19]
+		+ Result. It kindof sucks.
+*** DONE Set up dev and production profiles
+		CLOSED: [2016-06-28 Tue 05:36]
+*** TODO Get handle-transform-param-change to only submit params for the transform that has been used
+*** TODO Trigger a picture reload if user checks/unchecks an optional param #6
 *** TODO Add a value label next to the slider bar so that users know what actual values they are setting params to
 *** TODO Make sure that Gaussian Blur filter works and that it loads in all of the option-groups
 *** TODO Test that adding a transformation to the pipeline with a non default source works correctly
