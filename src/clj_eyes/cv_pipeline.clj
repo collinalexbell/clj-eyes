@@ -142,7 +142,7 @@
 
 (defn add-transformation [pipeline-list transformation-selection uid parent-frame-name-str]
   (let [pipeline (get-pipeline-from-list pipeline-list uid)
-        parent-frame (get-frame-from-pipeline pipeline-list (keyword parent-frame-name-str))
+        parent-frame (get-frame-from-pipeline pipeline (keyword parent-frame-name-str))
         frame-id (generate-transform-id pipeline-list uid)]
 
     {:pipelines
@@ -178,7 +178,9 @@
      (assoc pipeline (:id data)
       (load-image-matrix-into-pipeline-frame
        frame
-       (do-transform (:source-frame frame)
+       (do-transform (get pipeline (:source-frame frame))
                      {:transformation-name (:function-name data)
                       :transformation-params (:param-list data)}))))))
+
+
 
