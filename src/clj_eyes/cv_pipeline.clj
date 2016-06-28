@@ -24,8 +24,8 @@
 
 (defn pipeline-frame
   "Will generate the data structure that is neccisary for a pipeline frame in the gui"
-  [source-frame id]
-  {:source-frame source-frame :id id})
+  [source-frame id function-name]
+  {:source-frame source-frame :id id :function-name function-name})
 
 (defn add-transformation-params-to [transformation-name-keyword pipeline-frame]
   (assoc pipeline-frame
@@ -179,6 +179,6 @@
       (load-image-matrix-into-pipeline-frame
        frame
        (do-transform (:source-frame frame)
-                     {:transformation-name "canny"
+                     {:transformation-name (:function-name data)
                       :transformation-params (:param-list data)}))))))
 

@@ -36,9 +36,10 @@
    {:type :boolean :label "L2 Gradient" :obligation :optional :default "true" :option-group 1}]
 
   :gaussian-blur
-  [{:type :range :label "Kernal Size"   :obligation :manditory :default "1" :option-group 0}
-   {:type :range :label "SigmaX"        :obligation :manditory :default "0" :option-group 0}
-   {:type :range :label "SigmaY"        :obligation :optional  :default "0" :option-group 1}]})
+  [{:type :range :label "Kernal Size X"   :obligation :manditory :default "1" :option-group 0 :step 2 :min 1}
+   {:type :range :label "Kernal Size Y"   :obligation :manditory :default "1" :option-group 0 :step 2 :min 1}
+   {:type :range :label "SigmaX"        :obligation :manditory :default "0" :option-group 0 :step 0.2 :min 0}
+   {:type :range :label "SigmaY"        :obligation :optional  :default "0" :option-group 1 :step 0.2 :min 0}]})
 
 
 (def transformation-labels
@@ -49,6 +50,10 @@
 (defn generate-default-params [param-list selection]
   (map
    (fn [item] {:value (:default item)})
-   (get param-list selection)))
+   (filter
+    #(if (= 0 (:option-group %1))
+       true
+       false)
+    (get param-list selection))))
 
 

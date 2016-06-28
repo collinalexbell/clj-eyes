@@ -192,8 +192,12 @@
 		CLOSED: [2016-06-28 Tue 05:36]
 *** DONE Trigger a picture reload if user checks/unchecks an optional param #6
 		CLOSED: [2016-06-28 Tue 05:56]
-*** TODO Add a value label next to the slider bar so that users know what actual values they are setting params to #7
-*** TODO Make sure that Gaussian Blur filter works and that it loads in all of the option-groups
+*** DONE Add a value label next to the slider bar so that users know what actual values they are setting params to #7
+		CLOSED: [2016-06-28 Tue 06:12]
+*** DONE Make sure the initial image loads in only the first option group #8
+		CLOSED: [2016-06-28 Tue 11:21]
+*** DONE Make sure that Gaussian Blur filter works and that it loads in all of the option-groups #9
+		CLOSED: [2016-06-28 Tue 11:36]
 *** TODO Test that adding a transformation to the pipeline with a non default source works correctly
 *** TODO Write code that will reperform all of the transforms if a new source is selected
 *** TODO Get Select from uploaded images to remember the images uploaded that session and allow for selection

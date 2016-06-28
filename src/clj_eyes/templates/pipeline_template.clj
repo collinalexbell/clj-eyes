@@ -140,9 +140,9 @@
   (html
    [:div.close-button "X"]))
 
-(defn pipeline-frame [name img-src img-id options-frame]
+(defn pipeline-frame [name img-src img-id options-frame function-name]
   (html
-   [:div.pipeline-frame {:id (str "pipeline-" (clojure.core/name img-id))}
+   [:div.pipeline-frame {:id (str "pipeline-" (clojure.core/name img-id)) :data-function-name (clojure.core/name function-name)}
     [:img {:src img-src :id img-id}]
     [:div.pipeline-right-wrapper
      [:div.options-wrapper
@@ -172,7 +172,7 @@
   [(if (= :manditory (:obligation d)) :div.option-input.option-input-manditory :div.option-input.option-input-optional)
    {:data-option-group (:option-group d)}
     [:div.option-checkbox {:data-option-group (:option-group d)}]
-    [:label.option-params (:label d) [:span.option-param-value (:default d)]
+    [:label.option-params (:label d) [:span.option-param-value  (:default d)]
      (if (not (= (:type d) :boolean))
       [:input {:type (:type d)
                :min (:min d)
@@ -247,11 +247,11 @@
     [:div#main-content
      (title)
      [:div#filter-content]
-     (pipeline-frame "Source Image" "/img" "pipeline-source-img" (source-options-frame))
+     (pipeline-frame "Source Image" "/img" "pipeline-source-img" (source-options-frame) "src")
      arrow
-     (pipeline-frame "Gaussian Filter" "/imgs/blurry.png" "filter1" (pipeline-options-frame gaussian-demo-options-data "filter1"))
+     (pipeline-frame "Gaussian Filter" "/imgs/blurry.png" "filter1" (pipeline-options-frame gaussian-demo-options-data "filter1") "gaussian-blur")
      arrow
-     (pipeline-frame "Canny Filter" "/imgs/canny.png" "filter2" (pipeline-options-frame canny-demo-options-data "filter2"))
+     (pipeline-frame "Canny Filter" "/imgs/canny.png" "filter2" (pipeline-options-frame canny-demo-options-data "filter2") "canny")
      (add-filter-to-pipeline)
      [:div#add-filter]]]
    [:script {:src "js/jquery-2.2.4.min.js"}]
@@ -266,7 +266,7 @@
     [:div#main-content
      (title)
      [:div#filter-content]
-     (pipeline-frame "Source Image" "imgs/test-pattern.png" "pipeline-source-img" (source-options-frame))
+     (pipeline-frame "Source Image" "imgs/test-pattern.png" "pipeline-source-img" (source-options-frame) "src")
      (add-filter-to-pipeline)
      [:div#add-filter]]]
    [:script {:src "js/jquery-2.2.4.min.js"}]
@@ -312,5 +312,6 @@
      (:transformation-label frame)
      (str "/img?id=" (name (:id frame)))
      (:id frame)
-     (pipeline-options-frame (:transformation-params frame) (name (:id frame))))))
+     (pipeline-options-frame (:transformation-params frame) (name (:id frame)))
+     (:function-name frame))))
 
