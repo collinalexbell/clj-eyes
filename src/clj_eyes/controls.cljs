@@ -107,7 +107,7 @@
 
 (defmethod -event-msg-handler :pipeline/reload-img
   [{:as ev-msg :keys [?data]}]
-  (.log js/console "Reloading img")
+  (.log js/console (str "Reloading img" (:id ?data)))
   (.log js/console (:id ?data))
   (img/reload-image (name (:id ?data))))
 

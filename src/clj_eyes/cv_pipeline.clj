@@ -166,6 +166,7 @@
   "The function that takes a pipeline-list, a uid and a data struct with an :id of the transformation as well as the new :param-list
   The function will return a pipeline-list with the new transform data associated with it"
   [pipeline-list uid data]
+  (println "updating transform")
   (let [pipeline
         (get-pipeline-from-list pipeline-list uid)
 

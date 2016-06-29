@@ -34,7 +34,8 @@
         uid    (:uid event-msg)]
     (pipeline/update-pipeline-list
      (pipeline/update-transform @pipeline/loaded-pipelines uid data))
-    (pipeline/notify-client-of-img-change uid (:id data))))
+    (pipeline/notify-client-of-img-change uid (:id data)))
+  ((:?reply-fn event-msg) {:status "ok"}))
 
 
 (defn handle-transformation-result
