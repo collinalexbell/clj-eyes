@@ -43,3 +43,7 @@
       .last
       (jq/after html)))
 
+(defn close-button [frame-id]
+  #(soc/chsk-send!
+   [:pipeline/close-frame
+    {:id (keyword frame-id)}]))

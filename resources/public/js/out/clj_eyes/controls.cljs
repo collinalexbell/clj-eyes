@@ -54,7 +54,8 @@
 (defmethod -event-msg-handler :pipeline/load-transformation-frame
   [{:as ev-msg :keys [?data]}]
   (handle/add-transformation (:html ?data))
-  (params/bind-inputs-on-change (:frame-id ?data)))
+  (params/bind-inputs-on-change (:frame-id ?data))
+  (bind/close-button (:frame-id ?data)))
 
 
 (defonce router_ (atom nil))

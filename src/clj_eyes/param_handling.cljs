@@ -91,7 +91,7 @@
           (gather-inputs-from-option-input the-list))
      (let [pipeline-input-list (find-downstream-transforms (jq/$ pipeline-frame))]
        [(concat [@the-list] (doall (map (fn [inputs] (:input-list  inputs)) pipeline-input-list)))
-        (concat [id]        (doall (map (fn [inputs] (keyword (:pipeline-id inputs) )) pipeline-input-list)))]
+        (concat [id]        (doall (map (fn [inputs] (keyword (:pipeline-id inputs))) pipeline-input-list)))]
 
        (concat [(transform-data. @the-list (name id))] pipeline-input-list))))
 

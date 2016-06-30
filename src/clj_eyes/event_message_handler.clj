@@ -58,6 +58,11 @@
        :frame-id
        (:frame-id transformation-result)})
 
+(defmethod -event-msg-handler :pipeline/close-frame
+  [ev-msg]
+  (let [data (second (:event ev-msg))])
+  (println (:id data)))
+
 (defmethod -event-msg-handler :pipeline/add-transformation
   [ev-msg]
                                         ;(soc/chsk-send! 1 [:opencv/load-transformation-options {:html (get-transform-html (:transformation-selection (second (:event ev-msg))))}])
