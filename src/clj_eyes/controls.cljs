@@ -11,11 +11,22 @@
             [cljs.core.async :refer [<!]]
             [clj-eyes.param-handling :as params]))
 
+
 (defn upload-file []
-    (http/post
-     "/upload-src"
-     {:multipart-params
-      [[:data "data"] ["src-file" (-> (.getElementById js/document "source-file") .-files (.item 0))]]}))
+  (let [postback-chan
+        (http/post
+         "/upload-src"
+         {:multipart-params
+          [[:data "data"] ["src-file" (-> (.getElementById js/document "source-file") .-files (.item 0))]]})]
+    (go ((fn [response]
+           (-> (params/find-and-notify-downstream-transforms
+                (jq/$ :#pipeline-pipeline-source-img)
+                "derp")
+               ((fn [pipeline-input-list]
+                  (params/send-update-transform-params
+                   (concat [] (doall (map (fn [inputs] (:input-list  inputs)) pipeline-input-list)))
+                   (concat [] (doall (map (fn [inputs] (keyword (subs (:pipeline-id inputs) 9))) pipeline-input-list))))))))
+         (<! postback-chan)))))
 
 (defn bind-on-file-select []
   (-> (jq/$ :#source-file)

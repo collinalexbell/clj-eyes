@@ -2,7 +2,8 @@
   (:require [taoensso.sente :as sente]
             [clj-eyes.web-socket :as soc]
             [clj-eyes.cv-filter :as filter]
-            [clj-eyes.templates.pipeline-template])
+            [clj-eyes.templates.pipeline-template]
+            [clj-eyes.pipeline-frame :as pipeline-frame])
   (:use hiccup.core))
 
 (import '[org.opencv.core MatOfInt MatOfByte Mat CvType Size]
@@ -19,28 +20,20 @@
 (defn get-pipelines []
   @loaded-pipelines)
 
-(defn notify-client-of-img-change [uid id]
-  (soc/chsk-send! uid [:pipeline/reload-img {:id id}]))
+(defrecord pipeline-specifier [uid id])
 
-(defn pipeline-frame
-  "Will generate the data structure that is neccisary for a pipeline frame in the gui"
-  [source-frame id function-name]
-  {:source-frame source-frame :id id :function-name function-name})
+(defn notify-client-of-img-change
+  "Will notify the client via socket of a change ina pipeline frame
+   Accepts a pipeline-specifier"
+  ([uid id]
+   (soc/chsk-send! uid [:pipeline/reload-img {:id id}]))
 
-(defn add-transformation-params-to [transformation-name-keyword pipeline-frame]
-  (assoc pipeline-frame
-   :transformation-params (transformation-name-keyword filter/filter-params)
-   :transformation-label  (filter/transformation-labels transformation-name-keyword)))
+  ([the-pipeline-specifier]
+   (soc/chsk-send!
+    (:uid the-pipeline-specifier)
+    [:pipeline/reload-img {:id (:id the-pipeline-specifier)}])))
 
 
-(defn load-image-matrix-into-pipeline-frame
-  "Will create a matrix field in the pipeline frame that is takes on the value of img-matrix"
-  [pipeline-frame img-matrix]
-  (assoc pipeline-frame :img-matrix img-matrix))
-
-(defn fetch-img-matrix-from [frame]
-  "Will get the image matrix from frame"
-  (get frame :img-matrix nil))
 
 (defn get-pipeline-from-list [list-of-pipelines uid]
   (get list-of-pipelines uid {}))
@@ -63,12 +56,12 @@
         frame    (get-frame-from-pipeline
                   pipeline :pipeline-source-img
                   ;Constructor if pipeline doesn't exist
-                  #(pipeline-frame nil :pipeline-source-img :src))]
+                  #(pipeline-frame/pipeline-frame nil :pipeline-source-img :src))]
    (assoc pipeline-list uid
           (assoc
            pipeline
            :pipeline-source-img
-           (load-image-matrix-into-pipeline-frame
+           (pipeline-frame/load-image-matrix-into-pipeline-frame
             frame 
             (Imgcodecs/imread src-file))))))  
 
@@ -113,10 +106,10 @@
     "
   (let [pipeline (get-pipeline-from-list list-of-pipelines uid)
         frame (get-frame-from-pipeline pipeline img-id)
-        img-src (fetch-img-matrix-from frame)
+        img-src (pipeline-frame/fetch-img-matrix-from frame)
         img-buf (MatOfByte.)]
     ;Fetch the matrix from the frame and test that it is not nil
-    (if (not (nil? (fetch-img-matrix-from frame)))
+    (if (not (nil? (pipeline-frame/fetch-img-matrix-from frame)))
       (do
         (Imgcodecs/imencode ".webp"
                             img-src
@@ -148,10 +141,10 @@
     {:pipelines
      (assoc pipeline-list uid
         (assoc pipeline frame-id  
-            (add-transformation-params-to
+            (pipeline-frame/add-transformation-params-to
                 (keyword transformation-selection)
-                (load-image-matrix-into-pipeline-frame
-                 (pipeline-frame (keyword parent-frame-name-str) frame-id (keyword transformation-selection)) 
+                (pipeline-frame/load-image-matrix-into-pipeline-frame
+                 (pipeline-frame/pipeline-frame (keyword parent-frame-name-str) frame-id (keyword transformation-selection)) 
                  (do-transform parent-frame
                                {:transformation-name
                                 transformation-selection
@@ -177,7 +170,7 @@
 
     (assoc pipeline-list uid
      (assoc pipeline (:id data)
-      (load-image-matrix-into-pipeline-frame
+      (pipeline-frame/load-image-matrix-into-pipeline-frame
        frame
        (do-transform (get pipeline (:source-frame frame))
                      {:transformation-name (:function-name data)

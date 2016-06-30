@@ -200,7 +200,14 @@
 		CLOSED: [2016-06-28 Tue 11:36]
 *** DONE Get transformation to work with the non default source 
 		CLOSED: [2016-06-28 Tue 12:03]
-*** TODO Write code that will reperform all of the transforms if a new source is selected
+*** DONE Write code that will reperform all of the transforms if a new source is selected or if a parent frame was updated
+		CLOSED: [2016-06-29 Wed 10:26]
+*** DONE Load source from /img and not from a file path
+		CLOSED: [2016-06-30 Thu 01:29]
+*** DONE When new source is selected, reperform all of the transforms #12
+		CLOSED: [2016-06-30 Thu 02:13]
+*** TODO Remove id from find-and-notify-downstream-transforms in param_handling
+*** TODO Write code that uses clojure records
 *** TODO Get Select from uploaded images to remember the images uploaded that session and allow for selection
 *** TODO Set up the current pipeline and frame as a clojure type or record
 *** TODO Get the title to save into the correct session and load on refresh.
@@ -209,7 +216,9 @@
 *** TODO Remove x from source frame
 *** TODO Add listener to the close button that removes the frame from the pipeline.
 
+*** TODO Add feature that enlarges image when clicked on
 *** TODO Figure out why figwheel is nessicary to not cause an error when loading the page. I thought figwheel was optional.
 *** TODO On /pipeline page load, use loader throbber to indicate when the web socket connection has fully loaded
 
+		
 		

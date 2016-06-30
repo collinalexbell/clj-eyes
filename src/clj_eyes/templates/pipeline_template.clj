@@ -266,7 +266,7 @@
     [:div#main-content
      (title)
      [:div#filter-content]
-     (pipeline-frame "Source Image" "imgs/test-pattern.png" "pipeline-source-img" (source-options-frame) "src")
+     (pipeline-frame "Source Image" "/img?id=pipeline-source-img" "pipeline-source-img" (source-options-frame) "src")
      (add-filter-to-pipeline)
      [:div#add-filter]]]
    [:script {:src "js/jquery-2.2.4.min.js"}]

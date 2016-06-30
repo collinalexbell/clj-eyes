@@ -32,10 +32,15 @@
   [event-msg]
   (let [data (second (:event event-msg))
         uid    (:uid event-msg)]
-    (pipeline/update-pipeline-list
-     (pipeline/update-transform @pipeline/loaded-pipelines uid data))
-    (pipeline/notify-client-of-img-change uid (:id data)))
-  ((:?reply-fn event-msg) {:status "ok"}))
+
+    (doall (map
+      #(pipeline/update-pipeline-list
+        (pipeline/update-transform @pipeline/loaded-pipelines uid %1))
+      (:transform-list data)))
+    (doseq [transform-data (:transform-list data)]
+     (pipeline/notify-client-of-img-change
+      (pipeline/->pipeline-specifier
+       uid (:id transform-data))))))
 
 
 (defn handle-transformation-result
