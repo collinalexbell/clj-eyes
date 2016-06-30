@@ -42,8 +42,10 @@ goog.addDependency("../cognitect/transit.js", ['cognitect.transit'], ['com.cogni
 goog.addDependency("../cljs_http/util.js", ['cljs_http.util'], ['no.en.core', 'goog.Uri', 'cljs.core', 'goog.userAgent', 'cognitect.transit', 'clojure.string']);
 goog.addDependency("../cljs_http/core.js", ['cljs_http.core'], ['goog.net.Jsonp', 'goog.net.XhrIo', 'cljs.core', 'cljs_http.util', 'cljs.core.async', 'goog.net.EventType', 'clojure.string', 'goog.net.ErrorCode']);
 goog.addDependency("../cljs_http/client.js", ['cljs_http.client'], ['cljs_http.core', 'no.en.core', 'goog.Uri', 'cljs.core', 'cljs_http.util', 'cljs.core.async', 'clojure.string', 'cljs.reader']);
+goog.addDependency("../clj_eyes/handlers.js", ['clj_eyes.handlers'], ['clj_eyes.param_handling', 'cljs.core', 'cljs_http.client', 'cljs.core.async', 'jayq.core', 'clj_eyes.socket']);
+goog.addDependency("../clj_eyes/bind_funcs.js", ['clj_eyes.bind_funcs'], ['clj_eyes.param_handling', 'clj_eyes.handlers', 'cljs.core', 'jayq.core']);
 goog.addDependency("../clj_eyes/img_frame.js", ['clj_eyes.img_frame'], ['cljs.core']);
-goog.addDependency("../clj_eyes/controls.js", ['clj_eyes.controls'], ['clj_eyes.param_handling', 'cljs.core', 'cljs_http.client', 'cljs.core.async', 'jayq.core', 'taoensso.sente', 'clj_eyes.socket', 'taoensso.timbre', 'taoensso.encore', 'clj_eyes.img_frame']);
+goog.addDependency("../clj_eyes/controls.js", ['clj_eyes.controls'], ['clj_eyes.param_handling', 'clj_eyes.handlers', 'cljs.core', 'clj_eyes.bind_funcs', 'cljs.core.async', 'jayq.core', 'taoensso.sente', 'clj_eyes.socket', 'taoensso.timbre', 'taoensso.encore', 'clj_eyes.img_frame']);
 goog.addDependency("../clj_eyes/core.js", ['clj_eyes.core'], ['cljs.core', 'clj_eyes.controls', 'clj_eyes.socket']);
 goog.addDependency("../figwheel/client/utils.js", ['figwheel.client.utils'], ['goog.userAgent.product', 'cljs.core', 'clojure.string']);
 goog.addDependency("../figwheel/client/file_reloading.js", ['figwheel.client.file_reloading'], ['goog.string', 'goog.net.jsloader', 'goog.Uri', 'cljs.core', 'goog.object', 'cljs.core.async', 'clojure.set', 'figwheel.client.utils', 'clojure.string']);
