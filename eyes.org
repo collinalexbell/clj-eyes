@@ -206,7 +206,8 @@
 		CLOSED: [2016-06-30 Thu 01:29]
 *** DONE When new source is selected, reperform all of the transforms #12
 		CLOSED: [2016-06-30 Thu 02:13]
-*** TODO Remove id from find-and-notify-downstream-transforms in param_handling
+*** TODO Remove id from find-and-notify-downstream-transforms in param_handling and rename to find-transforms
+*** TODO Completly refactor find-transforms
 *** TODO Write code that uses clojure records
 *** TODO Get Select from uploaded images to remember the images uploaded that session and allow for selection
 *** TODO Set up the current pipeline and frame as a clojure type or record

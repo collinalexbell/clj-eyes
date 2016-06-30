@@ -19,9 +19,8 @@
          {:multipart-params
           [[:data "data"] ["src-file" (-> (.getElementById js/document "source-file") .-files (.item 0))]]})]
     (go ((fn [response]
-           (-> (params/find-and-notify-downstream-transforms
-                (jq/$ :#pipeline-pipeline-source-img)
-                "derp")
+           (-> (params/find-transforms
+                (jq/$ :#pipeline-pipeline-source-img))
                ((fn [pipeline-input-list]
                   (params/send-update-transform-params
                    (concat [] (doall (map (fn [inputs] (:input-list  inputs)) pipeline-input-list)))

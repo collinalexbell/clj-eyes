@@ -53,7 +53,7 @@
            (jq/find :span)
            (jq/html value))))))
 
-(defn find-and-notify-downstream-transforms [pipeline-frame-jq id]
+(defn find-transforms [pipeline-frame-jq]
   "A pure function that takes a pipeline frame and a pipeline id.
    Returns a data struct that contains the lists of inputs and pipeline-ids
    coresponding to the pipeline frames that are downstream and need to be updated"
@@ -82,7 +82,7 @@
      (-> (jq/$ (keyword (str "#pipeline-" (name id))))
           (jq/find :.option-input)
           (gather-inputs-from-option-input the-list))
-     (let [pipeline-input-list (find-and-notify-downstream-transforms (jq/$ pipeline-frame) id)]
+     (let [pipeline-input-list (find-transforms (jq/$ pipeline-frame))]
       (send-update-transform-params
        (concat [@the-list] (doall (map (fn [inputs] (:input-list  inputs)) pipeline-input-list)))
        (concat [id]        (doall (map (fn [inputs] (keyword (subs (:pipeline-id inputs) 9))) pipeline-input-list)))))))

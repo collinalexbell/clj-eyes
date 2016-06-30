@@ -11374,3 +11374,26 @@ notifying browser that file changed:  out/clj_eyes/controls.js
 [0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
 [32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.691 seconds.[0m
 notifying browser that file changed:  out/clj_eyes/controls.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[36m----  Compiler Warning on   src/clj_eyes/controls.cljs   line:22  column:17  ----[0m
+
+  [1mUse of undeclared Var clj-eyes.param-handling/find-and-notify-downstream-transforms[0m
+
+  [36m18[0m  [36m     "/upload-src"[0m
+  [36m19[0m  [36m     {:multipart-params[0m
+  [36m20[0m  [36m      [[:data "data"] ["src-file" (-> (.getElementById js/document "source-file") .-files (.item 0))]]})][0m
+  [36m21[0m  [36m(go ((fn [response][0m
+  [33m22[0m  [1m       (-> (params/find-and-notify-downstream-transforms[0m
+  [0m  [0m  [33m            ^--- Use of undeclared Var clj-eyes.param-handling/find-and-notify-downstream-transforms[0m
+  [36m23[0m  [36m            (jq/$ :#pipeline-pipeline-source-img)[0m
+  [36m24[0m  [36m            "derp")[0m
+  [36m25[0m  [36m           ((fn [pipeline-input-list][0m
+  [36m26[0m  [36m              (params/send-update-transform-params[0m
+  [36m27[0m  [36m               (concat [] (doall (map (fn [inputs] (:input-list  inputs)) pipeline-input-list)))[0m
+
+[36m----  Compiler Warning : Please see src/clj_eyes/controls.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.942 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/param_handling.js
+[0mCompiling "resources/public/js/clj-eyes.js" from ["src/"]...[0m
+[32mSuccessfully compiled "resources/public/js/clj-eyes.js" in 0.528 seconds.[0m
+notifying browser that file changed:  out/clj_eyes/controls.js

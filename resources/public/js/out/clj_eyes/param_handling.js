@@ -11,8 +11,8 @@ while(true){
 if((el_num < n__22622__auto__)){
 each_fn.call(null,el_num,cljs.core.nth.call(null,elements__$1,el_num));
 
-var G__33504 = (el_num + (1));
-el_num = G__33504;
+var G__34353 = (el_num + (1));
+el_num = G__34353;
 continue;
 } else {
 return null;
@@ -22,7 +22,7 @@ break;
 });
 clj_eyes.param_handling.manditory_or_selected = (function clj_eyes$param_handling$manditory_or_selected(item){
 
-var class_items_33505 = clojure.string.split.call(null,new cljs.core.Keyword(null,"class","class",-2030961996).cljs$core$IFn$_invoke$arity$1(item),/ /);
+var class_items_34354 = clojure.string.split.call(null,new cljs.core.Keyword(null,"class","class",-2030961996).cljs$core$IFn$_invoke$arity$1(item),/ /);
 
 if(((new cljs.core.Keyword(null,"class","class",-2030961996).cljs$core$IFn$_invoke$arity$1(item).indexOf("option-input-manditory") > (-1))) || ((new cljs.core.Keyword(null,"class","class",-2030961996).cljs$core$IFn$_invoke$arity$1(item).indexOf("activated") > (-1)))){
 return true;
@@ -47,7 +47,7 @@ cljs.core.swap_BANG_.call(null,param_list_atom,cljs.core.conj,new cljs.core.Pers
 return jayq.core.html.call(null,jayq.core.find.call(null,jq_item,new cljs.core.Keyword(null,"span","span",1394872991)),value);
 }));
 });
-clj_eyes.param_handling.find_and_notify_downstream_transforms = (function clj_eyes$param_handling$find_and_notify_downstream_transforms(pipeline_frame_jq,id){
+clj_eyes.param_handling.find_transforms = (function clj_eyes$param_handling$find_transforms(pipeline_frame_jq){
 
 var the_pipeline_list = cljs.core.atom.call(null,cljs.core.PersistentVector.EMPTY);
 clj_eyes.param_handling.jq_each_elements.call(null,((function (the_pipeline_list){
@@ -86,7 +86,7 @@ var the_list = cljs.core.atom.call(null,cljs.core.PersistentVector.EMPTY);
 var pipeline_frame = cljs.core.keyword.call(null,[cljs.core.str("#pipeline-"),cljs.core.str(cljs.core.name.call(null,id))].join(''));
 clj_eyes.param_handling.gather_inputs_from_option_input.call(null,jayq.core.find.call(null,jayq.core.$.call(null,cljs.core.keyword.call(null,[cljs.core.str("#pipeline-"),cljs.core.str(cljs.core.name.call(null,id))].join(''))),new cljs.core.Keyword(null,".option-input",".option-input",1885884989)),the_list);
 
-var pipeline_input_list = clj_eyes.param_handling.find_and_notify_downstream_transforms.call(null,jayq.core.$.call(null,pipeline_frame),id);
+var pipeline_input_list = clj_eyes.param_handling.find_transforms.call(null,jayq.core.$.call(null,pipeline_frame));
 return clj_eyes.param_handling.send_update_transform_params.call(null,cljs.core.concat.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.deref.call(null,the_list)], null),cljs.core.doall.call(null,cljs.core.map.call(null,((function (pipeline_input_list,the_list,pipeline_frame){
 return (function (inputs){
 return new cljs.core.Keyword(null,"input-list","input-list",-122103664).cljs$core$IFn$_invoke$arity$1(inputs);
@@ -115,13 +115,13 @@ return null;
 clj_eyes.param_handling.gen_option_checkbox_handler = (function clj_eyes$param_handling$gen_option_checkbox_handler(id){
 return (function (){
 var foo = this;
-var option_div_33506 = jayq.core.$.call(null,foo).parent();
-var option_frame_33507 = option_div_33506.parent();
-var option_group_33508 = jayq.core.$.call(null,foo).data("option-group");
-if((jayq.core.attr.call(null,option_div_33506,"class").indexOf("activated") < (0))){
-clj_eyes.param_handling.change_optiongroup_checkbox.call(null,option_frame_33507,option_group_33508,jayq.core.add_class);
+var option_div_34355 = jayq.core.$.call(null,foo).parent();
+var option_frame_34356 = option_div_34355.parent();
+var option_group_34357 = jayq.core.$.call(null,foo).data("option-group");
+if((jayq.core.attr.call(null,option_div_34355,"class").indexOf("activated") < (0))){
+clj_eyes.param_handling.change_optiongroup_checkbox.call(null,option_frame_34356,option_group_34357,jayq.core.add_class);
 } else {
-clj_eyes.param_handling.change_optiongroup_checkbox.call(null,option_frame_33507,option_group_33508,jayq.core.remove_class);
+clj_eyes.param_handling.change_optiongroup_checkbox.call(null,option_frame_34356,option_group_34357,jayq.core.remove_class);
 }
 
 return clj_eyes.param_handling.gen_param_input_change_handler.call(null,id).call(null);
@@ -137,4 +137,4 @@ return item;
 return jayq.core.bind.call(null,jayq.core.find.call(null,jayq.core.$.call(null,cljs.core.keyword.call(null,[cljs.core.str("#pipeline-"),cljs.core.str(cljs.core.name.call(null,id))].join(''))),new cljs.core.Keyword(null,".option-checkbox",".option-checkbox",1675746654)),new cljs.core.Keyword(null,"click","click",1912301393),clj_eyes.param_handling.gen_option_checkbox_handler.call(null,id));
 });
 
-//# sourceMappingURL=param_handling.js.map?rel=1467195802796
+//# sourceMappingURL=param_handling.js.map?rel=1467253293048
