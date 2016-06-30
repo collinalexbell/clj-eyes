@@ -19,12 +19,14 @@
          {:multipart-params
           [[:data "data"] ["src-file" (-> (.getElementById js/document "source-file") .-files (.item 0))]]})]
     (go ((fn [response]
-           (-> (params/find-transforms
+           (-> (params/find-downstream-transforms
                 (jq/$ :#pipeline-pipeline-source-img))
                ((fn [pipeline-input-list]
                   (params/send-update-transform-params
-                   (concat [] (doall (map (fn [inputs] (:input-list  inputs)) pipeline-input-list)))
-                   (concat [] (doall (map (fn [inputs] (keyword (subs (:pipeline-id inputs) 9))) pipeline-input-list))))))))
+                   (map (fn [pipeline-transform-data]
+                          (params/transform-data.
+                           (:input-list pipeline-transform-data)
+                           (:pipeline-id pipeline-transform-data))) pipeline-input-list))))))
          (<! postback-chan)))))
 
 (defn bind-on-file-select []

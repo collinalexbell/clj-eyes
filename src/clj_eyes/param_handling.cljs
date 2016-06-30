@@ -10,7 +10,6 @@
 
 (defn manditory-or-selected [item]
   "Tests an item to make sure it has a class option-input-manditory or activated"
-  (let [class-items (clojure.string/split (:class item) #" ")])
   (if (or
        (> (.indexOf (:class item) "option-input-manditory") -1)
        (> (.indexOf (:class item) "activated") -1))
@@ -19,19 +18,24 @@
 
 (defn send-update-transform-params
   "Will send a notification to the server that a frame or frames' inputs have changed with a list of all of the inputs"
-  [param-lists ids]
+  [transformation-data-list]
+  (.log js/console (clj->js transformation-data-list))
    (soc/chsk-send!
     [:pipeline/update-transform-params
      {:transform-list
       (map
-       (fn [param-list id] {:param-list
-               (filter manditory-or-selected param-list)
-               :id
-               id
-               :function-name
-               (-> (jq/$ (keyword (str "#pipeline-" (name id))))
-                   (jq/data "function-name"))})
-       param-lists ids)}]))
+       (fn [transformation-data]
+         (.log js/console (clj->js transformation-data))
+         {:param-list
+               (filter manditory-or-selected (:input-list transformation-data))
+
+          :id
+          (keyword (:pipeline-id transformation-data))
+
+          :function-name
+          (-> (jq/$ (keyword (str "#pipeline-" (name (:pipeline-id transformation-data)))))
+              (jq/data "function-name"))})
+       transformation-data-list)}]))
 
 (defn gather-inputs-from-option-input [option-input param-list-atom]
   (jq-each-elements
@@ -53,7 +57,10 @@
            (jq/find :span)
            (jq/html value))))))
 
-(defn find-transforms [pipeline-frame-jq]
+
+(defrecord transform-data [input-list pipeline-id])
+
+(defn find-downstream-transforms [pipeline-frame-jq]
   "A pure function that takes a pipeline frame and a pipeline id.
    Returns a data struct that contains the lists of inputs and pipeline-ids
    coresponding to the pipeline frames that are downstream and need to be updated"
@@ -73,19 +80,24 @@
                        item))
                     ((fn [option-input]
                        (gather-inputs-from-option-input option-input the-input-list)
-                       (swap! the-pipeline-list conj {:input-list @the-input-list :pipeline-id pipeline-id}))))))))
+                       (swap! the-pipeline-list conj  (transform-data. @the-input-list (keyword (subs pipeline-id 9)))))))))))
    @the-pipeline-list))
 
-(defn gen-param-input-change-handler [id]
-  #(let [the-list (atom [])
+(defn find-changing-transforms [id]
+  (let [the-list (atom [])
          pipeline-frame (keyword (str "#pipeline-" (name id)))]
      (-> (jq/$ (keyword (str "#pipeline-" (name id))))
           (jq/find :.option-input)
           (gather-inputs-from-option-input the-list))
-     (let [pipeline-input-list (find-transforms (jq/$ pipeline-frame))]
-      (send-update-transform-params
-       (concat [@the-list] (doall (map (fn [inputs] (:input-list  inputs)) pipeline-input-list)))
-       (concat [id]        (doall (map (fn [inputs] (keyword (subs (:pipeline-id inputs) 9))) pipeline-input-list)))))))
+     (let [pipeline-input-list (find-downstream-transforms (jq/$ pipeline-frame))]
+       [(concat [@the-list] (doall (map (fn [inputs] (:input-list  inputs)) pipeline-input-list)))
+        (concat [id]        (doall (map (fn [inputs] (keyword (:pipeline-id inputs) )) pipeline-input-list)))]
+
+       (concat [(transform-data. @the-list (name id))] pipeline-input-list))))
+
+(defn gen-param-input-change-handler[id]
+  #(send-update-transform-params (find-changing-transforms id)))
+
 
 
 (defn change-optiongroup-checkbox [option-frame option-group change-fn]
