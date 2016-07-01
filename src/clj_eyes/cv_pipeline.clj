@@ -6,14 +6,17 @@
             [clj-eyes.pipeline-frame :as pipeline-frame])
   (:use hiccup.core))
 
-(import '[org.opencv.core MatOfInt MatOfByte Mat CvType Size Core]
+(import '[org.opencv.core MatOfInt MatOfByte Mat CvType Size Core Scalar]
         '[org.opencv.imgcodecs Imgcodecs]
         '[org.opencv.imgproc Imgproc])
 
+(defn mat-with-size-of [parent-mat]
+  (Mat. (.size parent-mat) CvType/CV_8UC3))
+
 (defn mat-eq? [mat1 mat2]
-  (let [mat-dif (Mat.)]
-   (Core/compare mat1 mat2 mat-dif Core/CMP_EQ)
-   (if (= 0 (Core/countNonZero mat-dif))
+  (let [mat-dif  (Mat. (.size mat1) CvType/CV_8UC1)]
+   (Core/compare mat1 mat2 mat-dif Core/CMP_NE)
+   (if (= (Scalar. 0 0 0 0) (Core/sumElems mat-dif))
      true
      false)))
 
@@ -26,6 +29,12 @@
 
 (defn get-pipelines []
   @loaded-pipelines)
+
+(get-pipelines)
+
+(defn find-by-parent [id pipeline]
+  (map (fn [item] (second item))
+       (filter #(if (= id (:source-frame (second %1))) true false) pipeline)))
 
 (defrecord pipeline-specifier [uid id])
 
@@ -48,6 +57,47 @@
 (defn get-frame-from-pipeline
   ([pipeline id] (get pipeline id))
   ([pipeline id constr-if-nil] (get pipeline id (constr-if-nil))))
+
+(defn assoc-all-in-list [the-list key val]
+  "Assocs a key and a value into all entries of a list of maps"
+  (map #(assoc %1 key val) the-list))
+
+(defn update-tree-recursively [tree parent-key parent-node-id node-update-fn]
+   (reduce
+    (fn [reduced-tree item-to-update]
+      (assoc (update-tree-recursively reduced-tree parent-key (first item-to-update) node-update-fn)
+             (first item-to-update)
+             (node-update-fn (second item-to-update)
+                             ((parent-key (second item-to-update)) reduced-tree))))
+    tree
+    (filter #(= parent-node-id (parent-key (second %1))) tree))) 
+
+(defn transform-pipeline-frame [frame-to-update parent-frame]
+  (assoc
+   frame-to-update
+   :img-matrix
+   (do-transform
+    parent-frame
+    {:transformation-name   (:function-name                 frame-to-update)
+     :transformation-params (:current-transformation-params frame-to-update)})))
+
+(defn remove-pipeline-frame [pipeline id]
+  (let [source-frame-id (:source-frame (get-frame-from-pipeline pipeline id))]
+   (update-tree-recursively
+    (dissoc 
+     (reduce
+      #(assoc %1 (:id %2) %2)
+      pipeline
+      (assoc-all-in-list
+       (find-by-parent id pipeline)
+       :source-frame
+       source-frame-id))
+     id)
+    :source-frame
+    source-frame-id
+    transform-pipeline-frame)))
+
+
 
 (defn generate-transform-id [pipeline-list uid]
   (keyword
@@ -127,9 +177,6 @@
       nil)))
 
 
-(defn mat-with-size-of [parent-mat]
-  (Mat. (.size parent-mat) CvType/CV_8UC3))
-
 (defn do-transform [parent-frame transformation]
   (let [parent-mat (get parent-frame :img-matrix default-img)
         rv (mat-with-size-of parent-mat) 
@@ -148,16 +195,18 @@
     {:pipelines
      (assoc pipeline-list uid
         (assoc pipeline frame-id  
-            (pipeline-frame/add-transformation-params-to
-                (keyword transformation-selection)
-                (pipeline-frame/load-image-matrix-into-pipeline-frame
-                 (pipeline-frame/pipeline-frame (keyword parent-frame-name-str) frame-id (keyword transformation-selection)) 
-                 (do-transform parent-frame
-                               {:transformation-name
-                                transformation-selection
+            (pipeline-frame/add-current-transformation-params-to
+             (filter/generate-default-params filter/filter-params (keyword transformation-selection))
+             (pipeline-frame/add-transformation-params-to
+              (keyword transformation-selection)
+              (pipeline-frame/load-image-matrix-into-pipeline-frame
+               (pipeline-frame/pipeline-frame (keyword parent-frame-name-str) frame-id (keyword transformation-selection)) 
+               (do-transform parent-frame
+                             {:transformation-name
+                              transformation-selection
 
-                                :transformation-params
-                                (filter/generate-default-params filter/filter-params (keyword transformation-selection))})))))
+                              :transformation-params
+                              (filter/generate-default-params filter/filter-params (keyword transformation-selection))}))))))
 
      :frame-id frame-id}))
 
@@ -177,11 +226,13 @@
 
     (assoc pipeline-list uid
      (assoc pipeline (:id data)
-      (pipeline-frame/load-image-matrix-into-pipeline-frame
-       frame
-       (do-transform (get pipeline (:source-frame frame))
-                     {:transformation-name (:function-name data)
-                      :transformation-params (:param-list data)}))))))
+      (pipeline-frame/add-current-transformation-params-to
+       (:param-list data)
+       (pipeline-frame/load-image-matrix-into-pipeline-frame
+        frame
+        (do-transform (get pipeline (:source-frame frame))
+                      {:transformation-name (:function-name data)
+                       :transformation-params (:param-list data)})))))))
 
 
 

@@ -29,8 +29,66 @@
 
 (deftest mat-eq?
   (let [mat-1 (Imgcodecs/imread "resources/public/imgs/test-pattern.png")
-        mat-2 (Imgcodecs/imread "resources/public/imgs/test-pattern.png")]
-    (is (pipeline/mat-eq? mat-1 mat-2))))
+        mat-2 (Imgcodecs/imread "resources/public/imgs/test-pattern.png")
+        mat-3 (pipeline/mat-with-size-of mat-1)
+        mat-4 (pipeline/mat-with-size-of mat-1)]
+    (is (pipeline/mat-eq? mat-1 mat-2))
+    ;Blur the image and test for equality
+    (Imgproc/GaussianBlur mat-1 mat-3 (Size. 3 3) 0.0)
+    (Imgproc/GaussianBlur mat-1 mat-4 (Size. 3 3) 0.0)
+    (is (not (pipeline/mat-eq? mat-1 mat-3)))
+    (is (pipeline/mat-eq? mat-3 mat-4))))
+
+(deftest find-by-parent
+  (is (= (pipeline/find-by-parent
+          :transformation1
+          {:transformation1
+           {:source-frame :pipeline-source-img}
+           :transformation2
+           {:source-frame :transformation1
+            :data :derp}})
+         [{:source-frame :transformation1 :data :derp}])))
+
+(deftest assoc-all-in-list
+  (is (= [{:source-frame :new-frame :data :derp-data}]
+         (pipeline/assoc-all-in-list
+          [{:source-frame :derp-frame :data :derp-data}]
+          :source-frame
+          :new-frame))))
+
+(deftest update-tree-recursively
+ (let
+     [source-tree
+      {:item1 {:parent nil}
+       :item2 {:parent :item1 :text nil}
+       :item3 {:parent :item1 :text nil}
+       :item4 {:parent :item2 :text nil}}
+
+      tree-updated-from-item2
+      {:item1 {:parent nil}
+       :item2 {:parent :item1 :text nil}
+       :item3 {:parent :item1 :text nil}
+       :item4 {:parent :item2 :text :updated}}
+
+      tree-updated-from-item1
+      {:item1 {:parent nil}
+       :item2 {:parent :item1 :text :updated}
+       :item3 {:parent :item1 :text :updated}
+       :item4 {:parent :item2 :text :updated}}
+
+      update-fn #(assoc %1 :text :updated)]
+
+   (is (= tree-updated-from-item2 (pipeline/update-tree-recursively
+                                   source-tree
+                                   :parent
+                                   :item2
+                                   update-fn)))
+
+   (is (= tree-updated-from-item1 (pipeline/update-tree-recursively
+                                   source-tree
+                                   :parent
+                                   :item1
+                                   update-fn)))))
 
 (run-tests)
 

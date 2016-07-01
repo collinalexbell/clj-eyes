@@ -6,6 +6,14 @@
   [source-frame id function-name]
   {:source-frame source-frame :id id :function-name function-name})
 
+(defn add-current-transformation-params-to
+  "Caches the current params for reloads and pipeline node restructuring without needing to reference client"
+  [transformation-params pipeline-frame]
+  (assoc
+   pipeline-frame
+   :current-transformation-params
+   transformation-params))
+
 (defn add-transformation-params-to
   "Adds a label and params to a pipeline frame"
   [transformation-name-keyword pipeline-frame]

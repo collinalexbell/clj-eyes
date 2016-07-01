@@ -60,8 +60,10 @@
 
 (defmethod -event-msg-handler :pipeline/close-frame
   [ev-msg]
-  (let [data (second (:event ev-msg))])
-  (println (:id data)))
+  (let [data (second (:event ev-msg))]
+    (pipeline/remove-pipeline-frame
+     (pipeline/get-pipeline-from-list @pipeline/loaded-pipelines (:uid ev-msg))
+     (:id data))))
 
 (defmethod -event-msg-handler :pipeline/add-transformation
   [ev-msg]
