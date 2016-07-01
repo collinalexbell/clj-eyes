@@ -182,7 +182,7 @@
         rv (mat-with-size-of parent-mat) 
         name (transformation :transformation-name) 
         params (map #(:value %) (transformation :transformation-params))
-        name-symbol (symbol "clj-eyes.cv-filter" name)]
+        name-symbol (symbol "clj-eyes.cv-filter" (clojure.core/name name))]
     (apply (eval  name-symbol) (cons parent-mat (cons rv params)))
     rv))
 
