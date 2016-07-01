@@ -27,6 +27,11 @@
     (is (= filter-id1 :transformation1))
     (is (= filter-id2 :transformation2))))
 
+(deftest mat-eq?
+  (let [mat-1 (Imgcodecs/imread "resources/public/imgs/test-pattern.png")
+        mat-2 (Imgcodecs/imread "resources/public/imgs/test-pattern.png")]
+    (is (pipeline/mat-eq? mat-1 mat-2))))
+
 (run-tests)
 
 ;(clojure.test/test-vars [#'clj-eyes.pipeline-test/fetch-webp])

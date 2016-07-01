@@ -6,9 +6,16 @@
             [clj-eyes.pipeline-frame :as pipeline-frame])
   (:use hiccup.core))
 
-(import '[org.opencv.core MatOfInt MatOfByte Mat CvType Size]
+(import '[org.opencv.core MatOfInt MatOfByte Mat CvType Size Core]
         '[org.opencv.imgcodecs Imgcodecs]
         '[org.opencv.imgproc Imgproc])
+
+(defn mat-eq? [mat1 mat2]
+  (let [mat-dif (Mat.)]
+   (Core/compare mat1 mat2 mat-dif Core/CMP_EQ)
+   (if (= 0 (Core/countNonZero mat-dif))
+     true
+     false)))
 
 (def loaded-pipelines (atom {}))
 
