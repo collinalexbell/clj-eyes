@@ -60,12 +60,25 @@
 
 (defmethod -event-msg-handler :pipeline/close-frame
   [ev-msg]
-  (let [data (second (:event ev-msg))]
+  (let [data
+        (second (:event ev-msg))
+
+        edited-pipeline-result
+        (pipeline/remove-pipeline-frame
+         (pipeline/get-pipeline-from-list @pipeline/loaded-pipelines (:uid ev-msg))
+         (:id data))]
+
     (pipeline/update-pipeline-list
-     (assoc @pipeline/loaded-pipelines (:uid ev-msg)
-      (pipeline/remove-pipeline-frame
-       (pipeline/get-pipeline-from-list @pipeline/loaded-pipelines (:uid ev-msg))
-       (:id data))))))
+     (assoc @pipeline/loaded-pipelines
+            (:uid ev-msg)
+            (:pipeline edited-pipeline-result)))
+
+    ;Notify the client
+    (doall (map #(pipeline/notify-client-of-img-change
+                  (pipeline/->pipeline-specifier
+                   (:uid ev-msg)
+                   %1))
+                (:affected-ids edited-pipeline-result)))))
 
 (defmethod -event-msg-handler :pipeline/add-transformation
   [ev-msg]

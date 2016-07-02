@@ -73,8 +73,11 @@
     (filter #(= parent-node-id (parent-key (second %1))) tree))) 
 
 (defn transform-pipeline-frame [frame-to-update parent-frame]
+  "Assocs a new :img-matrix into the frame and then sets :edited to true to singal the frame was affected"
   (assoc
    frame-to-update
+   :edited
+   true
    :img-matrix
    (do-transform
     parent-frame
@@ -82,20 +85,33 @@
      :transformation-params (:current-transformation-params frame-to-update)})))
 
 (defn remove-pipeline-frame [pipeline id]
+  "Will remove a frame with id frome a pipline. It relinks & reloads the :img-matrix of all affected frames
+   Returns a map with keys [:pipeline :affected-ids].
+   :pipeline is the resultant pipeline. This is needed for obvious reasons
+   :affected-ids contains all of the ids of frames which had their :img-matrix recomputed. This is needed for notifying the client"
   (let [source-frame-id (:source-frame (get-frame-from-pipeline pipeline id))]
-   (update-tree-recursively
-    (dissoc 
-     (reduce
-      #(assoc %1 (:id %2) %2)
-      pipeline
-      (assoc-all-in-list
-       (find-by-parent id pipeline)
-       :source-frame
-       source-frame-id))
-     id)
-    :source-frame
-    source-frame-id
-    transform-pipeline-frame)))
+   (reduce 
+    (fn [result frame]
+      (assoc
+       result
+       :pipeline (assoc (:pipeline result) (:id (second frame)) (dissoc (second frame) :edited))
+       :affected-ids (if (get (second frame) :edited false)
+                       (conj (:affected-ids result) (first frame))
+                       (:affected-ids result))))
+    {:pipeline {} :affected-ids []}
+    (update-tree-recursively
+     (dissoc 
+      (reduce
+       #(assoc %1 (:id %2) %2)
+       pipeline
+       (assoc-all-in-list
+        (find-by-parent id pipeline)
+        :source-frame
+        source-frame-id))
+      id)
+     :source-frame
+     source-frame-id
+     transform-pipeline-frame))))
 
 
 
