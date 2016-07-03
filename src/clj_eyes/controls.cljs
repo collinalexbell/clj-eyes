@@ -57,6 +57,11 @@
   (params/bind-inputs-on-change (:frame-id ?data))
   (bind/close-button (:frame-id ?data)))
 
+(defmethod -event-msg-handler :pipeline/close-frame
+  [{:as ev-msg :keys [?data]}]
+  (.log js/console "close frame data recieved")
+  (handle/close-frame (:id ?data)))
+
 
 (defonce router_ (atom nil))
 (defn  stop-router! [] (when-let [stop-f @router_] (stop-f)))

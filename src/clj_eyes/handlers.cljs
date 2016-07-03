@@ -47,3 +47,18 @@
   #(soc/chsk-send!
    [:pipeline/close-frame
     {:id (keyword frame-id)}]))
+
+(defn close-frame [id]
+  (.log js/console (str "close-frame count: " (count (jq/$ (str "#pipeline-" (clojure.core/name id))))))
+  (let [jq-frame
+        (jq/$
+         (str "#pipeline-" (clojure.core/name id)))]
+
+    ;Delete the arrow above the jq-frame
+    (-> jq-frame
+        (jq/prev :.down-arrow)
+        jq/remove)
+
+    ;Delete the frame itself
+    (-> jq-frame
+        jq/remove)))

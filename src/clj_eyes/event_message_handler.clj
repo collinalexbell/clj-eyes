@@ -73,12 +73,11 @@
             (:uid ev-msg)
             (:pipeline edited-pipeline-result)))
 
-    ;Notify the client
-    (doall (map #(pipeline/notify-client-of-img-change
-                  (pipeline/->pipeline-specifier
-                   (:uid ev-msg)
-                   %1))
-                (:affected-ids edited-pipeline-result)))))
+    ;Notify the client 
+    (pipeline/notify-client-of-frame-deletion
+     (:uid ev-msg)
+     (:id data)
+     (:affected-ids edited-pipeline-result))))
 
 (defmethod -event-msg-handler :pipeline/add-transformation
   [ev-msg]

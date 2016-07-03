@@ -49,6 +49,16 @@
     (:uid the-pipeline-specifier)
     [:pipeline/reload-img {:id (:id the-pipeline-specifier)}])))
 
+(defn notify-client-of-frame-deletion [uid closed-id affected-ids]
+  ;Notify the client that the image has now been removed.
+  (soc/chsk-send! uid [:pipeline/close-frame {:id closed-id}])
+
+  ;Notify the client of img changes
+  (doall (map #(notify-client-of-img-change
+                (->pipeline-specifier
+                 uid
+                 %1))
+              affected-ids)))
 
 
 (defn get-pipeline-from-list [list-of-pipelines uid]
