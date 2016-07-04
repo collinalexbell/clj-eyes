@@ -218,6 +218,9 @@
 		CLOSED: [2016-07-04 Mon 05:16]
 *** DONE Closing a frame based on an uploaded source makes the source unretrievable.
 		CLOSED: [2016-07-04 Mon 05:50]
+*** DONE Test that fixes #2 works on bitbucket
+		CLOSED: [2016-07-04 Mon 06:04]
+*** TODO Fix the default image loading on /pipeline load
 *** TODO Get Select from uploaded images to remember the images uploaded that session and allow for selection
 *** TODO Set up the current pipeline and frame as a clojure type or record
 *** TODO Get the title to save into the correct session and load on refresh.
