@@ -10,16 +10,25 @@
 (def default-img
   (Imgcodecs/imread "resources/public/imgs/test-pattern.png"))
 
+(defn fetch-tree [pipeline]
+  (:tree pipeline))
+
+(defn fetch-meta-data [pipeline]
+  (:meta-data pipeline))
+
 (defn find-by-parent [id pipeline]
   (map (fn [item] (second item))
-       (filter #(if (= id (:source-frame (second %1))) true false) pipeline)))
+       (filter #(if (= id (:source-frame (second %1))) true false) (:tree pipeline))))
+
+(defn fetch-parent-frame [pipeline frame]
+  (get (:tree pipeline) (:source-frame frame)))
 
 (defn get-frame-from-pipeline
-  ([pipeline id] (get pipeline id))
-  ([pipeline id constr-if-nil] (get pipeline id (constr-if-nil))))
+  ([pipeline id] (get (:tree pipeline) id))
+  ([pipeline id constr-if-nil] (get (:tree pipeline) id (constr-if-nil))))
 
 (defn assoc-all-in-list [the-list key val]
-  "Assocs a key and a value into all entries of a list of maps"
+  "Assocs a key and a value to all entries of a list of maps"
   (map #(assoc %1 key val) the-list))
 
 (defn update-tree-recursively [tree parent-key parent-node-id node-update-fn]
@@ -76,7 +85,7 @@
      (dissoc 
       (reduce
        #(assoc %1 (:id %2) %2)
-       pipeline
+       (:tree pipeline)
        (assoc-all-in-list
         (find-by-parent id pipeline)
         :source-frame
@@ -86,3 +95,19 @@
      source-frame-id
      transform-pipeline-frame))))
 
+
+(defn insert-frame [pipeline frame-id frame]
+  "Inserts a frame with a given id into the pipeline.
+   Returns the pipeline"
+  (assoc pipeline
+         :tree
+         (assoc (:tree pipeline) frame-id frame)
+         :meta-data
+         (assoc
+          (get pipeline :meta-data {})
+          :frame-no
+          (+ 1 (get (get pipeline :meta-data {}) :frame-no 0)))))
+
+(defn generate-transform-id [pipeline]
+  (keyword
+   (str "transformation" (get (:meta-data pipeline) :frame-no 0))))

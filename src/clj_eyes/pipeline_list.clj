@@ -56,11 +56,6 @@
   (get list-of-pipelines uid {}))
 
 
-(defn generate-transform-id [pipeline-list uid]
-  (keyword
-   (str "transformation"
-    (count (get-pipeline-from-list pipeline-list uid)))))
-
 (defn load-new-source
   "Will open the src file and load it into memory as an opencv mat
   Must take an atom as its 3rd parameter and will return the atom after loading"
@@ -72,7 +67,7 @@
                   ;Constructor if pipeline doesn't exist
                   #(pipeline-frame/pipeline-frame nil :pipeline-source-img :src))]
    (assoc pipeline-list uid
-          (assoc
+          (pipeline/insert-frame
            pipeline
            :pipeline-source-img
            (pipeline-frame/load-image-matrix-into-pipeline-frame
@@ -138,11 +133,11 @@
 (defn add-transformation [pipeline-list transformation-selection uid parent-frame-name-str]
   (let [pipeline (get-pipeline-from-list pipeline-list uid)
         parent-frame (pipeline/get-frame-from-pipeline pipeline (keyword parent-frame-name-str))
-        frame-id (generate-transform-id pipeline-list uid)]
+        frame-id (pipeline/generate-transform-id pipeline)]
 
     {:pipelines
      (assoc pipeline-list uid
-        (assoc pipeline frame-id  
+        (pipeline/insert-frame pipeline frame-id  
             (pipeline-frame/add-current-transformation-params-to
              (filter/generate-default-params filter/filter-params (keyword transformation-selection))
              (pipeline-frame/add-transformation-params-to
@@ -173,14 +168,12 @@
             (:id data))]
 
     (assoc pipeline-list uid
-     (assoc pipeline (:id data)
+     (pipeline/insert-frame pipeline (:id data)
       (pipeline-frame/add-current-transformation-params-to
        (:param-list data)
        (pipeline-frame/load-image-matrix-into-pipeline-frame
         frame
-        (pipeline/do-transform (get pipeline (:source-frame frame))
+        (pipeline/do-transform (pipeline/fetch-parent-frame pipeline frame)
                       {:transformation-name (:function-name data)
                        :transformation-params (:param-list data)})))))))
-
-
 
