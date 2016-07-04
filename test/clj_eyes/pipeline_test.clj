@@ -64,6 +64,22 @@
                                    :item1
                                    update-fn)))))
 
+(deftest cache-uploaded-src
+  (let [pipeline
+        {:tree {:pipeline-source-img {:img-matrix pipeline/default-img}}}]
+    (is (= org.opencv.core.Mat
+           (type
+            (:default-src
+             (:uploaded-img-cache
+              (pipeline/cache-uploaded-src pipeline :default-src))))))))
+
+
+(deftest fetch-uploaded-src-from-cache
+  (let [pipeline
+        {:uploaded-img-cache {:default-src pipeline/default-img}}]
+    (is (=
+         org.opencv.core.Mat
+         (type (pipeline/fetch-uploaded-src-from-cache pipeline "default-src"))))))
 
 
 (run-tests)
