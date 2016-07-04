@@ -126,7 +126,14 @@
                             ;;Settings, specifically image quality
                             (MatOfInt. (into-array Integer/TYPE [Imgcodecs/CV_IMWRITE_WEBP_QUALITY 30])))
        {:type :in-memory :value img-buf})
-      nil)))
+      (if (= img-id :pipeline-source-img)
+        (do
+          (Imgcodecs/imencode ".webp"
+                             pipeline/default-img
+                             img-buf
+                             (MatOfInt. (into-array Integer/TYPE [Imgcodecs/CV_IMWRITE_WEBP_QUALITY 30])))
+          {:type :in-memory :value img-buf})
+        nil))))
 
 
 
