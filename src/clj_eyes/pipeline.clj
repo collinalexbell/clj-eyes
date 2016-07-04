@@ -10,7 +10,7 @@
 (def default-img
   (Imgcodecs/imread "resources/public/imgs/test-pattern.png"))
 
-(defn fetch-tree [pipeline]
+(defn fetch-tree pipeline]
   (:tree pipeline))
 
 (defn fetch-meta-data [pipeline]
@@ -76,11 +76,14 @@
     (fn [result frame]
       (assoc
        result
-       :pipeline (assoc (:pipeline result) (:id (second frame)) (dissoc (second frame) :edited))
+       :pipeline (assoc (:tree (:pipeline result)) :tree
+                        (assoc (:tree (:pipeline result))
+                               (:id (second frame))
+                               (dissoc (second frame) :edited)))
        :affected-ids (if (get (second frame) :edited false)
                        (conj (:affected-ids result) (first frame))
                        (:affected-ids result))))
-    {:pipeline {} :affected-ids []}
+    {:pipeline {:meta-data (:meta-data pipeline) :tree {}} :affected-ids []}
     (update-tree-recursively
      (dissoc 
       (reduce
@@ -107,6 +110,12 @@
           (get pipeline :meta-data {})
           :frame-no
           (+ 1 (get (get pipeline :meta-data {}) :frame-no 0)))))
+
+(defn update-frame [pipeline frame-id frame]
+  "Will update the frame without incrimenting the :frame-no"
+    (assoc pipeline
+           :tree
+           (assoc (:tree pipeline) frame-id frame)))
 
 (defn generate-transform-id [pipeline]
   (keyword

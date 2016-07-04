@@ -168,7 +168,7 @@
             (:id data))]
 
     (assoc pipeline-list uid
-     (pipeline/insert-frame pipeline (:id data)
+     (pipeline/update-frame pipeline (:id data)
       (pipeline-frame/add-current-transformation-params-to
        (:param-list data)
        (pipeline-frame/load-image-matrix-into-pipeline-frame
