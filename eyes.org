@@ -210,7 +210,11 @@
 		CLOSED: [2016-06-30 Thu 02:23]
 *** DONE Refactor the cljs param handling code.#13
 		CLOSED: [2016-06-30 Thu 08:34]
-*** TODO Add listener to the close button that removes the frame from the pipeline.
+*** DONE Add listener to the close button that removes the frame from the pipeline.
+		CLOSED: [2016-07-03 Sun 09:24]
+*** DONE Refactor cv-pipeline into pipeline and pipeline-list
+		CLOSED: [2016-07-04 Mon 04:11]
+*** TODO Keep track of metadata associated with a pipeline.
 *** TODO Get Select from uploaded images to remember the images uploaded that session and allow for selection
 *** TODO Set up the current pipeline and frame as a clojure type or record
 *** TODO Get the title to save into the correct session and load on refresh.

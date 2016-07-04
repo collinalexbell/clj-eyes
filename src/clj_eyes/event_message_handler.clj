@@ -1,6 +1,7 @@
 (ns clj-eyes.event-message-handler
   (:require [clj-eyes.web-socket  :as soc]
-            [clj-eyes.cv-pipeline :as pipeline]
+            [clj-eyes.pipeline-list :as pipeline-list]
+            [clj-eyes.pipeline    :as pipeline]
             [clj-eyes.cv-filter   :as filter]
             [clj-eyes.templates.pipeline-template :as pipeline-template]
             [taoensso.sente       :as sente]))
@@ -34,24 +35,24 @@
         uid    (:uid event-msg)]
 
     (doall (map
-      #(pipeline/update-pipeline-list
-        (pipeline/update-transform @pipeline/loaded-pipelines uid %1))
+      #(pipeline-list/update-pipeline-list
+        (pipeline-list/update-transform @pipeline-list/loaded-pipelines uid %1))
       (:transform-list data)))
     (doseq [transform-data (:transform-list data)]
-     (pipeline/notify-client-of-img-change
-      (pipeline/->pipeline-specifier
+     (pipeline-list/notify-client-of-img-change
+      (pipeline-list/->pipeline-specifier
        uid (:id transform-data))))))
 
 
 (defn handle-transformation-result
   [transformation-result uid]
       ;first for some side effects
-      (pipeline/update-pipeline-list (:pipelines transformation-result))
+      (pipeline-list/update-pipeline-list (:pipelines transformation-result))
       ;now return the generated html
       {:html
        (pipeline-template/generate-new-frame-html
         (pipeline/get-frame-from-pipeline 
-         (pipeline/get-pipeline-from-list (:pipelines transformation-result) uid)
+         (pipeline-list/get-pipeline-from-list (:pipelines transformation-result) uid)
          (:frame-id transformation-result))
         filter/filter-params)
 
@@ -65,16 +66,16 @@
 
         edited-pipeline-result
         (pipeline/remove-pipeline-frame
-         (pipeline/get-pipeline-from-list @pipeline/loaded-pipelines (:uid ev-msg))
+         (pipeline-list/get-pipeline-from-list @pipeline-list/loaded-pipelines (:uid ev-msg))
          (:id data))]
 
-    (pipeline/update-pipeline-list
-     (assoc @pipeline/loaded-pipelines
+    (pipeline-list/update-pipeline-list
+     (assoc @pipeline-list/loaded-pipelines
             (:uid ev-msg)
             (:pipeline edited-pipeline-result)))
 
     ;Notify the client 
-    (pipeline/notify-client-of-frame-deletion
+    (pipeline-list/notify-client-of-frame-deletion
      (:uid ev-msg)
      (:id data)
      (:affected-ids edited-pipeline-result))))
@@ -89,8 +90,8 @@
      [:pipeline/load-transformation-frame
 
        (handle-transformation-result
-        (pipeline/add-transformation
-         @pipeline/loaded-pipelines
+        (pipeline-list/add-transformation
+         @pipeline-list/loaded-pipelines
          (:transformation-selection event-data)
          (:uid ev-msg)
          (:parent-frame event-data))

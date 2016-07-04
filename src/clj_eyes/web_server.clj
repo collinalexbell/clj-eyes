@@ -6,7 +6,7 @@
    [clj-eyes.templates.pipeline-template :as pipeline-template]
    [clj-eyes.web-socket :as soc]
    [clj-eyes.session :as session]
-   [clj-eyes.cv-pipeline :as pipeline]
+   [clj-eyes.pipeline-list :as pipeline-list]
    clj-eyes.event-message-handler
    [compojure.core :refer :all]
    [compojure.route :as route])
@@ -38,8 +38,8 @@
   (if (not (nil? (:id (:params request)))) 
       (let [webp
 
-            (pipeline/fetch-webp
-             @pipeline/loaded-pipelines
+            (pipeline-list/fetch-webp
+             @pipeline-list/loaded-pipelines
              (:uid (request :session))
              (keyword (:id (:params request))))]
 
@@ -53,9 +53,9 @@
   (let [session (:session req)
         uid (:uid session)]
     ;;Converting a File to a pathname only to use CV to load the file again seems a bit redundant, but CV cant imread from File obj
-    (pipeline/update-pipeline-list
-     (pipeline/load-new-source (.toString (:tempfile (:src-file (:params req)))) uid @pipeline/loaded-pipelines))
-    (pipeline/notify-client-of-img-change uid "pipeline-source-img")
+    (pipeline-list/update-pipeline-list
+     (pipeline-list/load-new-source (.toString (:tempfile (:src-file (:params req)))) uid @pipeline-list/loaded-pipelines))
+    (pipeline-list/notify-client-of-img-change uid "pipeline-source-img")
     {:status 200}))
 
 
