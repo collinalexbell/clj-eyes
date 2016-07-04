@@ -197,7 +197,7 @@
     [:div#select-source-upload "Upload new image"]
     [:input#source-file {:type "file" :style "display:none;"}]
     [:p "OR"]
-     [:select.selectpicker {:multiple true :title "Select from uploaded images"}
+     [:select.selectpicker {:title "Select from uploaded images" :id "src-select"}
       (generate-source-options)]]))
 
 

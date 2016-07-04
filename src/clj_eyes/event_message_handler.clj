@@ -43,6 +43,18 @@
       (pipeline-list/->pipeline-specifier
        uid (:id transform-data))))))
 
+(defmethod -event-msg-handler
+  :pipeline/select-source
+  [{:as ev-msg :keys [?data uid]}]
+  (pipeline-list/update-pipeline-list
+   (assoc
+    @pipeline-list/loaded-pipelines
+    uid
+    (pipeline/update-pipeline-source-img
+     (pipeline-list/get-pipeline-from-list @pipeline-list/loaded-pipelines uid)
+     (keyword (clojure.string/replace (:src-name ?data) #" " "-")))))
+  (pipeline-list/notify-client-of-img-change uid :pipeline-source-img))
+
 
 (defn handle-transformation-result
   [transformation-result uid]

@@ -27,6 +27,7 @@ goog.addDependency("../taoensso/timbre.js", ['taoensso.timbre'], ['cljs.core', '
 goog.addDependency("../taoensso/sente.js", ['taoensso.sente'], ['cljs.core', 'taoensso.sente.interfaces', 'cljs.core.async', 'taoensso.timbre', 'clojure.string', 'taoensso.encore']);
 goog.addDependency("../clj_eyes/socket.js", ['clj_eyes.socket'], ['cljs.core', 'cljs.core.async', 'taoensso.sente', 'taoensso.timbre', 'taoensso.encore']);
 goog.addDependency("../clj_eyes/param_handling.js", ['clj_eyes.param_handling'], ['cljs.core', 'jayq.core', 'clj_eyes.socket']);
+goog.addDependency("../hiccups/runtime.js", ['hiccups.runtime'], ['cljs.core', 'clojure.string']);
 goog.addDependency("../no/en/core.js", ['no.en.core'], ['cljs.core', 'goog.crypt.base64', 'clojure.string', 'cljs.reader']);
 goog.addDependency("../com/cognitect/transit/util.js", ['com.cognitect.transit.util'], ['goog.object']);
 goog.addDependency("../com/cognitect/transit/eq.js", ['com.cognitect.transit.eq'], ['com.cognitect.transit.util']);
@@ -42,7 +43,7 @@ goog.addDependency("../cognitect/transit.js", ['cognitect.transit'], ['com.cogni
 goog.addDependency("../cljs_http/util.js", ['cljs_http.util'], ['no.en.core', 'goog.Uri', 'cljs.core', 'goog.userAgent', 'cognitect.transit', 'clojure.string']);
 goog.addDependency("../cljs_http/core.js", ['cljs_http.core'], ['goog.net.Jsonp', 'goog.net.XhrIo', 'cljs.core', 'cljs_http.util', 'cljs.core.async', 'goog.net.EventType', 'clojure.string', 'goog.net.ErrorCode']);
 goog.addDependency("../cljs_http/client.js", ['cljs_http.client'], ['cljs_http.core', 'no.en.core', 'goog.Uri', 'cljs.core', 'cljs_http.util', 'cljs.core.async', 'clojure.string', 'cljs.reader']);
-goog.addDependency("../clj_eyes/handlers.js", ['clj_eyes.handlers'], ['clj_eyes.param_handling', 'cljs.core', 'cljs_http.client', 'cljs.core.async', 'jayq.core', 'clj_eyes.socket']);
+goog.addDependency("../clj_eyes/handlers.js", ['clj_eyes.handlers'], ['hiccups.runtime', 'clj_eyes.param_handling', 'cljs.core', 'cljs_http.client', 'cljs.core.async', 'jayq.core', 'clj_eyes.socket']);
 goog.addDependency("../clj_eyes/bind_funcs.js", ['clj_eyes.bind_funcs'], ['clj_eyes.param_handling', 'clj_eyes.handlers', 'cljs.core', 'jayq.core']);
 goog.addDependency("../clj_eyes/img_frame.js", ['clj_eyes.img_frame'], ['cljs.core']);
 goog.addDependency("../clj_eyes/controls.js", ['clj_eyes.controls'], ['clj_eyes.param_handling', 'clj_eyes.handlers', 'cljs.core', 'clj_eyes.bind_funcs', 'cljs.core.async', 'jayq.core', 'taoensso.sente', 'clj_eyes.socket', 'taoensso.timbre', 'taoensso.encore', 'clj_eyes.img_frame']);

@@ -3,7 +3,7 @@
             [jayq.core :as jq]
             [clj-eyes.handlers :as handle]))
 
-(defn on-file-select []
+(defn on-file-upload []
   (-> (jq/$ :#source-file)
             (jq/bind :change handle/upload-file)))
 
@@ -27,8 +27,15 @@
        :click
        #((handle/close-button frame-id)))))
 
+(defn on-file-select []
+  "Initally binds the select-source select box to handle any changes"
+  (-> (jq/$ :#src-select)
+      (jq/bind
+       :change
+       handle/select-source)))
 
 (defn run-init-binds []
   (on-file-select)
+  (on-file-upload)
   (submit-new-filter-option)
   (upload-button))

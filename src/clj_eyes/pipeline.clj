@@ -1,4 +1,5 @@
-(ns clj-eyes.pipeline)
+(ns clj-eyes.pipeline
+  (:require [clj-eyes.pipeline-frame :as frame]))
 
 (import '[org.opencv.core MatOfInt MatOfByte Mat CvType Size Core Scalar]
         '[org.opencv.imgcodecs Imgcodecs]
@@ -117,6 +118,33 @@
            :tree
            (assoc (:tree pipeline) frame-id frame)))
 
+(defn cache-uploaded-src [pipeline src-name]
+  "Will cache the source img currently in the tree under the key src-name"
+  (assoc
+   pipeline
+   :uploaded-img-cache
+   (assoc
+    (get pipeline :uploaded-img-cache {})
+    (keyword src-name)
+    (frame/fetch-img-matrix-from
+     (get-frame-from-pipeline pipeline :pipeline-source-img)))))
+
+(defn fetch-uploaded-src-from-cache [pipeline src-name]
+  (get
+   (get pipeline :uploaded-img-cache {})
+   (keyword src-name)
+   default-img))
+
+
 (defn generate-transform-id [pipeline]
   (keyword
    (str "transformation" (get (:meta-data pipeline) :frame-no 0))))
+
+
+(defn update-pipeline-source-img [pipeline img-id]
+  (update-frame
+   pipeline
+   :pipeline-source-img
+   (frame/load-image-matrix-into-pipeline-frame
+    (get-frame-from-pipeline pipeline  :pipeline-source-img)
+    (fetch-uploaded-src-from-cache pipeline img-id))))

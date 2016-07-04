@@ -4,7 +4,7 @@ goog.require('cljs.core');
 goog.require('clj_eyes.param_handling');
 goog.require('jayq.core');
 goog.require('clj_eyes.handlers');
-clj_eyes.bind_funcs.on_file_select = (function clj_eyes$bind_funcs$on_file_select(){
+clj_eyes.bind_funcs.on_file_upload = (function clj_eyes$bind_funcs$on_file_upload(){
 return jayq.core.bind.call(null,jayq.core.$.call(null,new cljs.core.Keyword(null,"#source-file","#source-file",-1314187081)),new cljs.core.Keyword(null,"change","change",-1163046502),clj_eyes.handlers.upload_file);
 });
 clj_eyes.bind_funcs.submit_new_filter_option = (function clj_eyes$bind_funcs$submit_new_filter_option(){
@@ -20,12 +20,18 @@ return jayq.core.bind.call(null,jayq.core.find.call(null,jayq.core.$.call(null,[
 return clj_eyes.handlers.close_button.call(null,frame_id).call(null);
 }));
 });
+clj_eyes.bind_funcs.on_file_select = (function clj_eyes$bind_funcs$on_file_select(){
+
+return jayq.core.bind.call(null,jayq.core.$.call(null,new cljs.core.Keyword(null,"#src-select","#src-select",-1981143020)),new cljs.core.Keyword(null,"change","change",-1163046502),clj_eyes.handlers.select_source);
+});
 clj_eyes.bind_funcs.run_init_binds = (function clj_eyes$bind_funcs$run_init_binds(){
 clj_eyes.bind_funcs.on_file_select.call(null);
+
+clj_eyes.bind_funcs.on_file_upload.call(null);
 
 clj_eyes.bind_funcs.submit_new_filter_option.call(null);
 
 return clj_eyes.bind_funcs.upload_button.call(null);
 });
 
-//# sourceMappingURL=bind_funcs.js.map?rel=1467279181371
+//# sourceMappingURL=bind_funcs.js.map?rel=1467619095320

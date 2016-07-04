@@ -59,20 +59,24 @@
 (defn load-new-source
   "Will open the src file and load it into memory as an opencv mat
   Must take an atom as its 3rd parameter and will return the atom after loading"
-  [src-file uid pipeline-list]
+  [src uid pipeline-list]
   ;We want to test to make sure that there is not a frame with id: pipeline-source-img in the pipeline frames map
   (let [pipeline (get-pipeline-from-list pipeline-list uid)
         frame    (pipeline/get-frame-from-pipeline
                   pipeline :pipeline-source-img
                   ;Constructor if pipeline doesn't exist
-                  #(pipeline-frame/pipeline-frame nil :pipeline-source-img :src))]
+                  #(pipeline-frame/pipeline-frame nil :pipeline-source-img :src))
+        src-file    (.toString (:tempfile src))
+        src-keyword (keyword (clojure.string/replace (:filename src) #" " "-"))]
    (assoc pipeline-list uid
-          (pipeline/insert-frame
-           pipeline
-           :pipeline-source-img
-           (pipeline-frame/load-image-matrix-into-pipeline-frame
-            frame 
-            (Imgcodecs/imread src-file))))))  
+          (pipeline/cache-uploaded-src 
+           (pipeline/insert-frame
+            pipeline
+            :pipeline-source-img
+            (pipeline-frame/load-image-matrix-into-pipeline-frame
+             frame 
+             (Imgcodecs/imread src-file)))
+           src-keyword))))  
 
 (defn update-pipeline-list [new-list]
   (swap! loaded-pipelines (fn [ignore-me] new-list)))

@@ -13,6 +13,7 @@
                  [http-kit "2.1.18"] ; Add to your project.clj. 
                  [ring "1.4.0"]
                  [hiccup "1.0.5"]
+                 [hiccups "0.3.0"]
                  [com.cemerick/austin "0.1.6"]
                  [weasel "0.7.0" :exclusions [org.clojure/clojurescript]]
                  [com.taoensso/sente "1.9.0-beta2"]
