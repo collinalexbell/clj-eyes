@@ -1,6 +1,11 @@
 (ns clj-eyes.pipeline-list-test
   (:use clojure.test)
-  (:require [clj-eyes.pipeline :as pipeline]))
+  (:require [clj-eyes.pipeline-list :as pipeline-list]))
+
+(import '[org.opencv.core MatOfInt MatOfByte Mat CvType Size]
+        '[org.opencv.imgcodecs Imgcodecs]
+        '[org.opencv.imgproc Imgproc])
+
 
 (deftest mat-eq?
   (let [mat-1 (Imgcodecs/imread "resources/public/imgs/test-pattern.png")
