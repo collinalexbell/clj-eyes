@@ -56,6 +56,19 @@
   (pipeline-list/notify-client-of-img-change uid :pipeline-source-img))
 
 
+(defmethod -event-msg-handler
+  :pipeline/update-title
+  [{:as ev-msg :keys [?data uid]}]
+
+  (pipeline-list/update-pipeline-list 
+    (assoc
+     @pipeline-list/loaded-pipelines
+     uid
+     (pipeline/update-title
+      (pipeline-list/get-pipeline-from-list @pipeline-list/loaded-pipelines uid)
+      (:title ?data))))))
+
+
 (defn handle-transformation-result
   [transformation-result uid]
       ;first for some side effects
@@ -108,6 +121,7 @@
          (:uid ev-msg)
          (:parent-frame event-data))
         (:uid ev-msg))])))
+
 
 (defonce router_ (atom nil))
 (defn  stop-router! [] (when-let [stop-fn @router_] (stop-fn)))

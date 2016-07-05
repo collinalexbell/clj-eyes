@@ -92,3 +92,10 @@
     {:src-name
      (-> (jq/$ :#src-select)
          (jq/val))}]))
+
+(defn title-change []
+  (soc/chsk-send!
+   [:pipeline/update-title
+    {:title
+     (-> (jq/$ :#pipeline-title)
+         (jq/html))}]))

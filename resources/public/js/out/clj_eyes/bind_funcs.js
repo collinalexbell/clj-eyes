@@ -12,8 +12,8 @@ while(true){
 if((el_num < n__22628__auto__)){
 each_fn.call(null,el_num,cljs.core.nth.call(null,elements__$1,el_num));
 
-var G__32287 = (el_num + (1));
-el_num = G__32287;
+var G__32906 = (el_num + (1));
+el_num = G__32906;
 continue;
 } else {
 return null;
@@ -49,6 +49,9 @@ clj_eyes.param_handling.bind_inputs_on_change.call(null,id);
 return clj_eyes.bind_funcs.close_button.call(null,id);
 }));
 });
+clj_eyes.bind_funcs.bind_title_change = (function clj_eyes$bind_funcs$bind_title_change(){
+return jayq.core.bind.call(null,jayq.core.$.call(null,new cljs.core.Keyword(null,"#pipeline-title","#pipeline-title",-26504658)),new cljs.core.Keyword(null,"focusout","focusout",-1980488769),clj_eyes.handlers.title_change);
+});
 clj_eyes.bind_funcs.run_init_binds = (function clj_eyes$bind_funcs$run_init_binds(){
 clj_eyes.bind_funcs.on_file_select.call(null);
 
@@ -58,7 +61,9 @@ clj_eyes.bind_funcs.submit_new_filter_option.call(null);
 
 clj_eyes.bind_funcs.upload_button.call(null);
 
-return clj_eyes.bind_funcs.on_init_frame_load.call(null);
+clj_eyes.bind_funcs.on_init_frame_load.call(null);
+
+return clj_eyes.bind_funcs.bind_title_change.call(null);
 });
 
-//# sourceMappingURL=bind_funcs.js.map?rel=1467704719067
+//# sourceMappingURL=bind_funcs.js.map?rel=1467709532817

@@ -226,7 +226,8 @@
 		CLOSED: [2016-07-04 Mon 08:36]
 *** DONE Get the current filters to load on refresh.
 		CLOSED: [2016-07-05 Tue 08:33]
-*** TODO Get the title to save into the correct session and load on refresh.
+*** DONE Get the title to save into the correct session and load on refresh.
+		CLOSED: [2016-07-05 Tue 09:07]
 *** TODO Make all of the wrapper functions for all of the various transformations
 *** TODO Get the select upload box to update all of the affected images in the pipeline!
 *** TODO Save pipelines into a database

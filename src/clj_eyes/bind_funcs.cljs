@@ -51,9 +51,14 @@
            (params/bind-inputs-on-change id)
            (close-button id))))))
 
+(defn bind-title-change []
+  (-> (jq/$ :#pipeline-title)
+      (jq/bind :focusout handle/title-change)))
+
 (defn run-init-binds []
   (on-file-select)
   (on-file-upload)
   (submit-new-filter-option)
   (upload-button)
-  (on-init-frame-load))
+  (on-init-frame-load)
+  (bind-title-change))
