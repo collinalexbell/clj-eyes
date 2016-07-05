@@ -177,7 +177,7 @@
   [(if (= :manditory (:obligation d)) :div.option-input.option-input-manditory :div.option-input.option-input-optional)
    {:data-option-group (:option-group d)}
     [:div.option-checkbox {:data-option-group (:option-group d)}]
-    [:label.option-params (:label d) [:span.option-param-value  (:default d)]
+    [:label.option-params (:label d) [:span.option-param-value  (if (not (nil? (:value d))) (:value d) (:default d))]
      (if (not (= (:type d) :boolean))
       [:input {:type (:type d)
                :min (:min d)
@@ -213,9 +213,9 @@
      (select-source)]))
 
 
-(defn title []
+(defn title [the-title]
   (html
-   [:div#pipeline-title {:contenteditable "true"} "Untitled Pipeline"]))
+   [:div#pipeline-title {:contenteditable "true"} the-title]))
 
 (defn filter-options []
   (html
@@ -297,12 +297,12 @@
        "ingore, must be refactored. Hah"))
     frames)))
 
-(defn body [existing-frames]
+(defn body [pipeline-title existing-frames]
   [:body
    [:div#content-frame
     [:div#menu]
     [:div#main-content
-     (title)
+     (title pipeline-title)
      [:div#filter-content]
      (pipeline-frame "Source Image" "/img?id=pipeline-source-img" "pipeline-source-img" (source-options-frame) "src" true)
      (generate-already-loaded-transforms existing-frames)
@@ -315,13 +315,13 @@
 
 
 
-(defn render [existing-frames]
+(defn render [pipeline-title existing-frames]
   (html
-   (let [body (body existing-frames)]
+   (let [body (body pipeline-title existing-frames)]
      [:html
       [:head
        [:link {:rel "stylesheet"
-               :href "css/bootstrap.min.css"}]
+               :href "css/bootstrap.min.css"}
        [:link {:rel "stylesheet"
                :href "css/bootstrap-select.min.css"}]
        [:link {:rel "stylesheet"

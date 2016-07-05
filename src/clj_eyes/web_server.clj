@@ -21,15 +21,18 @@
    hiccup.core))
 
 (defn pipeline-handler [request]
+  (let [pipeline
+         (pipeline-list/get-pipeline-from-list
+          @pipeline-list/loaded-pipelines (get-in request [:session :uid]))]
     {:status  200
      :session (session/generate-session request) 
      :headers {"Content-Type" "text/html"}
      :body (if (not (nil? (:mockup (:params request))))
              (pipeline-template/render-mockup)
              (pipeline-template/render
+              (pipeline/title pipeline)
               (pipeline/transform-frame-list
-               (pipeline-list/get-pipeline-from-list
-                @pipeline-list/loaded-pipelines (get-in request [:session :uid])))))})
+               pipeline)))}))
 
 (defn home-handler [request]
   (println "handling request")

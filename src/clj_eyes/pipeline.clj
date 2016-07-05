@@ -180,3 +180,13 @@
          (:tree pipeline)
          :pipeline-source-img
          :source-frame)))
+
+
+(defn update-title [pipeline title]
+  (assoc-in
+   pipeline
+   [:meta-data :title]
+   title))
+
+(defn title [pipeline]
+  (get-in pipeline [:meta-data :title] "Untitled Pipeline"))
