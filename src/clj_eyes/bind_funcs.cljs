@@ -3,6 +3,13 @@
             [jayq.core :as jq]
             [clj-eyes.handlers :as handle]))
 
+
+(defn jq-each-elements [elements each-fn]
+  (let [elements (js->clj elements)]
+    (dotimes [el-num (count elements)]
+      (each-fn el-num (nth elements el-num)))))
+
+
 (defn on-file-upload []
   (-> (jq/$ :#source-file)
             (jq/bind :change handle/upload-file)))
@@ -34,8 +41,19 @@
        :change
        handle/select-source)))
 
+(defn on-init-frame-load []
+  ;(params/bind-inputs-on-change %1)
+  ;(bind/close-button %1)
+  (-> (jq/$ :.transform-frame)
+      (jq-each-elements
+       (fn [i item]
+         (let [id (clojure.string/replace (jq/attr (jq/$ item) "id") #"pipeline-" "")]
+           (params/bind-inputs-on-change id)
+           (close-button id))))))
+
 (defn run-init-binds []
   (on-file-select)
   (on-file-upload)
   (submit-new-filter-option)
-  (upload-button))
+  (upload-button)
+  (on-init-frame-load))

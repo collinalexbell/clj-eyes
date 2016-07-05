@@ -140,15 +140,20 @@
   (html
    [:div.close-button "X"]))
 
-(defn pipeline-frame [name img-src img-id options-frame function-name]
-  (html
-   [:div.pipeline-frame {:id (str "pipeline-" (clojure.core/name img-id)) :data-function-name (clojure.core/name function-name)}
-    [:img {:src img-src :id img-id}]
-    [:div.pipeline-right-wrapper
-     [:div.options-wrapper
-      [:h3.pipeline-frame-title name] 
-       options-frame]
-     (close-button)]]))
+(defn pipeline-frame [name img-src img-id options-frame function-name & [is-source?]]
+  (let [pipeline-div-keyword
+        (if is-source?
+          :div.pipeline-frame
+          :div.pipeline-frame.transform-frame)]
+      (html
+       [pipeline-div-keyword
+        {:id (str "pipeline-" (clojure.core/name img-id)) :data-function-name (clojure.core/name function-name)}
+        [:img {:src img-src :id img-id}]
+        [:div.pipeline-right-wrapper
+         [:div.options-wrapper
+          [:h3.pipeline-frame-title name] 
+          options-frame]
+         (close-button)]])))
 
 (defn generate-boolean-input [d id]
   [:div.boolean-input
@@ -259,14 +264,34 @@
    [:script {:src "js/bootstrap-select.min.js"}]
    [:script {:src "js/clj-eyes.js"}]])
 
-(defn body []
+(defn generate-new-frame-html [frame frame-params]
+  (str
+    (html arrow)
+    (pipeline-frame
+     (:transformation-label frame)
+     (str "/img?id=" (name (:id frame)))
+     (:id frame)
+     (pipeline-options-frame (:transformation-params frame) (name (:id frame)))
+     (:function-name frame))))
+
+
+(defn generate-already-loaded-transforms
+  [frames]
+  (concat
+   (map
+    (fn [frame]
+      (generate-new-frame-html frame "ingore, must be refactored. Hah"))
+    frames)))
+
+(defn body [existing-frames]
   [:body
    [:div#content-frame
     [:div#menu]
     [:div#main-content
      (title)
      [:div#filter-content]
-     (pipeline-frame "Source Image" "/img?id=pipeline-source-img" "pipeline-source-img" (source-options-frame) "src")
+     (pipeline-frame "Source Image" "/img?id=pipeline-source-img" "pipeline-source-img" (source-options-frame) "src" true)
+     (generate-already-loaded-transforms existing-frames)
      (add-filter-to-pipeline)
      [:div#add-filter]]]
    [:script {:src "js/jquery-2.2.4.min.js"}]
@@ -276,9 +301,9 @@
 
 
 
-(defn render []
+(defn render [existing-frames]
   (html
-   (let [body (body)]
+   (let [body (body existing-frames)]
      [:html
       [:head
        [:link {:rel "stylesheet"
@@ -304,14 +329,4 @@
                    :href "css/radio-btns.css"}]
            [:style styles]]
           body])))
-
-(defn generate-new-frame-html [frame frame-params]
-  (str
-    (html arrow)
-    (pipeline-frame
-     (:transformation-label frame)
-     (str "/img?id=" (name (:id frame)))
-     (:id frame)
-     (pipeline-options-frame (:transformation-params frame) (name (:id frame)))
-     (:function-name frame))))
 

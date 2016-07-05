@@ -1,6 +1,7 @@
 (ns clj-eyes.pipeline-test
   (:use clojure.test)
-  (:require [clj-eyes.pipeline :as pipeline]))
+  (:require [clj-eyes.pipeline          :as pipeline]
+            [clj-eyes.pipeline-frame    :as frame]))
 
 (import '[org.opencv.core MatOfInt MatOfByte Mat CvType Size]
         '[org.opencv.imgcodecs Imgcodecs]
@@ -80,6 +81,21 @@
     (is (=
          org.opencv.core.Mat
          (type (pipeline/fetch-uploaded-src-from-cache pipeline "default-src"))))))
+
+(deftest transform-frame-list
+  (let [pipeline
+        {:tree
+         {:pipeline-source-img
+          (frame/pipeline-frame nil :pipeline-source-img :source)
+          :transform1
+          (frame/pipeline-frame :pipeline-source-img :transform1 :canny)
+          :transform2
+          (frame/pipeline-frame :transform1 :transform2 :canny)}}
+
+        frame-list
+        [(frame/pipeline-frame :pipeline-source-img :transform1 :canny)
+          (frame/pipeline-frame :transform1 :transform2 :canny)]]
+    (is (= (pipeline/transform-frame-list pipeline) frame-list))))
 
 
 (run-tests)

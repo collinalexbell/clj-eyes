@@ -11,7 +11,7 @@
 (def default-img
   (Imgcodecs/imread "resources/public/imgs/test-pattern.png"))
 
-(defn fetch-tree pipeline]
+(defn fetch-tree [pipeline]
   (:tree pipeline))
 
 (defn fetch-meta-data [pipeline]
@@ -32,6 +32,11 @@
   "Assocs a key and a value to all entries of a list of maps"
   (map #(assoc %1 key val) the-list))
 
+(defn filter-tree-by-parent [tree parent-key parent]
+  (filter
+   #(= parent (parent-key (second %1)))
+   tree))
+
 (defn update-tree-recursively [tree parent-key parent-node-id node-update-fn]
    (reduce
     (fn [reduced-tree item-to-update]
@@ -40,7 +45,7 @@
              (node-update-fn (second item-to-update)
                              ((parent-key (second item-to-update)) reduced-tree))))
     tree
-    (filter #(= parent-node-id (parent-key (second %1))) tree))) 
+    (filter-tree-by-parent tree parent-key parent-node-id))) 
 
 
 (defn do-transform [parent-frame transformation]
@@ -77,7 +82,7 @@
     (fn [result frame]
       (assoc
        result
-       :pipeline (assoc (:tree (:pipeline result)) :tree
+       :pipeline (assoc (:pipeline result) :tree
                         (assoc (:tree (:pipeline result))
                                (:id (second frame))
                                (dissoc (second frame) :edited)))
@@ -100,9 +105,10 @@
      transform-pipeline-frame))))
 
 
-(defn insert-frame [pipeline frame-id frame]
+(defn insert-frame
   "Inserts a frame with a given id into the pipeline.
    Returns the pipeline"
+  [pipeline frame-id frame]
   (assoc pipeline
          :tree
          (assoc (:tree pipeline) frame-id frame)
@@ -112,14 +118,16 @@
           :frame-no
           (+ 1 (get (get pipeline :meta-data {}) :frame-no 0)))))
 
-(defn update-frame [pipeline frame-id frame]
+(defn update-frame
   "Will update the frame without incrimenting the :frame-no"
-    (assoc pipeline
-           :tree
-           (assoc (:tree pipeline) frame-id frame)))
+  [pipeline frame-id frame]
+  (assoc pipeline
+         :tree
+         (assoc (:tree pipeline) frame-id frame)))
 
-(defn cache-uploaded-src [pipeline src-name]
+(defn cache-uploaded-src
   "Will cache the source img currently in the tree under the key src-name"
+  [pipeline src-name]
   (assoc
    pipeline
    :uploaded-img-cache
@@ -148,3 +156,25 @@
    (frame/load-image-matrix-into-pipeline-frame
     (get-frame-from-pipeline pipeline  :pipeline-source-img)
     (fetch-uploaded-src-from-cache pipeline img-id))))
+
+
+(defn tree-to-list [tree root-id root-key]
+  (flatten (cons
+            (get tree root-id)
+            (map
+             (fn [filter-result]
+               (tree-to-list
+                tree
+                (first filter-result)
+                root-key))
+             (filter-by-parent tree root-key root-id)))))
+
+(defn transform-frame-list
+  "Returns a list of frames in decending order
+  starting from pipeline-source-frame's child.
+  This function does not assume a single child per frame, but rather only returns the first child per frame"
+  [pipeline]
+  (rest (tree-to-list
+         (:tree pipeline)
+         :pipeline-source-img
+         :source-frame)))

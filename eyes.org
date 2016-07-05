@@ -224,7 +224,7 @@
 		CLOSED: [2016-07-04 Mon 06:14]
 *** DONE Get Select from uploaded images to remember the images uploaded that session and allow for selection
 		CLOSED: [2016-07-04 Mon 08:36]
-*** TODO Set up the current pipeline and frame as a clojure type or record
+*** TODO Get the current filters to load on refresh.
 *** TODO Get the title to save into the correct session and load on refresh.
 *** TODO Save pipelines into a database
 *** TODO Write code to load pipelines out of database

@@ -26,7 +26,10 @@
      :headers {"Content-Type" "text/html"}
      :body (if (not (nil? (:mockup (:params request))))
              (pipeline-template/render-mockup)
-             (pipeline-template/render))})
+             (pipeline-template/render
+              (pipeline/transform-frame-list
+               (pipeline-list/get-pipeline-from-list
+                @pipeline-list/loaded-pipelines (get-in request [:session :uid])))))})
 
 (defn home-handler [request]
   (println "handling request")
