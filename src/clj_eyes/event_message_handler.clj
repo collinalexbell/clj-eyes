@@ -65,6 +65,28 @@
       (:title ?data)))))
 
 
+
+(defmethod -event-msg-handler :pipeline/close-frame
+  [ev-msg]
+  (let [data
+        (second (:event ev-msg))
+
+        edited-pipeline-result
+        (pipeline/remove-pipeline-frame
+         (pipeline-list/get-pipeline-from-list @pipeline-list/loaded-pipelines (:uid ev-msg))
+         (:id data))]
+
+    (pipeline-list/update-pipeline-list
+     (:uid ev-msg)
+     (:pipeline edited-pipeline-result))
+
+    ;Notify the client 
+    (pipeline-list/notify-client-of-frame-deletion
+     (:uid ev-msg)
+     (:id data)
+     (:affected-ids edited-pipeline-result))))
+
+
 (defn handle-transformation-result
   [transformation-result uid]
       ;first for some side effects
@@ -79,27 +101,6 @@
 
        :frame-id
        (:frame-id transformation-result)})
-
-(defmethod -event-msg-handler :pipeline/close-frame
-  [ev-msg]
-  (let [data
-        (second (:event ev-msg))
-
-        edited-pipeline-result
-        (pipeline/remove-pipeline-frame
-         (pipeline-list/get-pipeline-from-list @pipeline-list/loaded-pipelines (:uid ev-msg))
-         (:id data))]
-
-    (pipeline-list/update-pipeline-list
-     (assoc @pipeline-list/loaded-pipelines
-            (:uid ev-msg)
-            (:pipeline edited-pipeline-result)))
-
-    ;Notify the client 
-    (pipeline-list/notify-client-of-frame-deletion
-     (:uid ev-msg)
-     (:id data)
-     (:affected-ids edited-pipeline-result))))
 
 (defmethod -event-msg-handler :pipeline/add-transformation
   [ev-msg]

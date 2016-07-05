@@ -230,6 +230,7 @@
 		CLOSED: [2016-07-05 Tue 09:07]
 *** DONE Change signature of update-pipeline-list to be like assoc. It will take the current pipeline list atom, the new pipeline and the uid associated with the pipeline
 		CLOSED: [2016-07-05 Tue 22:52]
+*** TODO Update tree recursively does not take into account previously updated img-mats
 *** TODO Make all of the wrapper functions for all of the various transformations
 *** TODO Get the select upload box to update all of the affected images in the pipeline!
 *** TODO Save pipelines into a database
@@ -241,7 +242,7 @@
 ** Ideas
 *** Make the event-msg-handler multi threaded
 *** Pipeline-list/update-transform works on the whole pipeline list. This should be moved to pipeline.clj and only work on a pipeline.
-*** Change signature of update-pipeline-list to be like assoc. It will take the current pipeline list atom, the new pipeline and the uid associated with the pipeline
+*** Pipeline-list add-transformation should be in pipeline
 
 
 
