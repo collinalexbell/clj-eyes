@@ -183,7 +183,7 @@
                :min (:min d)
                :max (:max d)
                :step (:step d)
-               :value (:default d)
+               :value (if (not (nil? (get d :value nil))) (:value d) (:default d))
                :class "non-boolean-input"
                :data-option-group (:option-group d)}]
       (generate-boolean-input d id))]])
@@ -280,7 +280,21 @@
   (concat
    (map
     (fn [frame]
-      (generate-new-frame-html frame "ingore, must be refactored. Hah"))
+      (generate-new-frame-html
+       (assoc
+        frame
+        :transformation-params
+        (map
+         #(assoc %1 :value (:value %2))
+         (:transformation-params frame)
+
+         ;Make the current params the same length as the full param list
+         (conj 
+          (into [] (:current-transformation-params frame))
+          (take (- (count (:transformation-params frame))
+                   (count (:current-transformation-params frame)))
+                (repeat {:value nil})))))
+       "ingore, must be refactored. Hah"))
     frames)))
 
 (defn body [existing-frames]

@@ -58,8 +58,9 @@
     rv))
 
 
-(defn transform-pipeline-frame [frame-to-update parent-frame]
+(defn transform-pipeline-frame 
   "Assocs a new :img-matrix into the frame and then sets :edited to true to singal the frame was affected"
+  [frame-to-update parent-frame]
   (assoc
    frame-to-update
    :edited
@@ -72,11 +73,12 @@
 
 
 
-(defn remove-pipeline-frame [pipeline id]
+(defn remove-pipeline-frame 
   "Will remove a frame with id frome a pipline. It relinks & reloads the :img-matrix of all affected frames
    Returns a map with keys [:pipeline :affected-ids].
    :pipeline is the resultant pipeline. This is needed for obvious reasons
    :affected-ids contains all of the ids of frames which had their :img-matrix recomputed. This is needed for notifying the client"
+  [pipeline id]
   (let [source-frame-id (:source-frame (get-frame-from-pipeline pipeline id))]
    (reduce 
     (fn [result frame]
