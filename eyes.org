@@ -228,6 +228,8 @@
 		CLOSED: [2016-07-05 Tue 08:33]
 *** DONE Get the title to save into the correct session and load on refresh.
 		CLOSED: [2016-07-05 Tue 09:07]
+*** DONE Change signature of update-pipeline-list to be like assoc. It will take the current pipeline list atom, the new pipeline and the uid associated with the pipeline
+		CLOSED: [2016-07-05 Tue 22:52]
 *** TODO Make all of the wrapper functions for all of the various transformations
 *** TODO Get the select upload box to update all of the affected images in the pipeline!
 *** TODO Save pipelines into a database
@@ -236,6 +238,12 @@
 *** TODO Add feature that enlarges image when clicked on
 *** TODO Figure out why figwheel is nessicary to not cause an error when loading the page. I thought figwheel was optional.
 *** TODO On /pipeline page load, use loader throbber to indicate when the web socket connection has fully loaded
+** Ideas
+*** Make the event-msg-handler multi threaded
+*** Pipeline-list/update-transform works on the whole pipeline list. This should be moved to pipeline.clj and only work on a pipeline.
+*** Change signature of update-pipeline-list to be like assoc. It will take the current pipeline list atom, the new pipeline and the uid associated with the pipeline
+
+
 
 		
 		

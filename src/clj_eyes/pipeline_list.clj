@@ -78,8 +78,12 @@
              (Imgcodecs/imread src-file)))
            src-keyword))))  
 
-(defn update-pipeline-list [new-list]
-  (swap! loaded-pipelines (fn [ignore-me] new-list)))
+(defn update-pipeline-list
+  "This is a state changing method. It will update loaded-pipelines with a new list of pipelines"
+  ([new-list]
+   (swap! loaded-pipelines (fn [ignore-me] new-list)))
+  ([uid new-pipeline]
+   (swap! loaded-pipelines assoc uid new-pipeline)))
 
 
 (defn -fetch-src-webp [uid pipelines]

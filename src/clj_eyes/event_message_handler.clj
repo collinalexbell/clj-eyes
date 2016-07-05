@@ -38,21 +38,19 @@
       #(pipeline-list/update-pipeline-list
         (pipeline-list/update-transform @pipeline-list/loaded-pipelines uid %1))
       (:transform-list data)))
+
     (doseq [transform-data (:transform-list data)]
      (pipeline-list/notify-client-of-img-change
-      (pipeline-list/->pipeline-specifier
-       uid (:id transform-data))))))
+      (pipeline-list/->pipeline-specifier uid (:id transform-data))))))
 
 (defmethod -event-msg-handler
   :pipeline/select-source
   [{:as ev-msg :keys [?data uid]}]
   (pipeline-list/update-pipeline-list
-   (assoc
-    @pipeline-list/loaded-pipelines
     uid
     (pipeline/update-pipeline-source-img
      (pipeline-list/get-pipeline-from-list @pipeline-list/loaded-pipelines uid)
-     (keyword (clojure.string/replace (:src-name ?data) #" " "-")))))
+     (keyword (clojure.string/replace (:src-name ?data) #" " "-"))))
   (pipeline-list/notify-client-of-img-change uid :pipeline-source-img))
 
 
@@ -61,12 +59,10 @@
   [{:as ev-msg :keys [?data uid]}]
 
   (pipeline-list/update-pipeline-list 
-    (assoc
-     @pipeline-list/loaded-pipelines
      uid
      (pipeline/update-title
       (pipeline-list/get-pipeline-from-list @pipeline-list/loaded-pipelines uid)
-      (:title ?data))))))
+      (:title ?data)))))
 
 
 (defn handle-transformation-result
