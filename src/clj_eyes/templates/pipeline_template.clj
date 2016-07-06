@@ -1,6 +1,7 @@
 (ns clj-eyes.templates.pipeline-template
   (:use hiccup.core)
-  (:require [garden.core :refer [css]]))
+  (:require [garden.core :refer [css]]
+            [clj-eyes.cv-filter :as filter]))
 
 ;(def background-color "rgba(219, 255, 169, .5)")
 (def background-color "rgba(238, 253, 217, .7)")
@@ -219,8 +220,10 @@
 
 (defn filter-options []
   (html
-   [:option {:value "gaussian-blur"} "Gaussian Blur"]
-   [:option {:value "canny"} "Canny"]))
+   (map
+    (fn [param]
+      [:option {:value (name (first param))} (filter/transformation-labels (first param))])
+    filter/filter-params)))
 
 (def arrow
   [:div.down-arrow
