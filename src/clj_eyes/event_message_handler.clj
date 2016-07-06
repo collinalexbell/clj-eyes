@@ -79,7 +79,7 @@
      uid
      (pipeline/update-title
       (pipeline-list/get-pipeline-from-list @pipeline-list/loaded-pipelines uid)
-      (:title ?data)))))
+      (:title ?data))))
 
 
 

@@ -7,6 +7,9 @@
 (def background-color "rgba(238, 253, 217, .7)")
 (def styles 
  (css
+      [:.input-selectpicker
+       [:.btn-group
+        {:width            "100% !important"}]]
       [:.option-param-value
        {:float            "right"}]
       [:.pipeline-frame-title
@@ -174,20 +177,37 @@
             :data-option-group (:option-group d)}] 
    [:label.btn {:for (str id "-toggle-off")} "Off"]])
 
+(defn generate-select-input [d id]
+  [:div.input-selectpicker
+   [:select.selectpicker {:title (:label d) :id (str
+                                                 (clojure.string/lower-case (clojure.string/replace (:label d) #" " "-"))
+                                                 (name id))}
+    (map
+     (fn [option]
+       [:option {:value (:value option)} (:label option)])
+     (:options d))]])
+
 (defn generate-pipeline-option-input [d id]
   [(if (= :manditory (:obligation d)) :div.option-input.option-input-manditory :div.option-input.option-input-optional)
    {:data-option-group (:option-group d)}
     [:div.option-checkbox {:data-option-group (:option-group d)}]
     [:label.option-params (:label d) [:span.option-param-value  (if (not (nil? (:value d))) (:value d) (:default d))]
-     (if (not (= (:type d) :boolean))
-      [:input {:type (:type d)
-               :min (:min d)
-               :max (:max d)
-               :step (:step d)
-               :value (if (not (nil? (get d :value nil))) (:value d) (:default d))
-               :class "non-boolean-input"
-               :data-option-group (:option-group d)}]
-      (generate-boolean-input d id))]])
+     (case (:type d)
+       :range
+       [:input
+        {:type (:type d)
+         :min (:min d)
+         :max (:max d)
+         :step (:step d)
+         :value (if (not (nil? (get d :value nil))) (:value d) (:default d))
+         :class "non-boolean-input"
+         :data-option-group (:option-group d)}]
+
+       :boolean
+       (generate-boolean-input d id)
+
+       :select
+       (generate-select-input d id))]])
 
 (defn pipeline-options-frame
   [option-data id]
@@ -324,13 +344,13 @@
      [:html
       [:head
        [:link {:rel "stylesheet"
-               :href "css/bootstrap.min.css"}
+               :href "css/bootstrap.min.css"}]
        [:link {:rel "stylesheet"
                :href "css/bootstrap-select.min.css"}]
        [:link {:rel "stylesheet"
                :href "css/radio-btns.css"}]
        [:style styles]]
-      body])))
+       body])))
 
 
 (defn render-mockup []

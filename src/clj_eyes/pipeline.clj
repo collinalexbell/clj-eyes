@@ -174,7 +174,7 @@
                 tree
                 (first filter-result)
                 root-key))
-             (filter-by-parent tree root-key root-id)))))
+             (filter-tree-by-parent tree root-key root-id)))))
 
 (defn transform-frame-list
   "Returns a list of frames in decending order

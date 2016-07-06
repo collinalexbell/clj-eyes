@@ -11,7 +11,13 @@
    (Imgproc/bilateralFilter src dest
                             (read-string diameter)
                             (read-string sigma-color)
-                            (read-string sigma-space))))
+                            (read-string sigma-space)))
+  ([src dest diameter sigma-color sigma-space border-type]
+   (Imgproc/bilateralFilter src dest
+                            (read-string diameter)
+                            (read-string sigma-color)
+                            (read-string sigma-space)
+                            (read-string border-type))))
 
 (defn gaussian-blur
   ([src dest kernal-height kernal-width standard-deviation-x]
@@ -66,9 +72,15 @@
    (gen-filter-param :range "SigmaY" "0" 0 {:step 0.2 :min 0})]
 
   :bilateral-filter
-  [(gen-filter-param :range "Pixel Neighborhood Diameter" "0" 0 {:step 1 :min 0 :max 10})
+  [(gen-filter-param :range "Pixel Neighborhood Diameter" "1" 0 {:step 1 :min 1 :max 10})
    (gen-filter-param :range "Sigma Color" "0" 0 {:step 0.2 :min 0 :max 400})
-   (gen-filter-param :range "Sigma Space" "0" 0 {:step 0.2 :min 0 :max 400})]})
+   (gen-filter-param :range "Sigma Space" "0" 0 {:step 0.2 :min 0 :max 400})
+   (gen-filter-param :select "Border Type" "4" 1 {:options [{:label "Constant"    :value 0}
+                                                            {:label "Replicate"   :value 1}
+                                                            {:label "Reflect"     :value 2}
+                                                            {:label "Wrap"        :value 3}
+                                                            {:label "Reflect 101" :value 4}
+                                                            {:label "Isolated"    :value 16}]})]})
 
 
 filter-params
