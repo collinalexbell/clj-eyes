@@ -51,7 +51,24 @@
     (pipeline/update-pipeline-source-img
      (pipeline-list/get-pipeline-from-list @pipeline-list/loaded-pipelines uid)
      (keyword (clojure.string/replace (:src-name ?data) #" " "-"))))
-  (pipeline-list/notify-client-of-img-change uid :pipeline-source-img))
+
+  (let [pipeline  (pipeline-list/get-pipeline-from-list @pipeline-list/loaded-pipelines uid)]
+   (pipeline-list/update-pipeline-list
+    uid
+    (assoc
+     pipeline
+     :tree
+     (pipeline/update-tree-recursively
+      (:tree pipeline)
+      :source-frame
+      :pipeline-source-img
+      pipeline/transform-pipeline-frame))))
+
+  (pipeline-list/notify-client-of-img-change uid :pipeline-source-img)
+  (doall (map
+          #(pipeline-list/notify-client-of-img-change uid (:id %1))
+          (pipeline/transform-frame-list
+           (pipeline-list/get-pipeline-from-list @pipeline-list/loaded-pipelines uid)))))
 
 
 (defmethod -event-msg-handler

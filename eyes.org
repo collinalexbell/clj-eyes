@@ -232,7 +232,8 @@
 		CLOSED: [2016-07-05 Tue 22:52]
 *** TODO Update tree recursively does not take into account previously updated img-mats
 *** TODO Make all of the wrapper functions for all of the various transformations
-*** TODO Get the select upload box to update all of the affected images in the pipeline!
+*** DONE Get the select upload box to update all of the affected images in the pipeline!
+		CLOSED: [2016-07-05 Tue 23:36]
 *** TODO Save pipelines into a database
 *** TODO Write code to load pipelines out of database
 *** TODO Remove x from source frame

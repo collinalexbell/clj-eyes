@@ -40,10 +40,15 @@
 (defn update-tree-recursively [tree parent-key parent-node-id node-update-fn]
    (reduce
     (fn [reduced-tree item-to-update]
-      (assoc (update-tree-recursively reduced-tree parent-key (first item-to-update) node-update-fn)
-             (first item-to-update)
-             (node-update-fn (second item-to-update)
-                             ((parent-key (second item-to-update)) reduced-tree))))
+      (update-tree-recursively
+       (assoc
+        (update-tree-recursively reduced-tree parent-key (first item-to-update) node-update-fn)
+        (first item-to-update)
+        (node-update-fn (second item-to-update)
+                        ((parent-key (second item-to-update)) reduced-tree)))
+       parent-key
+       (first item-to-update)
+       node-update-fn))
     tree
     (filter-tree-by-parent tree parent-key parent-node-id))) 
 
