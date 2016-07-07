@@ -7,138 +7,149 @@
 (def background-color "rgba(238, 253, 217, .7)")
 (def styles 
  (css
-      [:.input-selectpicker
-       [:.btn-group
-        {:width            "100% !important"}]]
-      [:.option-param-value
-       {:float            "right"}]
-      [:.pipeline-frame-title
-       {:text-align       "center"}
-       {:margin-bottom    "20px"}]
-      [:.btn
-       {:border           "2px solid transparent"}]
-      [:.btn-default
-       {:border-color     "#414141"
-        :border-size      "2px"}]
-      [:#source-options-frame
-       {:border           "0px"
-        :background-color background-color
-        }]
-      [:#select-source-upload
-       {:cursor           "pointer"
-        :border-radius    "7px"
-        :border           "2px solid #414141"
-        :text-align       "center"
-        :margin-bottom    "15px"
-        :background-color "FFFFFF"}]
-      [:#select-source
-       {:padding          "10px"
-        :text-align       "center"}
-       [:.bootstrap-select
-        {:width           "100%"
-         :margin          "2px 0px"}]]
-      [:#submit-new-filter-option
-       {:float            "right"
-        :border-radius    "10px"
-        :border           "2px solid #414141"
-        :width            "50px"
-        :height           "30px"
-        :background-color "rgba(127, 191, 212, .7)"}]
-      [:#add-filter-to-pipeline
-       {:float         "right"
-        :border-radius "10px"
-        :border        "2px solid #414141"
-        :padding       "10px"
-        :font-size     "1.5em"
-        :margin        "25px auto"
-        :width         "60%"
-        :background-color background-color}
-       [:.bootstrap-select
-        {:margin       "0 0 0 40px"}]]
-      [:.down-arrow
-       {:width          "58%"
-        :margin         "auto"}
-       [:img
-        {:width         "80px"
-         :height        "80px"}]]
-      [:.option-input-manditory
-       [:.option-checkbox
-        {:background-color "rgb(255, 99, 71)"}]]
-      [:.option-input-optional
-       {:color "#AAAAAA"}]
-      [:.option-input-optional.activated
-       {:color "#333333"}
-       [:.option-checkbox
-        {:background-color "#777777"}]]
-      [:.option-input
-       {:height        "auto"
-        :margin        "10px"}]
-      [:.option-params
-       {:width         "60%"}]
-      [:.option-checkbox
-       {:border-radius "15px"
-        :border        "2px solid #414141"
-        :margin        "10px 10px 0 0"
-        :float         "left"
-        :width         "30px"
-        :height        "20px"}]
-      [:#pipeline-title
-       {:width         "500px"
-        :border-radius "15px"
-        :border        "2px solid #414141"
-        :margin        "20px auto"
-        :padding       "5px"
-        :font-size     "x-large"
-        :text-align    "center"
-        :font-weight   "bold"}]
-      [:#content-frame
-      {:display        "block"
-       :width          "1000px"
-       :margin         "0px auto"
-       :overflow       "auto"}] 
-      [:.close-button
-       {;:color         "ff6347"
-        ;:color          "rgba(127, 191, 212, .7)"
-        :color         "rgb(11, 94, 122)"
-        ;:background-color "rgba(127, 191, 212, .7)"
-        :background-color "FFFFFF"
-        :float         "right"}]
-      [:.pipeline-right-wrapper
-       {:float         "right"}
-       {:display       "block"}
-       {:width         "400px"}]
-      [:.options-wrapper
-       {:float         "left"
-        :width         "90%"}]
-      [:.pipeline-options-frame
-       {:background-color "FFFFFF"
-        :border-radius "15px"
-        :border        "2px solid #414141"
-        :margin        "auto"
-        :width         "90%"
-        :padding       "10px"}]
-      [:.close-button
-       {:background-color "rgba(127, 191, 212, .7)"
-        :color         "000000"
-        :font-weight    "bold"
-        :padding-top       "2px"
-        :height        "20px"
-        :font-size     "75%"
-        :float         "right"
-        :padding       "3px"
-        :border-radius "5px"
-        :border        "2px solid #414141"}]
-      [:.pipeline-frame
-       {:background-color background-color 
-        :border-radius "15px"
-        :border        "2px solid #414141"
-        :padding       "20px"
-        :display       "block"
-        :margin        "0px 0px"
-        :overflow      "auto"}
-       [:img
-        {:width         "500px"
-         :height        "auto"}]]))
+  [:.mat-selection
+   [:button
+    {:border-radius    "10px"
+     :margin-top       "7px"
+     :height           "24px"
+     :background-color "#e6e6e6"
+     :border-color     "#adadad"}]
+   [:button:hover]]
+  [:.input-selectpicker
+   [:.btn-group
+    {:width            "100% !important"}]]
+  [:.option-param-value
+   {:float            "right"}]
+  [:.pipeline-frame-title
+   {:text-align       "center"}
+   {:margin-bottom    "20px"}]
+  [:.btn
+   {:border           "2px solid transparent"}]
+  [:.btn-default
+   {:border-color     "#414141"
+    :border-size      "2px"}]
+  [:#source-options-frame
+   {:border           "0px"
+    :background-color background-color
+    }]
+  [:#select-source-upload
+   {:cursor           "pointer"
+    :border-radius    "7px"
+    :border           "2px solid #414141"
+    :text-align       "center"
+    :margin-bottom    "15px"
+    :background-color "FFFFFF"}]
+  [:#select-source
+   {:padding          "10px"
+    :text-align       "center"}
+   [:.bootstrap-select
+    {:width           "100%"
+     :margin          "2px 0px"}]]
+  [:#submit-new-filter-option
+   {:float            "right"
+    :border-radius    "10px"
+    :border           "2px solid #414141"
+    :width            "50px"
+    :height           "30px"
+    :background-color "rgba(127, 191, 212, .7)"}]
+  [:#add-filter-to-pipeline
+   {:float         "right"
+    :border-radius "10px"
+    :border        "2px solid #414141"
+    :padding       "10px"
+    :font-size     "1.5em"
+    :margin        "25px auto"
+    :width         "60%"
+    :background-color background-color}
+   [:.bootstrap-select
+    {:margin       "0 0 0 40px"}]]
+  [:.down-arrow
+   {:width          "58%"
+    :margin         "auto"}
+   [:img
+    {:width         "80px"
+     :height        "80px"}]]
+  [:.option-input-manditory
+   [:.option-checkbox
+    {:background-color "rgb(255, 99, 71)"}]]
+  [:.option-input-optional
+   {:color "#AAAAAA"}]
+  [:.option-input-optional.activated
+   {:color "#333333"}
+   [:.option-checkbox
+    {:background-color "#777777"}]]
+  [:.option-input
+   {:height        "auto"
+    :margin        "10px"}]
+  [:.option-params
+   {:width         "60%"}]
+  [:.option-checkbox
+   {:border-radius "15px"
+    :border        "2px solid #414141"
+    :margin        "10px 10px 0 0"
+    :float         "left"
+    :width         "30px"
+    :height        "20px"}]
+  [:#pipeline-title
+   {:width         "500px"
+    :border-radius "15px"
+    :border        "2px solid #414141"
+    :margin        "20px auto"
+    :padding       "5px"
+    :font-size     "x-large"
+    :text-align    "center"
+    :font-weight   "bold"}]
+  [:#content-frame
+   {:display        "block"
+    :width          "1000px"
+    :margin         "0px auto"
+    :overflow       "auto"}] 
+  [:.close-button
+   {;:color         "ff6347"
+                                        ;:color          "rgba(127, 191, 212, .7)"
+    :color         "rgb(11, 94, 122)"
+                                        ;:background-color "rgba(127, 191, 212, .7)"
+    :background-color "FFFFFF"
+    :float         "right"}]
+  [:.pipeline-right-wrapper
+   {:float         "right"}
+   {:display       "block"}
+   {:width         "400px"}]
+  [:.options-wrapper
+   {:float         "left"
+    :width         "90%"}]
+  [:.pipeline-options-frame
+   {:background-color "FFFFFF"
+    :border-radius "15px"
+    :border        "2px solid #414141"
+    :margin        "auto"
+    :width         "90%"
+    :padding       "10px"}]
+  [:.close-button
+   {:background-color "rgba(127, 191, 212, .7)"
+    :color         "000000"
+    :font-weight    "bold"
+    :padding-top       "2px"
+    :height        "20px"
+    :font-size     "75%"
+    :float         "right"
+    :padding       "3px"
+    :border-radius "5px"
+    :border        "2px solid #414141"}]
+  [:.pipeline-frame
+   {:background-color background-color 
+    :border-radius "15px"
+    :border        "2px solid #414141"
+    :padding       "20px"
+    :display       "block"
+    :margin        "0px 0px"
+    :overflow      "auto"}
+   [:img
+    {:width         "500px"
+     :height        "auto"}]]))
+
+(defn starts-with-vowel [item]
+  (not (nil? (some #{(first item)} '(\a \e \i \o \u)))))
 
 (defn close-button []
   (html
@@ -187,11 +198,23 @@
        [:option {:value (:value option)} (:label option)])
      (:options d))]])
 
+(defn generate-mat-select
+  [d id]
+  [:div.mat-selection
+   [:button.btn-default {:id 
+                         (str
+                          (clojure.string/lower-case (clojure.string/replace (:label d) #" " "-"))
+                          (name id))}
+    [:span (str "Select a" (if (starts-with-vowel (:label d)) "n " " ") (:label d) " image")]]])
+
 (defn generate-pipeline-option-input [d id]
   [(if (= :manditory (:obligation d)) :div.option-input.option-input-manditory :div.option-input.option-input-optional)
    {:data-option-group (:option-group d)}
     [:div.option-checkbox {:data-option-group (:option-group d)}]
-    [:label.option-params (:label d) [:span.option-param-value  (if (not (nil? (:value d))) (:value d) (:default d))]
+    [:label.option-params 
+     (if (not (= :mat (:type d)))
+       (list [:span {:class (str "label-text-" (name (:type d)))} (:label d)]
+             [:span.option-param-value  (if (not (nil? (:value d))) (:value d) (:default d))]))
      (case (:type d)
        :range
        [:input
@@ -207,7 +230,10 @@
        (generate-boolean-input d id)
 
        :select
-       (generate-select-input d id))]])
+       (generate-select-input d id)
+
+       :mat
+       (generate-mat-select   d id))]])
 
 (defn pipeline-options-frame
   [option-data id]

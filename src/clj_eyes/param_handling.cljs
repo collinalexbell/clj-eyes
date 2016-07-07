@@ -54,7 +54,7 @@
                :value
                value})
        (-> jq-item
-           (jq/find :span)
+           (jq/find :span.option-param-value)
            .first
            (jq/html value))))))
 

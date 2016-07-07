@@ -92,6 +92,33 @@
                       (read-string kheight))))
 
 
+(defn erode
+  ([src dest kernal-width kernal-height]
+   (Imgproc/erode
+    src dest
+    (Imgproc/getStructuringElement 0 (Size.
+                                      (read-string kernal-width)
+                                      (read-string kernal-height))))))
+(defn dilate
+  ([src dest kernal-width kernal-height]
+   (Imgproc/dilate
+    src dest
+    (Imgproc/getStructuringElement 0 (Size.
+                                      (read-string kernal-width)
+                                      (read-string kernal-height))))))
+
+(defn filter2d 
+  ([src dest kernal-width kernal-height]
+   (Imgproc/filter2D
+    src dest -1
+    (Imgproc/getStructuringElement 0 (Size.
+                                      (read-string kernal-width)
+                                      (read-string kernal-height))))))
+
+
+
+
+
 (defn gen-filter-param
   "Generates a map that defines a filter-param"
   [type label default option-group & [additional-arg-map]]
@@ -148,7 +175,19 @@
 
   :blur
   [(gen-filter-param :range "Kernal Width" "1" 0 {:min 1 :max 100})
-   (gen-filter-param :range "Kernal Height" "1" 0 {:min 1 :max 100})]})
+   (gen-filter-param :range "Kernal Height" "1" 0 {:min 1 :max 100})]
+
+  :erode
+  [(gen-filter-param :range "Kernal Width" "3" 0 {:min 1 :max 20})
+   (gen-filter-param :range "Kernal Height" "3" 0 {:min 1 :max 20})]
+
+  :dilate
+  [(gen-filter-param :range "Kernal Width" "3" 0 {:min 1 :max 20})
+   (gen-filter-param :range "Kernal Height" "3" 0 {:min 1 :max 20})]
+
+  :filter2d
+  [(gen-filter-param :range "Kernal Width" "3" 0 {:min 1 :max 20})
+   (gen-filter-param :range "Kernal Height" "3" 0 {:min 1 :max 20})]})
 
 
 filter-params
@@ -161,7 +200,10 @@ filter-params
    :sobel            "Sobel"
    :median-blur      "Median Blur"
    :box-filter       "Box Filter"
-   :blur             "Standard Blur"})
+   :blur             "Standard Blur"
+   :erode            "Erode"
+   :dilate           "Dilate"
+   :filter2d         "Filter 2D"})
 
 
 (defn generate-default-params [param-list selection]
