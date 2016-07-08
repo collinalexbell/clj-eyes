@@ -73,9 +73,15 @@
    [:.option-checkbox
     {:background-color "rgb(255, 99, 71)"}]]
   [:.option-input-optional
-   {:color "#AAAAAA"}]
+   {:color "#AAAAAA"}
+     [:.dropdown-toggle
+      {:border-color   "#CCCCCC"
+       :color "#AAAAAA"}]]
   [:.option-input-optional.activated
    {:color "#333333"}
+    [:.dropdown-toggle
+     {:border-color   "#333333"
+      :color "#333333"}]
    [:.option-checkbox
     {:background-color "#777777"}]]
   [:.option-input
@@ -192,12 +198,15 @@
 
 (defn generate-select-input [d id]
   [:div.input-selectpicker
-   [:select.selectpicker {:title (:label d) :id (str
+   [:select.selectpicker.dropup {:data-dropup-auto "false" :title "Select One" :id (str
                                                  (clojure.string/lower-case (clojure.string/replace (:label d) #" " "-"))
                                                  (name id))}
     (map
      (fn [option]
-       [:option {:value (:value option)} (:label option)])
+       [:option (merge {:value (:value option)}
+                       (if (= (:value d) (str (:value option)))
+                         {:selected "selected"} {}))
+        (:label option)])
      (:options d))]])
 
 (defn generate-mat-select
@@ -220,9 +229,11 @@
     [:label.option-params 
      (if (not (= :mat (:type d)))
        (list [:span {:class (str "label-text-" (name (:type d)))} (:label d)]
-             [:span.option-param-value  (if (not (nil? (:value d)))
-                                          (clojure.string/capitalize (:value  d))
-                                          (clojure.string/capitalize (:default  d)))]))
+             (if (not (= :select (:type d)))
+               [:span.option-param-value  (if (not (nil? (:value d)))
+                                            (clojure.string/capitalize (:value  d))
+                                            (clojure.string/capitalize (:default  d)))]
+               '())))
      (case (:type d)
        :range
        [:input

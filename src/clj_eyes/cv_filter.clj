@@ -131,7 +131,7 @@
    additional-arg-map))
 
 (defn border-type-param [option-group]
-  (gen-filter-param :select "Border Type (enum)" "4" option-group
+  (gen-filter-param :select "Border Type" "4" option-group
                     {:options [{:label "Constant"    :value 0}
                                {:label "Replicate"   :value 1}
                                {:label "Reflect"     :value 2}
