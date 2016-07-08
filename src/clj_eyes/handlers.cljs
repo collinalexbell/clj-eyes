@@ -26,13 +26,6 @@
   "Adds a file to the select list of uploaded images"
   [img-name]
   (.log js/console (html [:option {:value img-name}  img-name]))
-  (if (<
-       (count (-> (jq/$ :#src-select)
-                  (jq/find :option)))
-       2)
-    (-> (jq/$ :#src-select)
-        (jq/append
-         (html [:option {:value "default-img"} "Default Img"]))))
   (-> (jq/$ :#src-select)
       (jq/append
        (html [:option {:value img-name}  img-name]))

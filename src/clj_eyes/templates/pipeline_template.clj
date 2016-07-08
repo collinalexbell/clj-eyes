@@ -168,7 +168,8 @@
          [:div.options-wrapper
           [:h3.pipeline-frame-title name] 
           options-frame]
-         (close-button)]])))
+         (if (not (= :pipeline-source-img (keyword img-id)))
+          (close-button))]])))
 
 (defn generate-boolean-input [d id]
   [:div.boolean-input
@@ -242,22 +243,27 @@
      (conj [:div.pipeline-options-frame] inputs))))
 
 
-(defn generate-source-options [])
-(defn select-source []
+(defn generate-source-options [existing-sources]
+  (map
+   #(html [:option {:value (:name %1)} (:label %1)])
+   existing-sources)
+  )
+(defn select-source [existing-sources]
   (html
    [:div#select-source
     [:div#select-source-upload "Upload new image"]
     [:input#source-file {:type "file" :style "display:none;"}]
     [:p "OR"]
      [:select.selectpicker {:title "Select from uploaded images" :id "src-select"}
-      (generate-source-options)]]))
+      (html [:option {:value "default-img"} "Default Img"])
+      (generate-source-options existing-sources)]]))
 
 
 
-(defn source-options-frame []
+(defn source-options-frame [existing-sources]
   (html
    [:div#source-options-frame.pipeline-options-frame
-     (select-source)]))
+     (select-source existing-sources)]))
 
 
 (defn title [the-title]
@@ -346,14 +352,14 @@
        "ingore, must be refactored. Hah"))
     frames)))
 
-(defn body [pipeline-title existing-frames]
+(defn body [pipeline-title existing-frames existing-sources]
   [:body
    [:div#content-frame
     [:div#menu]
     [:div#main-content
      (title pipeline-title)
      [:div#filter-content]
-     (pipeline-frame "Source Image" "/img?id=pipeline-source-img" "pipeline-source-img" (source-options-frame) "src" true)
+     (pipeline-frame "Source Image" "/img?id=pipeline-source-img" "pipeline-source-img" (source-options-frame existing-sources) "src" true)
      (generate-already-loaded-transforms existing-frames)
      (add-filter-to-pipeline)
      [:div#add-filter]]]
@@ -364,9 +370,9 @@
 
 
 
-(defn render [pipeline-title existing-frames]
+(defn render [pipeline-title existing-frames existing-sources]
   (html
-   (let [body (body pipeline-title existing-frames)]
+   (let [body (body pipeline-title existing-frames existing-sources)]
      [:html
       [:head
        [:link {:rel "stylesheet"

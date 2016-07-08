@@ -150,6 +150,11 @@
    (keyword src-name)
    default-img))
 
+(defn get-uploaded-img-list [pipeline]
+  (map
+   (fn [cache-item] {:name (name (first cache-item))
+                     :label (clojure.string/replace (name (first cache-item)) #"-" " ")})
+   (:uploaded-img-cache pipeline)))
 
 (defn generate-transform-id [pipeline]
   (keyword

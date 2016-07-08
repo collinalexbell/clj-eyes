@@ -32,7 +32,8 @@
              (pipeline-template/render
               (pipeline/title pipeline)
               (pipeline/transform-frame-list
-               pipeline)))}))
+               pipeline)
+              (pipeline/get-uploaded-img-list pipeline)))}))
 
 (defn home-handler [request]
   (println "handling request")
