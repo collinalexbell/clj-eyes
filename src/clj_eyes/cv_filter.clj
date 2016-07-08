@@ -116,7 +116,12 @@
                                       (read-string kernal-height))))))
 
 
+(defn equalize-histogram [src dest]
+  (Imgproc/equalizeHist src dest))
 
+
+(defn to-grey [src dest]
+  (Imgproc/cvtColor src dest Imgproc/COLOR_BGR2GRAY))
 
 
 (defn gen-filter-param
@@ -187,7 +192,13 @@
 
   :filter2d
   [(gen-filter-param :range "Kernal Width" "3" 0 {:min 1 :max 20})
-   (gen-filter-param :range "Kernal Height" "3" 0 {:min 1 :max 20})]})
+   (gen-filter-param :range "Kernal Height" "3" 0 {:min 1 :max 20})]
+
+  :equalize-histogram
+  []
+
+  :to-grey
+  []})
 
 
 filter-params
@@ -203,7 +214,11 @@ filter-params
    :blur             "Standard Blur"
    :erode            "Erode"
    :dilate           "Dilate"
-   :filter2d         "Filter 2D"})
+   :filter2d         "Filter 2D"
+   :equalize-histogram "Equalize Histogram (Greyscale Only)"
+   :to-grey          "To Greyscale"})
+
+
 
 
 (defn generate-default-params [param-list selection]

@@ -109,8 +109,7 @@
    {:display        "block"
     :width          "1000px"
     :height         "100%"
-    :margin         "0px auto"
-    :overflow       "auto"}] 
+    :margin         "0px auto"}] 
   [:.close-button
    {;:color         "ff6347"
                                         ;:color          "rgba(127, 191, 212, .7)"
@@ -258,7 +257,8 @@
   [option-data id]
   (html
    (let [inputs (map #(generate-pipeline-option-input % id) option-data)]
-     (conj [:div.pipeline-options-frame] inputs))))
+     (conj [:div.pipeline-options-frame] inputs (if (= 0 (count option-data))
+                                                 [:p "Transform has no paramaters"])))))
 
 
 (defn generate-source-options [existing-sources selected-source]
