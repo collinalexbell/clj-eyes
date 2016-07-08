@@ -55,7 +55,9 @@
   (.log js/console html)
   (-> (jq/$ :.pipeline-frame)
       .last
-      (jq/after html)))
+      (jq/after html))
+  (-> (jq/$ :.selectpicker)
+      (.selectpicker "render")))
 
 (defn close-button [frame-id]
   #(soc/chsk-send!

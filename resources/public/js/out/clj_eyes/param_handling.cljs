@@ -135,7 +135,7 @@
 
 (defn bind-inputs-on-change [id]
   (-> (jq/$ (keyword (str "#pipeline-" (name id))))
-      (jq/find :input)
+      (jq/find "input, select")
       ((fn [item] (.log js/console (count item)) item))
       (jq/bind :change (gen-param-input-change-handler id)))
   (-> (jq/$ (keyword (str "#pipeline-" (name id))))
