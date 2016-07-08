@@ -243,27 +243,35 @@
      (conj [:div.pipeline-options-frame] inputs))))
 
 
-(defn generate-source-options [existing-sources]
+(defn generate-source-options [existing-sources selected-source]
   (map
-   #(html [:option {:value (:name %1)} (:label %1)])
-   existing-sources)
-  )
-(defn select-source [existing-sources]
+   #(html [:option (merge {:value (:name %1)}
+                          (if (= (name selected-source) (:name %1))
+                              {:selected "selected"}
+                              {}))
+           (:label %1)])
+   existing-sources))
+
+(defn select-source [existing-sources selected-source]
   (html
    [:div#select-source
     [:div#select-source-upload "Upload new image"]
     [:input#source-file {:type "file" :style "display:none;"}]
     [:p "OR"]
-     [:select.selectpicker {:title "Select from uploaded images" :id "src-select"}
-      (html [:option {:value "default-img"} "Default Img"])
-      (generate-source-options existing-sources)]]))
+     [:select.selectpicker {:title "Select from uploaded images" :id "src-select" }
+      (html [:option (merge {:value "default-img"}
+                            (if (= (name selected-source) "default-img")
+                              {:selected "selected"}
+                              {}))
+             "Default Img"])
+      (generate-source-options existing-sources selected-source)]]))
 
 
 
-(defn source-options-frame [existing-sources]
+(defn source-options-frame [existing-sources selected-source]
   (html
    [:div#source-options-frame.pipeline-options-frame
-     (select-source existing-sources)]))
+     (select-source existing-sources selected-source)]))
 
 
 (defn title [the-title]
@@ -352,14 +360,20 @@
        "ingore, must be refactored. Hah"))
     frames)))
 
-(defn body [pipeline-title existing-frames existing-sources]
+(defn body [pipeline-title existing-frames existing-sources selected-source]
   [:body
    [:div#content-frame
     [:div#menu]
     [:div#main-content
      (title pipeline-title)
      [:div#filter-content]
-     (pipeline-frame "Source Image" "/img?id=pipeline-source-img" "pipeline-source-img" (source-options-frame existing-sources) "src" true)
+     (pipeline-frame
+      "Source Image"
+      "/img?id=pipeline-source-img"
+      "pipeline-source-img"
+      (source-options-frame existing-sources selected-source)
+      "src"
+      true)
      (generate-already-loaded-transforms existing-frames)
      (add-filter-to-pipeline)
      [:div#add-filter]]]
@@ -370,9 +384,9 @@
 
 
 
-(defn render [pipeline-title existing-frames existing-sources]
+(defn render [pipeline-title existing-frames existing-sources selected-source]
   (html
-   (let [body (body pipeline-title existing-frames existing-sources)]
+   (let [body (body pipeline-title existing-frames existing-sources selected-source)]
      [:html
       [:head
        [:link {:rel "stylesheet"

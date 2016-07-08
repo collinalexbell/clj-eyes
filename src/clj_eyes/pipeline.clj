@@ -162,12 +162,15 @@
 
 
 (defn update-pipeline-source-img [pipeline img-id]
-  (update-frame
-   pipeline
-   :pipeline-source-img
-   (frame/load-image-matrix-into-pipeline-frame
-    (get-frame-from-pipeline pipeline  :pipeline-source-img)
-    (fetch-uploaded-src-from-cache pipeline img-id))))
+  (assoc
+   (update-frame
+    pipeline
+    :pipeline-source-img
+    (frame/load-image-matrix-into-pipeline-frame
+     (get-frame-from-pipeline pipeline  :pipeline-source-img)
+     (fetch-uploaded-src-from-cache pipeline img-id)))
+   :selected-source
+   img-id))
 
 
 (defn tree-to-list [tree root-id root-key]
@@ -200,3 +203,7 @@
 
 (defn title [pipeline]
   (get-in pipeline [:meta-data :title] "Untitled Pipeline"))
+
+
+(defn get-selected-source [pipeline]
+  (get pipeline :selected-source :default-img))

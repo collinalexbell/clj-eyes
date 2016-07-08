@@ -252,7 +252,9 @@
 *** DONE Get the select box to load on refresh
 		CLOSED: [2016-07-08 Fri 03:31]
 
-*** TODO Get the correct image to be selected in select box when the img is uploaded
+*** DONE Get the correct image to be selected in select box when the img is uploaded
+		CLOSED: [2016-07-08 Fri 03:37]
+*** TODO Get the correct image to be selected in select box when the page is reloaded
 *** TODO Add feature that enlarges image when clicked on
 *** TODO Figure out why figwheel is nessicary to not cause an error when loading the page. I thought figwheel was optional.
 *** TODO On /pipeline page load, use loader throbber to indicate when the web socket connection has fully loaded

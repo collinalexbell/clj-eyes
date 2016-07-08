@@ -33,7 +33,8 @@
               (pipeline/title pipeline)
               (pipeline/transform-frame-list
                pipeline)
-              (pipeline/get-uploaded-img-list pipeline)))}))
+              (pipeline/get-uploaded-img-list pipeline)
+              (pipeline/get-selected-source pipeline)))}))
 
 (defn home-handler [request]
   (println "handling request")
