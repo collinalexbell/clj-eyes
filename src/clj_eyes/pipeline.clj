@@ -96,7 +96,8 @@
        :affected-ids (if (get (second frame) :edited false)
                        (conj (:affected-ids result) (first frame))
                        (:affected-ids result))))
-    {:pipeline {:meta-data (:meta-data pipeline) :tree {}} :affected-ids []}
+    {:pipeline (assoc (dissoc pipeline :tree) :tree {})
+     :affected-ids []}
     (update-tree-recursively
      (dissoc 
       (reduce
