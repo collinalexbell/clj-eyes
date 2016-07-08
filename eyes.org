@@ -265,7 +265,14 @@
 *** DONE Fix L2 Gradient on canny edge detector.
 		CLOSED: [2016-07-08 Fri 04:42]
 
-*** TODO Get Boolean to capitalize value in span on load
+*** DONE Get Boolean to capitalize value in span on load
+		CLOSED: [2016-07-08 Fri 08:24]
+
+*** DONE Get the optional select boxes to be activated on load
+		CLOSED: [2016-07-08 Fri 08:34]
+
+*** DONE Get the values to display on load?		
+		CLOSED: [2016-07-08 Fri 08:37]
 
 *** TODO Get the title to light up green or otherwise signify that the title has saved (ask a designer whats best here (cevin, george, or cons))
 *** TODO Add feature that enlarges image when clicked on

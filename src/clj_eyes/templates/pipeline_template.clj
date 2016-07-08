@@ -210,15 +210,19 @@
     [:span (str "Select a" (if (starts-with-vowel (:label d)) "n " " ") (:label d) " image")]]])
 
 (defn generate-pipeline-option-input [d id]
-  [(if (= :manditory (:obligation d)) :div.option-input.option-input-manditory :div.option-input.option-input-optional)
+  [(if (= :manditory (:obligation d))
+     :div.option-input.option-input-manditory
+     (if (not (nil? (:value d)))
+         :div.option-input.option-input-optional.activated
+         :div.option-input.option-input-optional))
    {:data-option-group (:option-group d)}
     [:div.option-checkbox {:data-option-group (:option-group d)}]
     [:label.option-params 
      (if (not (= :mat (:type d)))
        (list [:span {:class (str "label-text-" (name (:type d)))} (:label d)]
              [:span.option-param-value  (if (not (nil? (:value d)))
-                                          (:value (clojure.string/capitalize d))
-                                          (:default (clojure.string/capitalize d)))]))
+                                          (clojure.string/capitalize (:value  d))
+                                          (clojure.string/capitalize (:default  d)))]))
      (case (:type d)
        :range
        [:input
