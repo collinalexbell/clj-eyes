@@ -31,3 +31,10 @@ input[type="radio"].toggle-right + label {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+.option-input-optional:not(.activated) input[type="radio"] + label {
+		color: #AAAAAA;
+		text-shadow: none;
+		background-image: none;
+}
+
