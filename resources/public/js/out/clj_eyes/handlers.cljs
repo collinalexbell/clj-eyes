@@ -29,6 +29,7 @@
   (-> (jq/$ :#src-select)
       (jq/append
        (html [:option {:value img-name}  img-name]))
+      (jq/val img-name)
       (.selectpicker "refresh")))
 
 (defn upload-file []
