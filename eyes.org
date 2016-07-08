@@ -9,19 +9,29 @@
 	 
 ** What OpenCV functionality would be suited to being explored with a gui?
 *** Image filters
-		+cv::bilateralFilter
-		+cv::blur
-		+cv::boxFilte
-		+cv::buildPyramid
-		+cv::dilate
-		+cv::erode
-		+cv::filter2D
-		+cv::GaussianBlur
-		+cv::medianBlur
-		+cv::Sobel
+**** DONE cv::bilateralFilter
+		 CLOSED: [2016-07-06 Wed 10:37]
+**** DONE cv::blur         - Also requires a "Point"
+		 CLOSED: [2016-07-07 Thu 09:12]
+**** DONE cv::boxFilter    - Some require a "Point"
+		 CLOSED: [2016-07-07 Thu 09:12]
+**** DONE cv::buildPyramid - Requires more thought and features!
+		 CLOSED: [2016-07-07 Thu 09:12]
+**** DONE cv::dilate       - Requires MAT param
+		 CLOSED: [2016-07-07 Thu 09:02]
+**** DONE cv::erode        - Requires MAT param
+		 CLOSED: [2016-07-07 Thu 09:02]
+**** DONE cv::filter2D     - Requires MAT param
+		 CLOSED: [2016-07-07 Thu 09:12]
+**** DONE cv::GaussianBlur
+		 CLOSED: [2016-07-06 Wed 11:45]
+**** DONE cv::medianBlur
+		 CLOSED: [2016-07-06 Wed 11:45]
+**** DONE cv::Sobel
+		 CLOSED: [2016-07-06 Wed 11:26]
 
 *** Feature Detection
-		+cv::Canny
+**** TODO cv::Canny
 
 
 ** Archetecture
@@ -182,7 +192,7 @@
 *** DONE Some optional parameters are tied together, so they must be activated together. Write the code to do this.
 		CLOSED: [2016-06-27 Mon 13:36]
 		
-** Path to v2.0
+** Path  v2.0
 *** DONE When the transform gets loaded, set the initial values of the sliders
 		CLOSED: [2016-06-28 Tue 04:20]
 *** DONE Test that the app is somewhat responsive in a live server environment.
@@ -230,7 +240,9 @@
 		CLOSED: [2016-07-05 Tue 09:07]
 *** DONE Change signature of update-pipeline-list to be like assoc. It will take the current pipeline list atom, the new pipeline and the uid associated with the pipeline
 		CLOSED: [2016-07-05 Tue 22:52]
-*** TODO Update tree recursively does not take into account previously updated img-mats
+*** DONE Update tree recursively does not take into account previously updated img-mats
+		CLOSED: [2016-07-06 Wed 05:36]
+
 *** TODO Make all of the wrapper functions for all of the various transformations
 *** DONE Get the select upload box to update all of the affected images in the pipeline!
 		CLOSED: [2016-07-05 Tue 23:36]

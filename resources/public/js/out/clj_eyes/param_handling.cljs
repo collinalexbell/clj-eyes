@@ -43,7 +43,7 @@
    (fn [i item]
      (let [jq-item (jq/$ item)
            value (-> jq-item
-                     (jq/find :input)
+                     (jq/find "input, select")
                      .first
                      jq/val)]
                                         ;Append Item to list to transfer to server
@@ -54,7 +54,8 @@
                :value
                value})
        (-> jq-item
-           (jq/find :span)
+           (jq/find :span.option-param-value)
+           .first
            (jq/html value))))))
 
 
