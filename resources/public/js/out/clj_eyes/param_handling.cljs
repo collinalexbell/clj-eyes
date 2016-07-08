@@ -43,10 +43,11 @@
    (fn [i item]
      (let [jq-item (jq/$ item)
            value (-> jq-item
-                     (jq/find "input, select")
+                     (jq/find "input[type='range'], input:checked, select")
                      .first
                      jq/val)]
                                         ;Append Item to list to transfer to server
+       (.log js/console (str "value: " value))
        (swap! param-list-atom conj 
               {:class
                (jq/attr jq-item "class")
@@ -56,7 +57,7 @@
        (-> jq-item
            (jq/find :span.option-param-value)
            .first
-           (jq/html value))))))
+           (jq/html (.capitalize value)))))))
 
 
 (defrecord transform-data [input-list pipeline-id])

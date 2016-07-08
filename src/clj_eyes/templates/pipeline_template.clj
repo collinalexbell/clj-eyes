@@ -102,6 +102,7 @@
   [:#content-frame
    {:display        "block"
     :width          "1000px"
+    :height         "100%"
     :margin         "0px auto"
     :overflow       "auto"}] 
   [:.close-button
@@ -180,14 +181,14 @@
             :id (str id "-toggle-on")
             :checked "checked"
             :data-option-group (:option-group d)}] 
-   [:label.btn {:for (str id "-toggle-on")} "On"]
+   [:label.btn {:for (str id "-toggle-on")} "True"]
    [:input {:type :radio
             :class "toggle toggle-right"
             :name (str id "-toggle")
             :value "false"
             :id (str id "-toggle-off")
             :data-option-group (:option-group d)}] 
-   [:label.btn {:for (str id "-toggle-off")} "Off"]])
+   [:label.btn {:for (str id "-toggle-off")} "False"]])
 
 (defn generate-select-input [d id]
   [:div.input-selectpicker
@@ -377,6 +378,8 @@
      (generate-already-loaded-transforms existing-frames)
      (add-filter-to-pipeline)
      [:div#add-filter]]]
+   [:script "String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);}"]
    [:script {:src "js/jquery-2.2.4.min.js"}]
    [:script {:src "js/bootstrap.min.js"}]
    [:script {:src "js/bootstrap-select.min.js"}]

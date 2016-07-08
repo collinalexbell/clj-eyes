@@ -13,7 +13,6 @@ input[type="radio"].toggle:checked + label {
 }
 
 input[type="radio"].toggle + label {
-  width: 3em;
 }
 
 input[type="radio"].toggle:checked + label.btn:hover {
