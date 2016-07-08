@@ -265,6 +265,7 @@
 *** DONE Fix L2 Gradient on canny edge detector.
 		CLOSED: [2016-07-08 Fri 04:42]
 
+*** TODO Get Boolean to capitalize value in span on load
 
 *** TODO Get the title to light up green or otherwise signify that the title has saved (ask a designer whats best here (cevin, george, or cons))
 *** TODO Add feature that enlarges image when clicked on

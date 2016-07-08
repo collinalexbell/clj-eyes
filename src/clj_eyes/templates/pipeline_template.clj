@@ -216,7 +216,9 @@
     [:label.option-params 
      (if (not (= :mat (:type d)))
        (list [:span {:class (str "label-text-" (name (:type d)))} (:label d)]
-             [:span.option-param-value  (if (not (nil? (:value d))) (:value d) (:default d))]))
+             [:span.option-param-value  (if (not (nil? (:value d)))
+                                          (:value (clojure.string/capitalize d))
+                                          (:default (clojure.string/capitalize d)))]))
      (case (:type d)
        :range
        [:input
@@ -353,7 +355,7 @@
          (:transformation-params frame)
 
          ;Make the current params the same length as the full param list
-         (conj 
+         (concat 
           (into [] (:current-transformation-params frame))
           (take (- (count (:transformation-params frame))
                    (count (:current-transformation-params frame)))
