@@ -19,6 +19,7 @@
                             (read-string sigma-space)
                             (read-string border-type))))
 
+
 (defn sobel
   ([src dest dx dy]
    (Imgproc/Sobel src dest

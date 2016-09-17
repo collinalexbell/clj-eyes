@@ -4,4 +4,4 @@ goog.require('cljs.core');
 goog.require('clj_eyes.controls');
 goog.require('clj_eyes.socket');
 
-//# sourceMappingURL=core.js.map?rel=1466236063741
+//# sourceMappingURL=core.js.map?rel=1467968603349
